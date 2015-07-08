@@ -341,7 +341,7 @@
 		{"trigger":"Schedule", "contents":"Schedule( ${1:js_raw_args js_raw_args_1} )"},
 		{"trigger":"GetContextPanel", "contents":"GetContextPanel( ${1:js_raw_args js_raw_args_1} )"},
 		{"trigger":"RegisterKeyBing", "contents":"RegisterKeyBind( ${1:js_raw_args js_raw_args_1} )"},
-		{"trigger":"Each", "contentsE":"Each( ${1:js_raw_args js_raw_args_1} )"},
+		{"trigger":"Each", "contents":"Each( ${1:js_raw_args js_raw_args_1} )"},
 		{"trigger":"Panel_visible", "contents":"visible( ${1:boolean boolean_1} )"},
 		{"trigger":"Panel_enabled", "contents":"enabled( ${1:boolean boolean_1} )"},
 		{"trigger":"Panel_checked", "contents":"checked( ${1:boolean boolean_1} )"},
