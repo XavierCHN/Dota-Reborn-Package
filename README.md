@@ -7,7 +7,7 @@ Code completion and syntax for DOTA 2 mod development
 
 # Includes
 
-* Panorama css ( properties completions )
+* Panorama css ( properties completions ) -- TODO
 * Panorama js ( functions and constants completions)
 * Panorama xml ( syntax , functions/constants completions and snippets)
 * Lua scripts ( functions and constants completions) -- Credits to [hex6](https://github.com/hex6)
