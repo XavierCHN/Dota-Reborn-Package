@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA["ApplyModifier"
+{
+	"ModifierName"	"modifier_${1:name}"
+	"Target"
+	{
+		"Center"	"TARGET"
+		"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"Types"		"DOTA_UNIT_TARGET_HERO"
+	}
+	"Duration"		"%${2:hero_duration}"
+}
+
+"ApplyModifier"
+{
+	"ModifierName"	"modifier_${1:name}"
+	"Target"
+	{
+		"Center"	"TARGET"
+		"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"Types"		"DOTA_UNIT_TARGET_BASIC"
+	}
+	"Duration"		"%${4:creep_duration}"
+}
+]]></content>
+	<tabTrigger>ApplyModifierHero-Creep</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>distinct</description>
+</snippet>

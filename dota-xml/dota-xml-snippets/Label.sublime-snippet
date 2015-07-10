@@ -1,0 +1,6 @@
+<snippet>
+    <description>Panorama Label</description>
+    <content><![CDATA[<Label text="${1:your_text_here}" />]]></content>
+    <tabTrigger>&lt;Label</tabTrigger>
+    <scope>text.dotaxml</scope>	
+</snippet>

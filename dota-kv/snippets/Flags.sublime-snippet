@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+"Flags"     "${1:DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES}"
+]]></content>
+	<tabTrigger>Flags</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>in a Target { }</description>
+</snippet>

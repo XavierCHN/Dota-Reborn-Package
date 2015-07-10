@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["Blink"
+{
+	"Target" 		"${1:TARGET}"
+}
+]]></content>
+	<tabTrigger>Blink</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>to a Target</description>
+</snippet>

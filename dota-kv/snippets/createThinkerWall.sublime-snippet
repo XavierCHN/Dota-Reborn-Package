@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA["CreateThinkerWall"
+{
+	"ModifierName"		"${1:modifier_name}"
+	"Width"				"%${2:width}"
+	"Length"			"%${3:length}"
+	"Rotation"			"${4:x} ${5:y} ${6:z}"
+	"Target" 			"${7:TARGET}"
+}
+]]></content>
+	<tabTrigger>CreateThinkerWall</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Line Thinker</description>
+</snippet>
+

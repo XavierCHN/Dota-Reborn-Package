@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["OnEquip"
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnEquip</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Item picked up</description>
+</snippet>

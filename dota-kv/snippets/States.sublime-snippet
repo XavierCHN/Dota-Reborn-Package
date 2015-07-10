@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["States"
+{
+	"${1:MODIFIER_STATE_STUNNED}"		"${2:MODIFIER_STATE_VALUE_ENABLED}"
+}
+]]></content>
+	<tabTrigger>States</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Apply Modifier States</description>
+</snippet>

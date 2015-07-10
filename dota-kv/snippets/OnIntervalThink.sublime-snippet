@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["OnIntervalThink"
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnIntervalThink</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Repeat Actions</description>
+</snippet>

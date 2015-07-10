@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA["DelayedAction"
+{
+	"Delay"     "%${1:delay}"
+	"Action"    
+	{
+		${2:[ACTIONS]}
+	}
+}
+]]></content>
+	<tabTrigger>DelayedAction</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Acts after Delay</description>
+</snippet>

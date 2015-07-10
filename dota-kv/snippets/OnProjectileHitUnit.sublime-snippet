@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["OnProjectileHitUnit"
+{
+	"DeleteOnHit"	"${1:1}"
+	${2:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnProjectileHitUnit</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Target detect</description>
+</snippet>

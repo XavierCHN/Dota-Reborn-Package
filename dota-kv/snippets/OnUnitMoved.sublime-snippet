@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["OnUnitMoved"
+// Example: Bloodseeker ult
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnUnitMoved</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>modifier event</description>
+</snippet>

@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA["TrackingProjectile"
+{
+	"Target"           	"${1:TARGET}"
+	"EffectName"		"${2:particles/base_attacks/ranged_tower_bad.vpcf}"
+	"Dodgeable"			"${3:1}"
+	"ProvidesVision"	"${4:1}"
+	"VisionRadius"		"${5:%vision_radius}"
+	"MoveSpeed"        	"${6:%projectile_speed}"
+	"SourceAttachment"	"${7:DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"}
+}
+]]></content>
+	<tabTrigger>TrackingProjectile</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Create TrackingProjectile</description>
+</snippet>

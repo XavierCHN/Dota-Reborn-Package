@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+"IsPurgable"		"${1:1}"
+"IsBuff"			"${2:1}"
+"IsDebuff"			"${3:0}"
+"IsStunDebuff"		"${4:0}"
+${5://Purge(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)}
+]]></content>
+	<tabTrigger>IsPurgable</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Set Purge Properties</description>
+</snippet>

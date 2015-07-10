@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["OnOwnerDied"
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnOwnerDied</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Ability owner dies</description>
+</snippet>

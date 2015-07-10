@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["OnAttackStart"
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnAttackStart</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Animation started</description>
+</snippet>

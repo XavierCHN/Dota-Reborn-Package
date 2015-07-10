@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA["LinearProjectile"
+{
+    "Target"      	 "${1:POINT}"
+	"EffectName"	 "${2:particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf}"
+	"MoveSpeed"		 "%${3:projectile_speed}"
+	"StartRadius"	 "%${4:start_radius}"
+	"StartPosition"  "${5:attach_attack1}"
+	"EndRadius"      "%${6:end_radius}"
+	"HasFrontalCone" "${7:0}"
+	"FixedDistance"  "%${8:range}"
+	"TargetTeams"	 "${9:DOTA_UNIT_TARGET_TEAM_ENEMY}"
+	"TargetTypes"	 "${10:DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO}"
+	"TargetFlags"	 "${11:DOTA_UNIT_TARGET_FLAG_NONE}"						
+    "ProvidesVision" "${12:1}"
+    "VisionRadius" 	 "%${13:vision_radius}"
+}
+]]></content>
+	<tabTrigger>LinearProjectile</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Create LinearProjectile</description>
+</snippet>

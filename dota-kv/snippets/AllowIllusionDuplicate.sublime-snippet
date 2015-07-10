@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+"AllowIllusionDuplicate"     "${1:1}"
+]]></content>
+	<tabTrigger>AllowIllusionDuplicate</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>in a modifier</description>
+</snippet>

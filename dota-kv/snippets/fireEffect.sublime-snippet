@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA["FireEffect"
+{
+	"EffectName"        "${1:}"
+	"EffectAttachType"  "${2:follow_origin}"
+	"Target"            "${3:TARGET}"
+}
+]]></content>
+	<tabTrigger>FireEffect</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>particle on a Target</description>
+</snippet>

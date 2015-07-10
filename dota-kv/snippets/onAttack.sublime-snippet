@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["OnAttack"
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnAttack</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Completed Miss or Hit</description>
+</snippet>

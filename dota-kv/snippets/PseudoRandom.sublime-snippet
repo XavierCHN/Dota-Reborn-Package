@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA["PseudoRandom" "${1:DOTA_PSEUDO_RANDOM_JUGG_CRIT}"
+]]></content>
+	<tabTrigger>PseudoRandom</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Add RNG to a Random</description>
+</snippet>

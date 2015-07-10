@@ -1,0 +1,32 @@
+<snippet>
+	<content><![CDATA[
+"Orb"
+{
+	"Priority"			"DOTA_ORB_PRIORITY_ABILITY"
+	"ProjectileName"    "${1:tracking_projectile_name}"
+	"CastAttack"		"1"
+}
+
+"OnOrbFire"
+{
+	"SpendMana"
+	{
+		"Mana"		"%${2:AbilityManaCost}"
+	}
+	
+	${3:[ACTIONS]}
+}
+
+"OnOrbImpact"
+{
+	${4:[ACTIONS]}
+}
+
+]]></content>
+	<tabTrigger>Orb</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Modifier Event+Actions</description>
+</snippet>
+
+
+

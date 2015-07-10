@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["ControlPointEntities"
+{
+	"${1:TARGET}"	"${2:attach_origin}"
+	"${3:CASTER}"	"${4:attach_origin}"
+}
+]]></content>
+	<tabTrigger>ControlPointEntities</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Attachment</description>
+</snippet>

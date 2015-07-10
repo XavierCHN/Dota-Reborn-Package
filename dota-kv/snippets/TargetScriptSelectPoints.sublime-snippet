@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA["Target"
+{
+	"Center"		    "${1:CASTER}"
+	"ScriptSelectPoints"
+	{
+		"ScriptFile"    "${2:heroes/hero_name/ability_name.lua}"
+		"Function"      "${3:GetPointsFunction}"
+		"Target"		"${4:CASTER}"
+		"Count"			"${5:2}"
+	}
+}
+]]></content>
+	<tabTrigger>Target ScriptSelectPoints</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>in Lua</description>
+</snippet>

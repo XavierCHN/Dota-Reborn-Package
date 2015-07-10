@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["OnProjectileDodge"
+// The unit with this modifier dodged a projectile.
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnProjectileDodge</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>modifier event</description>
+</snippet>

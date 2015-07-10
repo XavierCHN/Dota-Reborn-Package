@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["OnAbilityExecuted"
+// Any ability (including items) was used by the unit with this modifier.
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnAbilityExecuted</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>modifier event</description>
+</snippet>

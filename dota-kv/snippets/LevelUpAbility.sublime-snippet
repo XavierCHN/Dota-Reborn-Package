@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["LevelUpAbility"
+{
+	"Target" 		"${1:CASTER}"
+	"AbilityName"	"%${2:ability_name}"
+}
+]]></content>
+	<tabTrigger>LevelUpAbility</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>of a Target</description>
+</snippet>

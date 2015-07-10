@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA["Lifesteal"
+{
+	"Target"            "${1:ATTACKER}"
+	"LifestealPercent"	"%${2:lifesteal}"
+}
+]]></content>
+	<tabTrigger>Lifesteal</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Heal On Attack</description>
+</snippet>
+
+

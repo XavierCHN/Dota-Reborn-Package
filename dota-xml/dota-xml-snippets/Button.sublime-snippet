@@ -1,0 +1,9 @@
+<snippet>
+    <description>Panorama Button</description>
+    <content><![CDATA[<Button id="${1:id}" onactivate="${2:OnActivate()}">
+	<Label text="${3:button_text}" />
+	<Image src="file://{images}/${4:your_image_path/your_image.png}" />
+</Button>]]></content>
+    <tabTrigger>&lt;Button</tabTrigger>
+    <scope>text.dotaxml</scope>	
+</snippet>

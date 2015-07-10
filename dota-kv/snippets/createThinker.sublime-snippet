@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["CreateThinker"
+{
+	"ModifierName"	"modifier_${1:name}"
+	"Target" 		"${2:TARGET}"
+}
+]]></content>
+	<tabTrigger>CreateThinker</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Entity Thinker</description>
+</snippet>

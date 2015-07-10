@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA["ApplyMotionController"
+// For this: gfycat.com/BraveHideousGiantschnauzer -> check: bit.ly/1KWulqA
+{
+	"Caster" 		"${1:CASTER}"
+    "Target" 		"${2:TARGET}"
+    "ScriptFile"    "${3:heroes/hero_name/ability_name.lua}"
+    "HorizontalControlFunction" "${4:TestGravityFunc}"
+    "VerticalControlFunction" 	"${4:TestGravityFunc}"         
+}
+]]></content>
+	<tabTrigger>ApplyMotionController</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Movement</description>
+</snippet>

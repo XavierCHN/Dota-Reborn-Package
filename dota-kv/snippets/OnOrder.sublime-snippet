@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["OnOrder"
+// Triggers on Move/Casting/Hold/Stop
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnOrder</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>modifier event</description>
+</snippet>

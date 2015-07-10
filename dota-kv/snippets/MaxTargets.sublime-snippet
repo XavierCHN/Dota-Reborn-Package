@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+"MaxTargets" "%${1:max_targets}"
+"Random"     "${2:1}"
+]]></content>
+	<tabTrigger>MaxTargets</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Random up to MaxTargets</description>
+</snippet>

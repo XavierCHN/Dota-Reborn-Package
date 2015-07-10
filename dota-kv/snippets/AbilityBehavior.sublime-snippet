@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_${1:UNIT_TARGET}"
+"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_${2:ENEMY}"
+"AbilityUnitTargetType"			"${3:DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC}"
+"AbilityUnitDamageType"			"${4:DAMAGE_TYPE_MAGICAL}"
+]]></content>
+	<tabTrigger>AbilityBehavior</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Team Type</description>
+</snippet>

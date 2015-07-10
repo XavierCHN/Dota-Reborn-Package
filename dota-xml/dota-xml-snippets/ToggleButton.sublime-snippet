@@ -1,0 +1,6 @@
+<snippet>
+    <description>Panorama ToggleButton</description>
+    <content><![CDATA[<ToggleButton checked="true" text="${1:Checkbox 1}" />]]></content>
+    <tabTrigger>&lt;ToggleButton</tabTrigger>
+    <scope>text.dotaxml</scope>	
+</snippet>

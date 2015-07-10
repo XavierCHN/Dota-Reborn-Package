@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["OnRespawn"
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnRespawn</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>modf owner respawns</description>
+</snippet>

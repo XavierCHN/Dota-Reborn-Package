@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA["Target"
+{
+	"Center"  	"${1:TARGET}"
+	"Line"
+	{
+		"Length" 		"${2:1000}"
+		"Thickness" 	"${3:1000}"
+	}
+	"Teams" 	"${4:DOTA_UNIT_TARGET_TEAM_ENEMY}"
+	"Types" 	"${5:DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC}"
+}
+]]></content>
+	<tabTrigger>Target Line</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Length Thickness</description>
+</snippet>

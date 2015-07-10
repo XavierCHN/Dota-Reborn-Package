@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA["Heal"
+{
+	"Target"        "${1:TARGET}"
+	"HealAmount"	"%${2:heal}"
+}
+]]></content>
+	<tabTrigger>Heal</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Heal function</description>
+</snippet>
+
+

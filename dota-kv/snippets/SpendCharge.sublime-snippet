@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA["SpendCharge" {}
+]]></content>
+	<tabTrigger>SpendCharge</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>item modf owner event</description>
+</snippet>
+
+

@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+"AbilityCooldown"				"${1:8.0}"
+"AbilityManaCost"				"${2:100}"
+"AbilityDamage"					"${3:75 130 200}"
+]]></content>
+	<tabTrigger>AbilityCooldown</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>ManaCost Damage</description>
+</snippet>

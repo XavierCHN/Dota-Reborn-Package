@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["OnAbilityStart"
+// OnSpellStart as a Modifier Event, you can Apply it on a target to trigger any Actions.
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnAbilityStart</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>modifier event</description>
+</snippet>

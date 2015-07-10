@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA["Target"
+{
+	"Center"  	"${1:TARGET}"
+	"Radius" 	"%${2:radius}"
+	"Teams" 	"${3:DOTA_UNIT_TARGET_TEAM_ENEMY}"
+	"Types" 	"${4:DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC}"
+}
+]]></content>
+	<tabTrigger>Target</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Center Radius</description>
+</snippet>

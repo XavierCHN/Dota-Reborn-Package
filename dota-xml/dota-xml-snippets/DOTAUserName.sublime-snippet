@@ -1,0 +1,6 @@
+<snippet>
+    <description>Panorama DOTAUserName</description>
+    <content><![CDATA[<DOTAUserName steamid="${1:local}" />]]></content>
+    <tabTrigger>&lt;DOTAUserName</tabTrigger>
+    <scope>text.dotaxml</scope>	
+</snippet>

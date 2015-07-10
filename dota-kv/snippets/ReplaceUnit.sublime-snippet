@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA["ReplaceUnit"
+{
+	"UnitName"      "${1:npc_name}"
+	"Target"        "${2:TARGET}"
+}
+]]></content>
+	<tabTrigger>ReplaceUnit</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Target by UnitName</description>
+</snippet>
+
+

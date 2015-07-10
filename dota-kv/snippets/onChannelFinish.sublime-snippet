@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["OnChannelFinish"
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnChannelFinish</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Fires in any case</description>
+</snippet>

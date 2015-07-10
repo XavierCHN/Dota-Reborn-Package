@@ -1,0 +1,6 @@
+<snippet>
+    <description>Panorama DOTAAvatarImage</description>
+    <content><![CDATA[<DOTAAvatarImage steamid="${1:local}" />]]></content>
+    <tabTrigger>&lt;DOTAAvatarImage</tabTrigger>
+    <scope>text.dotaxml</scope>	
+</snippet>

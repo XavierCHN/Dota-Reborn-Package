@@ -1,0 +1,8 @@
+<snippet>
+    <description>Panorama Panel</description>
+    <content><![CDATA[<Panel ${3:id="${1:id}"} ${4:class="${2:class}"}>
+	${5:<!-- panel content -->}
+</Panel>]]></content>
+    <tabTrigger>&lt;Panel</tabTrigger>
+    <scope>text.dotaxml</scope>	
+</snippet>

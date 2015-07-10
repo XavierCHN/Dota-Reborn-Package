@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["OnAttackAllied"
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnAttackAllied</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Hit Friendly</description>
+</snippet>

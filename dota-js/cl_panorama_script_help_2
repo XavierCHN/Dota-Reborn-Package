@@ -1,0 +1,5142 @@
+=== CDOTA_PanoramaScript_GameEvents ===
+{| class="standard-table" style="width: 100%;"
+! Function
+! Signature
+! Description
+|- 
+| Subscribe
+| <code>GameEvents.Subscribe( cstring pEventName, js_value funcVal )</code>
+| Subscribe to a game event
+|- 
+| Unsubscribe
+| <code>GameEvents.Unsubscribe( integer nCallbackHandle )</code>
+| Unsubscribe from a game event
+|- 
+| SendCustomGameEventToServer
+| <code>GameEvents.SendCustomGameEventToServer( cstring pEventName, js_object jsObject )</code>
+| Send a custom game event
+|}
+
+
+=== CDOTA_PanoramaScript_GameUI ===
+{| class="standard-table" style="width: 100%;"
+! Function
+! Signature
+! Description
+|- 
+| SetDefaultUIEnabled
+| <code>GameUI.SetDefaultUIEnabled( integer nElementType, boolean bVisible )</code>
+| Control whether the default UI is enabled
+|- 
+| CustomUIConfig
+| <code>GameUI.CustomUIConfig( js_raw_args args )</code>
+| Get the current UI configuration
+|- 
+| PingMinimapAtLocation
+| <code>GameUI.PingMinimapAtLocation( js_value vec3 )</code>
+| Create a minimap ping at the given location
+|- 
+| SetMouseCallback
+| <code>GameUI.SetMouseCallback( js_value callbackFn )</code>
+| Install a mouse input filter
+|- 
+| GetCursorPosition
+| <code>GameUI.GetCursorPosition( js_raw_args args )</code>
+| Get the current mouse position.
+|- 
+| FindScreenEntities
+| <code>GameUI.FindScreenEntities( js_raw_args args )</code>
+| Return the entity index of the entity under the given screen position.
+|- 
+| GetScreenWorldPosition
+| <code>GameUI.GetScreenWorldPosition( js_raw_args args )</code>
+| Get the world position of the screen position, or null if the cursor is out of the world.
+|- 
+| WasMousePressed
+| <code>GameUI.WasMousePressed( integer nButtonNum )</code>
+| Install a mouse input filter
+|- 
+| WasMouseDoublePressed
+| <code>GameUI.WasMouseDoublePressed( integer nButtonNum )</code>
+| Install a mouse input filter
+|- 
+| IsMouseDown
+| <code>GameUI.IsMouseDown( integer nButtonNum )</code>
+| Install a mouse input filter
+|- 
+| IsShiftDown
+| <code>GameUI.IsShiftDown()</code>
+| Is the shift button pressed?
+|- 
+| IsAltDown
+| <code>GameUI.IsAltDown()</code>
+| Is the alt button pressed?
+|- 
+| IsControlDown
+| <code>GameUI.IsControlDown()</code>
+| Is the control button pressed?
+|- 
+| GetClickBehaviors
+| <code>GameUI.GetClickBehaviors()</code>
+| Get the current UI click interaction mode.
+|- 
+| SelectUnit
+| <code>GameUI.SelectUnit( integer nEntityIndex, boolean bAddToGroup )</code>
+| Select a unit, adding it to the group or replacing the current selection.
+|}
+
+
+=== CDOTA_PanoramaScript_CustomNetTables ===
+{| class="standard-table" style="width: 100%;"
+! Function
+! Signature
+! Description
+|- 
+| GetTableValue
+| <code>CustomNetTables.GetTableValue( cstring pTableName, cstring pKeyName )</code>
+| Get a key from a custom net table
+|- 
+| GetAllTableValues
+| <code>CustomNetTables.GetAllTableValues( cstring pTableName )</code>
+| Get all values from a custom net table
+|- 
+| SubscribeNetTableListener
+| <code>CustomNetTables.SubscribeNetTableListener( js_raw_args args )</code>
+| Register a callback when a particular custom net table changes
+|- 
+| UnsubscribeNetTableListener
+| <code>CustomNetTables.UnsubscribeNetTableListener( integer nCallbackHandle )</code>
+| Unsubscribe from a game event
+|}
+
+
+=== CScriptBindingPR_Players ===
+{| class="standard-table" style="width: 100%;"
+! Function
+! Signature
+! Description
+|- 
+| GetMaxPlayers
+| <code>Players.GetMaxPlayers()</code>
+| Get the maximum number of players in the game.
+|- 
+| GetMaxTeamPlayers
+| <code>Players.GetMaxTeamPlayers()</code>
+| Get the maximum number of players on teams.
+|- 
+| GetLocalPlayer
+| <code>Players.GetLocalPlayer()</code>
+| Get the local player ID.
+|- 
+| IsValidPlayer
+| <code>Players.IsValidPlayer( integer iPlayerID )</code>
+| Is the nth player a valid player?
+|- 
+| GetPlayerName
+| <code>Players.GetPlayerName( integer iPlayerID )</code>
+| Return the name of a player.
+|- 
+| GetPlayerHeroEntityIndex
+| <code>Players.GetPlayerHeroEntityIndex( integer iPlayerID )</code>
+| Get the entity index of the hero controlled by this player.
+|- 
+| GetSelectedEntities
+| <code>Players.GetSelectedEntities( integer iPlayerID )</code>
+| Get the entities this player has selected.
+|- 
+| GetQueryUnit
+| <code>Players.GetQueryUnit( integer iPlayerID )</code>
+| Get the entities this player is querying.
+|- 
+| GetLocalPlayerPortraitUnit
+| <code>Players.GetLocalPlayerPortraitUnit()</code>
+| Get local player current portrait unit. (ie. Player's hero or primary selected unit.)
+|- 
+| CanPlayerBuyback
+| <code>Players.CanPlayerBuyback( integer iPlayerID )</code>
+| Can the player buy back?
+|- 
+| GetAssists
+| <code>Players.GetAssists( integer iPlayerID )</code>
+| The number of assists credited to a player.
+|- 
+| GetClaimedDenies
+| <code>Players.GetClaimedDenies( integer iPlayerID )</code>
+| 
+|- 
+| GetClaimedMisses
+| <code>Players.GetClaimedMisses( integer iPlayerID )</code>
+| 
+|- 
+| GetDeaths
+| <code>Players.GetDeaths( integer iPlayerID )</code>
+| The number of deaths a player has suffered.
+|- 
+| GetDenies
+| <code>Players.GetDenies( integer iPlayerID )</code>
+| The number of denies credited to a player.
+|- 
+| GetGold
+| <code>Players.GetGold( integer iPlayerID )</code>
+| The amount of gold a player has.
+|- 
+| GetGoldBagsCollected
+| <code>Players.GetGoldBagsCollected( integer iPlayerID )</code>
+| The number of gold bags collected by a player.
+|- 
+| GetKills
+| <code>Players.GetKills( integer iPlayerID )</code>
+| The number of kills credited to a player.
+|- 
+| GetLastBuybackTime
+| <code>Players.GetLastBuybackTime( integer iPlayerID )</code>
+| 
+|- 
+| GetLastHitMultikill
+| <code>Players.GetLastHitMultikill( integer iPlayerID )</code>
+| 
+|- 
+| GetLastHits
+| <code>Players.GetLastHits( integer iPlayerID )</code>
+| The number of last hits credited to a player.
+|- 
+| GetLastHitStreak
+| <code>Players.GetLastHitStreak( integer iPlayerID )</code>
+| 
+|- 
+| GetLevel
+| <code>Players.GetLevel( integer iPlayerID )</code>
+| The current level of a player.
+|- 
+| GetMisses
+| <code>Players.GetMisses( integer iPlayerID )</code>
+| 
+|- 
+| GetNearbyCreepDeaths
+| <code>Players.GetNearbyCreepDeaths( integer iPlayerID )</code>
+| 
+|- 
+| GetReliableGold
+| <code>Players.GetReliableGold( integer iPlayerID )</code>
+| Total reliable gold for this player.
+|- 
+| GetRespawnSeconds
+| <code>Players.GetRespawnSeconds( integer iPlayerID )</code>
+| 
+|- 
+| GetStreak
+| <code>Players.GetStreak( integer iPlayerID )</code>
+| 
+|- 
+| GetTotalEarnedGold
+| <code>Players.GetTotalEarnedGold( integer iPlayerID )</code>
+| Total gold earned in this game by this player.
+|- 
+| GetTotalEarnedXP
+| <code>Players.GetTotalEarnedXP( integer iPlayerID )</code>
+| Total xp earned in this game by this player.
+|- 
+| GetUnreliableGold
+| <code>Players.GetUnreliableGold( integer iPlayerID )</code>
+| Total unreliable gold for this player.
+|- 
+| GetGoldPerMin
+| <code>Players.GetGoldPerMin( integer iPlayerID )</code>
+| Average gold earned per minute for this player.
+|- 
+| GetXPPerMin
+| <code>Players.GetXPPerMin( integer iPlayerID )</code>
+| Average xp earned per minute for this player.
+|- 
+| GetPlayerSelectedHero
+| <code>Players.GetPlayerSelectedHero( integer iPlayerID )</code>
+| Return the name of the hero a player is controlling.
+|- 
+| GetPlayerColor
+| <code>Players.GetPlayerColor( integer iPlayerID )</code>
+| Get the player color.
+|- 
+| IsSpectator
+| <code>Players.IsSpectator( integer iPlayerID )</code>
+| Is this player a spectator.
+|}
+
+
+=== CScriptBindingPR_Entities ===
+{| class="standard-table" style="width: 100%;"
+! Function
+! Signature
+! Description
+|- 
+| GetAbsOrigin
+| <code>Entities.GetAbsOrigin( integer nEntityIndex )</code>
+| Get the world origin of the entity.
+|- 
+| GetAllBuildingEntities
+| <code>Entities.GetAllBuildingEntities()</code>
+| Get all the building entities.
+|- 
+| GetAllHeroEntities
+| <code>Entities.GetAllHeroEntities()</code>
+| Get all the hero entities.
+|- 
+| GetAllEntitiesByName
+| <code>Entities.GetAllEntitiesByName( cstring pszName )</code>
+| Get all the entities with a given name.
+|- 
+| GetAllEntitiesByClassname
+| <code>Entities.GetAllEntitiesByClassname( cstring pszName )</code>
+| Get all the entities with a given classname.
+|- 
+| GetAllCreatureEntities
+| <code>Entities.GetAllCreatureEntities()</code>
+| Get all the creature entities.
+|- 
+| GetAllEntities
+| <code>Entities.GetAllEntities()</code>
+| Get all the entities.
+|- 
+| CanBeDominated
+| <code>Entities.CanBeDominated( integer nEntityIndex )</code>
+| 
+|- 
+| HasAttackCapability
+| <code>Entities.HasAttackCapability( integer nEntityIndex )</code>
+| 
+|- 
+| HasCastableAbilities
+| <code>Entities.HasCastableAbilities( integer nEntityIndex )</code>
+| 
+|- 
+| HasFlyingVision
+| <code>Entities.HasFlyingVision( integer nEntityIndex )</code>
+| 
+|- 
+| HasFlyMovementCapability
+| <code>Entities.HasFlyMovementCapability( integer nEntityIndex )</code>
+| 
+|- 
+| HasGroundMovementCapability
+| <code>Entities.HasGroundMovementCapability( integer nEntityIndex )</code>
+| 
+|- 
+| HasMovementCapability
+| <code>Entities.HasMovementCapability( integer nEntityIndex )</code>
+| 
+|- 
+| HasScepter
+| <code>Entities.HasScepter( integer nEntityIndex )</code>
+| 
+|- 
+| HasUpgradeableAbilities
+| <code>Entities.HasUpgradeableAbilities( integer nEntityIndex )</code>
+| 
+|- 
+| HasUpgradeableAbilitiesThatArentMaxed
+| <code>Entities.HasUpgradeableAbilitiesThatArentMaxed( integer nEntityIndex )</code>
+| 
+|- 
+| IsAlive
+| <code>Entities.IsAlive( integer nEntityIndex )</code>
+| 
+|- 
+| IsAncient
+| <code>Entities.IsAncient( integer nEntityIndex )</code>
+| 
+|- 
+| IsAttackImmune
+| <code>Entities.IsAttackImmune( integer nEntityIndex )</code>
+| 
+|- 
+| IsBarracks
+| <code>Entities.IsBarracks( integer nEntityIndex )</code>
+| 
+|- 
+| IsBlind
+| <code>Entities.IsBlind( integer nEntityIndex )</code>
+| 
+|- 
+| IsBoss
+| <code>Entities.IsBoss( integer nEntityIndex )</code>
+| 
+|- 
+| IsRoshan
+| <code>Entities.IsRoshan( integer nEntityIndex )</code>
+| 
+|- 
+| IsBuilding
+| <code>Entities.IsBuilding( integer nEntityIndex )</code>
+| 
+|- 
+| IsCommandRestricted
+| <code>Entities.IsCommandRestricted( integer nEntityIndex )</code>
+| 
+|- 
+| IsConsideredHero
+| <code>Entities.IsConsideredHero( integer nEntityIndex )</code>
+| 
+|- 
+| IsControllableByAnyPlayer
+| <code>Entities.IsControllableByAnyPlayer( integer nEntityIndex )</code>
+| 
+|- 
+| IsCourier
+| <code>Entities.IsCourier( integer nEntityIndex )</code>
+| 
+|- 
+| IsCreature
+| <code>Entities.IsCreature( integer nEntityIndex )</code>
+| 
+|- 
+| IsCreep
+| <code>Entities.IsCreep( integer nEntityIndex )</code>
+| 
+|- 
+| IsCreepHero
+| <code>Entities.IsCreepHero( integer nEntityIndex )</code>
+| 
+|- 
+| IsDeniable
+| <code>Entities.IsDeniable( integer nEntityIndex )</code>
+| 
+|- 
+| IsDominated
+| <code>Entities.IsDominated( integer nEntityIndex )</code>
+| 
+|- 
+| IsEnemy
+| <code>Entities.IsEnemy( integer nEntityIndex )</code>
+| 
+|- 
+| IsEvadeDisabled
+| <code>Entities.IsEvadeDisabled( integer nEntityIndex )</code>
+| 
+|- 
+| IsFort
+| <code>Entities.IsFort( integer nEntityIndex )</code>
+| 
+|- 
+| IsFrozen
+| <code>Entities.IsFrozen( integer nEntityIndex )</code>
+| 
+|- 
+| IsGeneratedByEconItem
+| <code>Entities.IsGeneratedByEconItem( integer nEntityIndex )</code>
+| 
+|- 
+| IsGreevil
+| <code>Entities.IsGreevil( integer nEntityIndex )</code>
+| 
+|- 
+| IsHallofFame
+| <code>Entities.IsHallofFame( integer nEntityIndex )</code>
+| 
+|- 
+| IsDisarmed
+| <code>Entities.IsDisarmed( integer nEntityIndex )</code>
+| 
+|- 
+| IsHero
+| <code>Entities.IsHero( integer nEntityIndex )</code>
+| 
+|- 
+| IsHexed
+| <code>Entities.IsHexed( integer nEntityIndex )</code>
+| 
+|- 
+| IsIllusion
+| <code>Entities.IsIllusion( integer nEntityIndex )</code>
+| 
+|- 
+| IsInRangeOfFountain
+| <code>Entities.IsInRangeOfFountain( integer nEntityIndex )</code>
+| 
+|- 
+| IsInventoryEnabled
+| <code>Entities.IsInventoryEnabled( integer nEntityIndex )</code>
+| 
+|- 
+| IsInvisible
+| <code>Entities.IsInvisible( integer nEntityIndex )</code>
+| 
+|- 
+| IsInvulnerable
+| <code>Entities.IsInvulnerable( integer nEntityIndex )</code>
+| 
+|- 
+| IsLaneCreep
+| <code>Entities.IsLaneCreep( integer nEntityIndex )</code>
+| 
+|- 
+| IsLootGreevil
+| <code>Entities.IsLootGreevil( integer nEntityIndex )</code>
+| 
+|- 
+| IsLowAttackPriority
+| <code>Entities.IsLowAttackPriority( integer nEntityIndex )</code>
+| 
+|- 
+| IsMagicImmune
+| <code>Entities.IsMagicImmune( integer nEntityIndex )</code>
+| 
+|- 
+| IsMechanical
+| <code>Entities.IsMechanical( integer nEntityIndex )</code>
+| 
+|- 
+| IsMuted
+| <code>Entities.IsMuted( integer nEntityIndex )</code>
+| 
+|- 
+| IsNeutralUnitType
+| <code>Entities.IsNeutralUnitType( integer nEntityIndex )</code>
+| 
+|- 
+| IsNightmared
+| <code>Entities.IsNightmared( integer nEntityIndex )</code>
+| 
+|- 
+| IsOther
+| <code>Entities.IsOther( integer nEntityIndex )</code>
+| 
+|- 
+| IsOutOfGame
+| <code>Entities.IsOutOfGame( integer nEntityIndex )</code>
+| 
+|- 
+| IsOwnedByAnyPlayer
+| <code>Entities.IsOwnedByAnyPlayer( integer nEntityIndex )</code>
+| 
+|- 
+| IsPhantom
+| <code>Entities.IsPhantom( integer nEntityIndex )</code>
+| 
+|- 
+| IsRangedAttacker
+| <code>Entities.IsRangedAttacker( integer nEntityIndex )</code>
+| 
+|- 
+| IsRealHero
+| <code>Entities.IsRealHero( integer nEntityIndex )</code>
+| 
+|- 
+| IsRooted
+| <code>Entities.IsRooted( integer nEntityIndex )</code>
+| 
+|- 
+| IsSelectable
+| <code>Entities.IsSelectable( integer nEntityIndex )</code>
+| 
+|- 
+| IsShop
+| <code>Entities.IsShop( integer nEntityIndex )</code>
+| 
+|- 
+| IsSilenced
+| <code>Entities.IsSilenced( integer nEntityIndex )</code>
+| 
+|- 
+| IsSpeciallyDeniable
+| <code>Entities.IsSpeciallyDeniable( integer nEntityIndex )</code>
+| 
+|- 
+| IsStunned
+| <code>Entities.IsStunned( integer nEntityIndex )</code>
+| 
+|- 
+| IsSummoned
+| <code>Entities.IsSummoned( integer nEntityIndex )</code>
+| 
+|- 
+| IsTower
+| <code>Entities.IsTower( integer nEntityIndex )</code>
+| 
+|- 
+| IsUnselectable
+| <code>Entities.IsUnselectable( integer nEntityIndex )</code>
+| 
+|- 
+| IsWard
+| <code>Entities.IsWard( integer nEntityIndex )</code>
+| 
+|- 
+| IsZombie
+| <code>Entities.IsZombie( integer nEntityIndex )</code>
+| 
+|- 
+| NoHealthBar
+| <code>Entities.NoHealthBar( integer nEntityIndex )</code>
+| 
+|- 
+| NoTeamMoveTo
+| <code>Entities.NoTeamMoveTo( integer nEntityIndex )</code>
+| 
+|- 
+| NoTeamSelect
+| <code>Entities.NoTeamSelect( integer nEntityIndex )</code>
+| 
+|- 
+| NotOnMinimap
+| <code>Entities.NotOnMinimap( integer nEntityIndex )</code>
+| 
+|- 
+| NotOnMinimapForEnemies
+| <code>Entities.NotOnMinimapForEnemies( integer nEntityIndex )</code>
+| 
+|- 
+| NoUnitCollision
+| <code>Entities.NoUnitCollision( integer nEntityIndex )</code>
+| 
+|- 
+| PassivesDisabled
+| <code>Entities.PassivesDisabled( integer nEntityIndex )</code>
+| 
+|- 
+| ProvidesVision
+| <code>Entities.ProvidesVision( integer nEntityIndex )</code>
+| 
+|- 
+| UsesHeroAbilityNumbers
+| <code>Entities.UsesHeroAbilityNumbers( integer nEntityIndex )</code>
+| 
+|- 
+| GetAbilityCount
+| <code>Entities.GetAbilityCount( integer nEntityIndex )</code>
+| 
+|- 
+| GetCombatClassAttack
+| <code>Entities.GetCombatClassAttack( integer nEntityIndex )</code>
+| 
+|- 
+| GetCombatClassDefend
+| <code>Entities.GetCombatClassDefend( integer nEntityIndex )</code>
+| 
+|- 
+| GetCurrentVisionRange
+| <code>Entities.GetCurrentVisionRange( integer nEntityIndex )</code>
+| 
+|- 
+| GetDamageBonus
+| <code>Entities.GetDamageBonus( integer nEntityIndex )</code>
+| 
+|- 
+| GetDamageMax
+| <code>Entities.GetDamageMax( integer nEntityIndex )</code>
+| 
+|- 
+| GetDamageMin
+| <code>Entities.GetDamageMin( integer nEntityIndex )</code>
+| 
+|- 
+| GetDayTimeVisionRange
+| <code>Entities.GetDayTimeVisionRange( integer nEntityIndex )</code>
+| 
+|- 
+| GetHealth
+| <code>Entities.GetHealth( integer nEntityIndex )</code>
+| 
+|- 
+| GetHealthPercent
+| <code>Entities.GetHealthPercent( integer nEntityIndex )</code>
+| 
+|- 
+| GetHealthThinkRegen
+| <code>Entities.GetHealthThinkRegen( integer nEntityIndex )</code>
+| 
+|- 
+| GetLevel
+| <code>Entities.GetLevel( integer nEntityIndex )</code>
+| 
+|- 
+| GetMaxHealth
+| <code>Entities.GetMaxHealth( integer nEntityIndex )</code>
+| 
+|- 
+| GetNightTimeVisionRange
+| <code>Entities.GetNightTimeVisionRange( integer nEntityIndex )</code>
+| 
+|- 
+| GetStates
+| <code>Entities.GetStates( integer nEntityIndex )</code>
+| 
+|- 
+| GetTotalPurchasedUpgradeGoldCost
+| <code>Entities.GetTotalPurchasedUpgradeGoldCost( integer nEntityIndex )</code>
+| 
+|- 
+| GetAttackRange
+| <code>Entities.GetAttackRange( integer nEntityIndex )</code>
+| 
+|- 
+| GetAttackSpeed
+| <code>Entities.GetAttackSpeed( integer nEntityIndex )</code>
+| 
+|- 
+| GetAttacksPerSecond
+| <code>Entities.GetAttacksPerSecond( integer nEntityIndex )</code>
+| 
+|- 
+| GetBaseAttackTime
+| <code>Entities.GetBaseAttackTime( integer nEntityIndex )</code>
+| 
+|- 
+| GetBaseMagicalResistanceValue
+| <code>Entities.GetBaseMagicalResistanceValue( integer nEntityIndex )</code>
+| 
+|- 
+| GetBaseMoveSpeed
+| <code>Entities.GetBaseMoveSpeed( integer nEntityIndex )</code>
+| 
+|- 
+| GetCollisionPadding
+| <code>Entities.GetCollisionPadding( integer nEntityIndex )</code>
+| 
+|- 
+| GetEffectiveInvisibilityLevel
+| <code>Entities.GetEffectiveInvisibilityLevel( integer nEntityIndex )</code>
+| 
+|- 
+| GetHasteFactor
+| <code>Entities.GetHasteFactor( integer nEntityIndex )</code>
+| 
+|- 
+| GetHullRadius
+| <code>Entities.GetHullRadius( integer nEntityIndex )</code>
+| 
+|- 
+| GetIdealSpeed
+| <code>Entities.GetIdealSpeed( integer nEntityIndex )</code>
+| 
+|- 
+| GetIncreasedAttackSpeed
+| <code>Entities.GetIncreasedAttackSpeed( integer nEntityIndex )</code>
+| 
+|- 
+| GetMana
+| <code>Entities.GetMana( integer nEntityIndex )</code>
+| 
+|- 
+| GetManaThinkRegen
+| <code>Entities.GetManaThinkRegen( integer nEntityIndex )</code>
+| 
+|- 
+| GetMaxMana
+| <code>Entities.GetMaxMana( integer nEntityIndex )</code>
+| 
+|- 
+| GetPaddedCollisionRadius
+| <code>Entities.GetPaddedCollisionRadius( integer nEntityIndex )</code>
+| 
+|- 
+| GetPercentInvisible
+| <code>Entities.GetPercentInvisible( integer nEntityIndex )</code>
+| 
+|- 
+| GetProjectileCollisionSize
+| <code>Entities.GetProjectileCollisionSize( integer nEntityIndex )</code>
+| 
+|- 
+| GetRingRadius
+| <code>Entities.GetRingRadius( integer nEntityIndex )</code>
+| 
+|- 
+| GetSecondsPerAttack
+| <code>Entities.GetSecondsPerAttack( integer nEntityIndex )</code>
+| 
+|- 
+| ManaFraction
+| <code>Entities.ManaFraction( integer nEntityIndex )</code>
+| 
+|- 
+| GetClassname
+| <code>Entities.GetClassname( integer nEntityIndex )</code>
+| 
+|- 
+| GetDisplayedUnitName
+| <code>Entities.GetDisplayedUnitName( integer nEntityIndex )</code>
+| 
+|- 
+| GetSelectionGroup
+| <code>Entities.GetSelectionGroup( integer nEntityIndex )</code>
+| 
+|- 
+| GetSoundSet
+| <code>Entities.GetSoundSet( integer nEntityIndex )</code>
+| 
+|- 
+| GetUnitLabel
+| <code>Entities.GetUnitLabel( integer nEntityIndex )</code>
+| 
+|- 
+| GetUnitName
+| <code>Entities.GetUnitName( integer nEntityIndex )</code>
+| 
+|- 
+| GetTotalDamageTaken
+| <code>Entities.GetTotalDamageTaken( integer nEntityIndex )</code>
+| 
+|- 
+| IsControllableByPlayer
+| <code>Entities.IsControllableByPlayer( integer nEntityIndex, integer nPlayerIndex )</code>
+| 
+|- 
+| GetChosenTarget
+| <code>Entities.GetChosenTarget( integer nEntityIndex )</code>
+| 
+|- 
+| HasItemInInventory
+| <code>Entities.HasItemInInventory( integer nEntityIndex, cstring pItemName )</code>
+| 
+|- 
+| GetRangeToUnit
+| <code>Entities.GetRangeToUnit( integer nEntityIndex, integer nEntityIndex2 )</code>
+| 
+|- 
+| IsEntityInRange
+| <code>Entities.IsEntityInRange( integer nEntityIndex, integer nEntityIndex2, float flRange )</code>
+| 
+|- 
+| GetMoveSpeedModifier
+| <code>Entities.GetMoveSpeedModifier( integer nEntityIndex, float flBaseSpeed )</code>
+| 
+|- 
+| CanAcceptTargetToAttack
+| <code>Entities.CanAcceptTargetToAttack( integer nEntityIndex, integer nEntityIndex2 )</code>
+| 
+|- 
+| InState
+| <code>Entities.InState( integer nEntityIndex, integer nState )</code>
+| 
+|- 
+| GetArmorForDamageType
+| <code>Entities.GetArmorForDamageType( integer nEntityIndex, integer iDamageType )</code>
+| 
+|- 
+| GetArmorReductionForDamageType
+| <code>Entities.GetArmorReductionForDamageType( integer nEntityIndex, integer iDamageType )</code>
+| 
+|- 
+| IsInRangeOfShop
+| <code>Entities.IsInRangeOfShop( integer nEntityIndex, integer iShopType, boolean bSpecific )</code>
+| 
+|- 
+| GetNumItemsInStash
+| <code>Entities.GetNumItemsInStash( integer nEntityIndex )</code>
+| 
+|- 
+| GetNumItemsInInventory
+| <code>Entities.GetNumItemsInInventory( integer nEntityIndex )</code>
+| 
+|- 
+| GetItemInSlot
+| <code>Entities.GetItemInSlot( integer nEntityIndex, integer nSlotIndex )</code>
+| 
+|- 
+| GetAbility
+| <code>Entities.GetAbility( integer nEntityIndex, integer nSlotIndex )</code>
+| 
+|- 
+| GetAbilityByName
+| <code>Entities.GetAbilityByName( integer nEntityIndex, cstring pszAbilityName )</code>
+| 
+|- 
+| GetSelectionEntities
+| <code>Entities.GetSelectionEntities( integer nEntityIndex )</code>
+| Get the currently selected entities
+|}
+
+
+=== CScriptBindingPR_Abilities ===
+{| class="standard-table" style="width: 100%;"
+! Function
+! Signature
+! Description
+|- 
+| GetAbilityName
+| <code>Abilities.GetAbilityName( integer nEntityIndex )</code>
+| 
+|- 
+| GetAbilityTextureName
+| <code>Abilities.GetAbilityTextureName( integer nEntityIndex )</code>
+| 
+|- 
+| GetAssociatedPrimaryAbilities
+| <code>Abilities.GetAssociatedPrimaryAbilities( integer nEntityIndex )</code>
+| 
+|- 
+| GetAssociatedSecondaryAbilities
+| <code>Abilities.GetAssociatedSecondaryAbilities( integer nEntityIndex )</code>
+| 
+|- 
+| GetHotkeyOverride
+| <code>Abilities.GetHotkeyOverride( integer nEntityIndex )</code>
+| 
+|- 
+| GetIntrinsicModifierName
+| <code>Abilities.GetIntrinsicModifierName( integer nEntityIndex )</code>
+| 
+|- 
+| GetSharedCooldownName
+| <code>Abilities.GetSharedCooldownName( integer nEntityIndex )</code>
+| 
+|- 
+| AbilityReady
+| <code>Abilities.AbilityReady( integer nEntityIndex )</code>
+| 
+|- 
+| CanAbilityBeUpgraded
+| <code>Abilities.CanAbilityBeUpgraded( integer nEntityIndex )</code>
+| 
+|- 
+| CanBeExecuted
+| <code>Abilities.CanBeExecuted( integer nEntityIndex )</code>
+| 
+|- 
+| GetAbilityDamage
+| <code>Abilities.GetAbilityDamage( integer nEntityIndex )</code>
+| 
+|- 
+| GetAbilityDamageType
+| <code>Abilities.GetAbilityDamageType( integer nEntityIndex )</code>
+| 
+|- 
+| GetAbilityTargetFlags
+| <code>Abilities.GetAbilityTargetFlags( integer nEntityIndex )</code>
+| 
+|- 
+| GetAbilityTargetTeam
+| <code>Abilities.GetAbilityTargetTeam( integer nEntityIndex )</code>
+| 
+|- 
+| GetAbilityTargetType
+| <code>Abilities.GetAbilityTargetType( integer nEntityIndex )</code>
+| 
+|- 
+| GetAbilityType
+| <code>Abilities.GetAbilityType( integer nEntityIndex )</code>
+| 
+|- 
+| GetBehavior
+| <code>Abilities.GetBehavior( integer nEntityIndex )</code>
+| 
+|- 
+| GetCastRange
+| <code>Abilities.GetCastRange( integer nEntityIndex )</code>
+| 
+|- 
+| GetChannelledManaCostPerSecond
+| <code>Abilities.GetChannelledManaCostPerSecond( integer nEntityIndex )</code>
+| 
+|- 
+| GetCurrentCharges
+| <code>Abilities.GetCurrentCharges( integer nEntityIndex )</code>
+| 
+|- 
+| GetEffectiveLevel
+| <code>Abilities.GetEffectiveLevel( integer nEntityIndex )</code>
+| 
+|- 
+| GetHeroLevelRequiredToUpgrade
+| <code>Abilities.GetHeroLevelRequiredToUpgrade( integer nEntityIndex )</code>
+| 
+|- 
+| GetLevel
+| <code>Abilities.GetLevel( integer nEntityIndex )</code>
+| 
+|- 
+| GetManaCost
+| <code>Abilities.GetManaCost( integer nEntityIndex )</code>
+| 
+|- 
+| GetMaxLevel
+| <code>Abilities.GetMaxLevel( integer nEntityIndex )</code>
+| 
+|- 
+| AttemptToUpgrade
+| <code>Abilities.AttemptToUpgrade( integer nEntityIndex )</code>
+| 
+|- 
+| CanLearn
+| <code>Abilities.CanLearn( integer nEntityIndex )</code>
+| 
+|- 
+| GetAutoCastState
+| <code>Abilities.GetAutoCastState( integer nEntityIndex )</code>
+| 
+|- 
+| GetToggleState
+| <code>Abilities.GetToggleState( integer nEntityIndex )</code>
+| 
+|- 
+| HasScepterUpgradeTooltip
+| <code>Abilities.HasScepterUpgradeTooltip( integer nEntityIndex )</code>
+| 
+|- 
+| IsActivated
+| <code>Abilities.IsActivated( integer nEntityIndex )</code>
+| 
+|- 
+| IsActivatedChanging
+| <code>Abilities.IsActivatedChanging( integer nEntityIndex )</code>
+| 
+|- 
+| IsAttributeBonus
+| <code>Abilities.IsAttributeBonus( integer nEntityIndex )</code>
+| 
+|- 
+| IsAutocast
+| <code>Abilities.IsAutocast( integer nEntityIndex )</code>
+| 
+|- 
+| IsCooldownReady
+| <code>Abilities.IsCooldownReady( integer nEntityIndex )</code>
+| 
+|- 
+| IsDisplayedAbility
+| <code>Abilities.IsDisplayedAbility( integer nEntityIndex )</code>
+| 
+|- 
+| IsHidden
+| <code>Abilities.IsHidden( integer nEntityIndex )</code>
+| 
+|- 
+| IsHiddenWhenStolen
+| <code>Abilities.IsHiddenWhenStolen( integer nEntityIndex )</code>
+| 
+|- 
+| IsInAbilityPhase
+| <code>Abilities.IsInAbilityPhase( integer nEntityIndex )</code>
+| 
+|- 
+| IsItem
+| <code>Abilities.IsItem( integer nEntityIndex )</code>
+| 
+|- 
+| IsMarkedAsDirty
+| <code>Abilities.IsMarkedAsDirty( integer nEntityIndex )</code>
+| 
+|- 
+| IsMuted
+| <code>Abilities.IsMuted( integer nEntityIndex )</code>
+| 
+|- 
+| IsOnCastbar
+| <code>Abilities.IsOnCastbar( integer nEntityIndex )</code>
+| 
+|- 
+| IsOnLearnbar
+| <code>Abilities.IsOnLearnbar( integer nEntityIndex )</code>
+| 
+|- 
+| IsOwnersGoldEnough
+| <code>Abilities.IsOwnersGoldEnough( integer nEntityIndex )</code>
+| 
+|- 
+| IsOwnersGoldEnoughForUpgrade
+| <code>Abilities.IsOwnersGoldEnoughForUpgrade( integer nEntityIndex )</code>
+| 
+|- 
+| IsOwnersManaEnough
+| <code>Abilities.IsOwnersManaEnough( integer nEntityIndex )</code>
+| 
+|- 
+| IsPassive
+| <code>Abilities.IsPassive( integer nEntityIndex )</code>
+| 
+|- 
+| IsRecipe
+| <code>Abilities.IsRecipe( integer nEntityIndex )</code>
+| 
+|- 
+| IsSharedWithTeammates
+| <code>Abilities.IsSharedWithTeammates( integer nEntityIndex )</code>
+| 
+|- 
+| IsStealable
+| <code>Abilities.IsStealable( integer nEntityIndex )</code>
+| 
+|- 
+| IsStolen
+| <code>Abilities.IsStolen( integer nEntityIndex )</code>
+| 
+|- 
+| GetAOERadius
+| <code>Abilities.GetAOERadius( integer nEntityIndex )</code>
+| 
+|- 
+| GetBackswingTime
+| <code>Abilities.GetBackswingTime( integer nEntityIndex )</code>
+| 
+|- 
+| GetCastPoint
+| <code>Abilities.GetCastPoint( integer nEntityIndex )</code>
+| 
+|- 
+| GetChannelStartTime
+| <code>Abilities.GetChannelStartTime( integer nEntityIndex )</code>
+| 
+|- 
+| GetChannelTime
+| <code>Abilities.GetChannelTime( integer nEntityIndex )</code>
+| 
+|- 
+| GetCooldown
+| <code>Abilities.GetCooldown( integer nEntityIndex )</code>
+| 
+|- 
+| GetCooldownLength
+| <code>Abilities.GetCooldownLength( integer nEntityIndex )</code>
+| 
+|- 
+| GetCooldownTime
+| <code>Abilities.GetCooldownTime( integer nEntityIndex )</code>
+| 
+|- 
+| GetCooldownTimeRemaining
+| <code>Abilities.GetCooldownTimeRemaining( integer nEntityIndex )</code>
+| 
+|- 
+| GetDuration
+| <code>Abilities.GetDuration( integer nEntityIndex )</code>
+| 
+|- 
+| GetUpgradeBlend
+| <code>Abilities.GetUpgradeBlend( integer nEntityIndex )</code>
+| 
+|- 
+| GetCaster
+| <code>Abilities.GetCaster( integer nAbilityIndex )</code>
+| 
+|- 
+| GetCustomValueFor
+| <code>Abilities.GetCustomValueFor( integer nAbilityIndex, cstring pszAbilityVarName )</code>
+| 
+|- 
+| GetLevelSpecialValueFor
+| <code>Abilities.GetLevelSpecialValueFor( integer nAbilityIndex, cstring szName, integer nLevel )</code>
+| 
+|- 
+| GetSpecialValueFor
+| <code>Abilities.GetSpecialValueFor( integer nAbilityIndex, cstring szName )</code>
+| 
+|- 
+| IsCosmetic
+| <code>Abilities.IsCosmetic( integer nAbilityIndex, integer nTargetEntityIndex )</code>
+| 
+|- 
+| ExecuteAbility
+| <code>Abilities.ExecuteAbility( integer nAbilityEntIndex, integer nCasterEntIndex, boolean bIsQuickCast )</code>
+| Attempt to execute the specified ability (Equivalent to clicking the ability in the HUD action bar)
+|- 
+| CreateDoubleTapCastOrder
+| <code>Abilities.CreateDoubleTapCastOrder( integer nAbilityEntIndex, integer nCasterEntIndex )</code>
+| Attempt to double-tap (self-cast) the specified ability (Equivalent to double-clicking the ability in the HUD action bar)
+|- 
+| PingAbility
+| <code>Abilities.PingAbility( integer nAbilityIndex )</code>
+| Ping the specified ability (Equivalent to alt-clicking the ability in the HUD action bar)
+|- 
+| GetKeybind
+| <code>Abilities.GetKeybind( integer nAbilityEntIndex )</code>
+| Returns the keybind (as a string) for the specified ability.
+|}
+
+
+=== CScriptBindingPR_Items ===
+{| class="standard-table" style="width: 100%;"
+! Function
+! Signature
+! Description
+|- 
+| ShouldDisplayCharges
+| <code>Items.ShouldDisplayCharges( integer nEntityIndex )</code>
+| 
+|- 
+| AlwaysDisplayCharges
+| <code>Items.AlwaysDisplayCharges( integer nEntityIndex )</code>
+| 
+|- 
+| ShowSecondaryCharges
+| <code>Items.ShowSecondaryCharges( integer nEntityIndex )</code>
+| 
+|- 
+| CanBeSoldByLocalPlayer
+| <code>Items.CanBeSoldByLocalPlayer( integer nEntityIndex )</code>
+| 
+|- 
+| CanDoubleTapCast
+| <code>Items.CanDoubleTapCast( integer nEntityIndex )</code>
+| 
+|- 
+| ForceHideCharges
+| <code>Items.ForceHideCharges( integer nEntityIndex )</code>
+| 
+|- 
+| IsAlertableItem
+| <code>Items.IsAlertableItem( integer nEntityIndex )</code>
+| 
+|- 
+| IsCastOnPickup
+| <code>Items.IsCastOnPickup( integer nEntityIndex )</code>
+| 
+|- 
+| IsDisassemblable
+| <code>Items.IsDisassemblable( integer nEntityIndex )</code>
+| 
+|- 
+| IsDroppable
+| <code>Items.IsDroppable( integer nEntityIndex )</code>
+| 
+|- 
+| IsInnatelyDisassemblable
+| <code>Items.IsInnatelyDisassemblable( integer nEntityIndex )</code>
+| 
+|- 
+| IsKillable
+| <code>Items.IsKillable( integer nEntityIndex )</code>
+| 
+|- 
+| IsMuted
+| <code>Items.IsMuted( integer nEntityIndex )</code>
+| 
+|- 
+| IsPermanent
+| <code>Items.IsPermanent( integer nEntityIndex )</code>
+| 
+|- 
+| IsPurchasable
+| <code>Items.IsPurchasable( integer nEntityIndex )</code>
+| 
+|- 
+| IsRecipe
+| <code>Items.IsRecipe( integer nEntityIndex )</code>
+| 
+|- 
+| IsRecipeGenerated
+| <code>Items.IsRecipeGenerated( integer nEntityIndex )</code>
+| 
+|- 
+| IsSellable
+| <code>Items.IsSellable( integer nEntityIndex )</code>
+| 
+|- 
+| IsStackable
+| <code>Items.IsStackable( integer nEntityIndex )</code>
+| 
+|- 
+| ProRatesChargesWhenSelling
+| <code>Items.ProRatesChargesWhenSelling( integer nEntityIndex )</code>
+| 
+|- 
+| RequiresCharges
+| <code>Items.RequiresCharges( integer nEntityIndex )</code>
+| 
+|- 
+| CanBeExecuted
+| <code>Items.CanBeExecuted( integer nEntityIndex )</code>
+| 
+|- 
+| GetCost
+| <code>Items.GetCost( integer nEntityIndex )</code>
+| 
+|- 
+| GetCurrentCharges
+| <code>Items.GetCurrentCharges( integer nEntityIndex )</code>
+| 
+|- 
+| GetSecondaryCharges
+| <code>Items.GetSecondaryCharges( integer nEntityIndex )</code>
+| 
+|- 
+| GetDisplayedCharges
+| <code>Items.GetDisplayedCharges( integer nEntityIndex )</code>
+| 
+|- 
+| GetInitialCharges
+| <code>Items.GetInitialCharges( integer nEntityIndex )</code>
+| 
+|- 
+| GetItemColor
+| <code>Items.GetItemColor( integer nEntityIndex )</code>
+| 
+|- 
+| GetShareability
+| <code>Items.GetShareability( integer nEntityIndex )</code>
+| 
+|- 
+| GetAbilityTextureSF
+| <code>Items.GetAbilityTextureSF( integer nEntityIndex )</code>
+| 
+|- 
+| GetAssembledTime
+| <code>Items.GetAssembledTime( integer nEntityIndex )</code>
+| 
+|- 
+| GetPurchaseTime
+| <code>Items.GetPurchaseTime( integer nEntityIndex )</code>
+| 
+|- 
+| GetPurchaser
+| <code>Items.GetPurchaser( integer nItemID )</code>
+| 
+|}
+
+
+=== CScriptBindingPR_Game ===
+{| class="standard-table" style="width: 100%;"
+! Function
+! Signature
+! Description
+|- 
+| Time
+| <code>Game.Time()</code>
+| 
+|- 
+| GetGameTime
+| <code>Game.GetGameTime()</code>
+| 
+|- 
+| GetDOTATime
+| <code>Game.GetDOTATime( boolean bIncludePreGame, boolean bIncludeNegativeTime )</code>
+| 
+|- 
+| GetGameWinner
+| <code>Game.GetGameWinner()</code>
+| Return the team id of the winning team.
+|- 
+| GetStateTransitionTime
+| <code>Game.GetStateTransitionTime()</code>
+| 
+|- 
+| IsHUDFlipped
+| <code>Game.IsHUDFlipped()</code>
+| Returns true if the user has enabled flipped HUD
+|- 
+| WorldToScreenX
+| <code>Game.WorldToScreenX( float x, float y, float z )</code>
+| Converts the specified x,y,z world co-ordinate into an x screen coordinate. Returns -1 if offscreen
+|- 
+| WorldToScreenY
+| <code>Game.WorldToScreenY( float x, float y, float z )</code>
+| Converts the specified x,y,z world co-ordinate into a y screen coordinate. Returns -1 if offscreen
+|- 
+| ScreenXYToWorld
+| <code>Game.ScreenXYToWorld( integer nX, integer nY )</code>
+| Converts the specified x, y screen coordinates into a x, y, z world coordinates.
+|- 
+| GetKeybindForAbility
+| <code>Game.GetKeybindForAbility( integer iSlot )</code>
+| Returns the keybind (as a string) for the requested ability slot.
+|- 
+| GetNianFightTimeLeft
+| <code>Game.GetNianFightTimeLeft()</code>
+| 
+|- 
+| GetState
+| <code>Game.GetState()</code>
+| 
+|- 
+| GameStateIs
+| <code>Game.GameStateIs( integer nState )</code>
+| 
+|- 
+| GameStateIsBefore
+| <code>Game.GameStateIsBefore( integer nState )</code>
+| 
+|- 
+| GameStateIsAfter
+| <code>Game.GameStateIsAfter( integer nState )</code>
+| 
+|- 
+| AddCommand
+| <code>Game.AddCommand( cstring pszCommandName, js_value callback, cstring pszDescription, integer nFlags )</code>
+| 
+|- 
+| GetLocalPlayerID
+| <code>Game.GetLocalPlayerID()</code>
+| 
+|- 
+| PlayerJoinTeam
+| <code>Game.PlayerJoinTeam( integer nTeamID )</code>
+| Assign the local player to the specified team
+|- 
+| AutoAssignPlayersToTeams
+| <code>Game.AutoAssignPlayersToTeams()</code>
+| Assign the currently unassigned players to teams
+|- 
+| ShufflePlayerTeamAssignments
+| <code>Game.ShufflePlayerTeamAssignments()</code>
+| Shuffle the team assignments of all of the players currently assigned to a team.
+|- 
+| SetRemainingSetupTime
+| <code>Game.SetRemainingSetupTime( float flSeconds )</code>
+| Set the remaining seconds in team setup before the game starts. -1 to stop the countdown timer
+|- 
+| SetAutoLaunchDelay
+| <code>Game.SetAutoLaunchDelay( float flSeconds )</code>
+| Set the amount of time in seconds that will be set as the remaining time when all players are assigned to a team.
+|- 
+| SetAutoLaunchEnabled
+| <code>Game.SetAutoLaunchEnabled( boolean bEnable )</code>
+| Enable or disable automatically starting the game once all players are assigned to a team
+|- 
+| GetAutoLaunchEnabled
+| <code>Game.GetAutoLaunchEnabled()</code>
+| Return true of false indicating if automatically starting the game is enabled.
+|- 
+| SetTeamSelectionLocked
+| <code>Game.SetTeamSelectionLocked( boolean bLockTeams )</code>
+| Lock the team selection preventing players from swiching teams.
+|- 
+| GetTeamSelectionLocked
+| <code>Game.GetTeamSelectionLocked()</code>
+| Returns true or false to indicate if team selection is locked
+|- 
+| GetAllTeamIDs
+| <code>Game.GetAllTeamIDs()</code>
+| Get all team IDs
+|- 
+| GetAllPlayerIDs
+| <code>Game.GetAllPlayerIDs()</code>
+| Get all player IDs
+|- 
+| GetUnassignedPlayerIDs
+| <code>Game.GetUnassignedPlayerIDs()</code>
+| Get unassigned player IDs
+|- 
+| GetPlayerUltimateStateOrTime
+| <code>Game.GetPlayerUltimateStateOrTime( integer nPlayerID )</code>
+| Get info about the player hero ultimate ability
+|- 
+| IsPlayerMuted
+| <code>Game.IsPlayerMuted( integer nPlayerID )</code>
+| Whether the local player has muted text and voice chat for the specified player id
+|- 
+| SetPlayerMuted
+| <code>Game.SetPlayerMuted( integer nPlayerID, boolean bMuted )</code>
+| Set whether the local player has muted text and voice chat for the specified player id
+|- 
+| GetTeamDetails
+| <code>Game.GetTeamDetails( integer nTeam )</code>
+| Get detailed information for the given team
+|- 
+| GetLocalPlayerInfo
+| <code>Game.GetLocalPlayerInfo()</code>
+| Get details for the local player
+|- 
+| GetPlayerItems
+| <code>Game.GetPlayerItems( integer nPlayerID )</code>
+| Get info about the player items.
+|- 
+| GetPlayerInfo
+| <code>Game.GetPlayerInfo( integer nPlayerID )</code>
+| Get info about the given player
+|- 
+| GetPlayerIDsOnTeam
+| <code>Game.GetPlayerIDsOnTeam( integer nTeam )</code>
+| Get player IDs for the given team
+|- 
+| ServerCmd
+| <code>Game.ServerCmd( cstring pMsg )</code>
+| 
+|- 
+| FinishGame
+| <code>Game.FinishGame()</code>
+| 
+|- 
+| EmitSound
+| <code>Game.EmitSound( cstring pSoundEventName )</code>
+| Emit a sound for the local player
+|- 
+| StopSound
+| <code>Game.StopSound( cstring pSoundEventName )</code>
+| Stop a current playing sound on the local player
+|- 
+| GetMapInfo
+| <code>Game.GetMapInfo()</code>
+| Return information about the current map.
+|- 
+| PrepareUnitOrders
+| <code>Game.PrepareUnitOrders( js_raw_args args )</code>
+| Orders from the local player - takes a single arguments object that supports: dotaunitorder_t OrderType, ent_index TargetIndex, vector Position, ent_index AbilityIndex, OrderIssuer_t OrderIssuer, ent_index UnitIndex, bool Queue, bool ShowEffects.
+|- 
+| DropItemAtCursor
+| <code>Game.DropItemAtCursor( integer nControlledUnitEnt, integer nItemEnt )</code>
+| Order a unit to drop the specified item at the current cursor location.
+|}
+
+
+=== $ ===
+{| class="standard-table" style="width: 100%;"
+! Function
+! Signature
+! Description
+|- 
+| Msg
+| <code>Msg( js_raw_args js_raw_args_1 )</code>
+| Log a message
+|- 
+| DispatchEvent
+| <code>DispatchEvent( js_raw_args js_raw_args_1 )</code>
+| Dispatch an event
+|- 
+| DispatchEventAsync
+| <code>DispatchEventAsync( js_raw_args js_raw_args_1 )</code>
+| Dispatch an event to occur later
+|- 
+| RegisterEventHandler
+| <code>RegisterEventHandler( js_raw_args js_raw_args_1 )</code>
+| Register an event handler
+|- 
+| RegisterForUnhandledEvent
+| <code>RegisterForUnhandledEvent( js_raw_args js_raw_args_1 )</code>
+| Register a handler for an event that is not otherwise handled
+|- 
+| UnregisterForUnhandledEvent
+| <code>UnregisterForUnhandledEvent( js_raw_args js_raw_args_1 )</code>
+| Remove an unhandled event handler
+|- 
+| FindChildInContext
+| <code>FindChildInContext( js_raw_args js_raw_args_1 )</code>
+| Find an element
+|- 
+| AsyncWebRequest
+| <code>AsyncWebRequest( js_raw_args js_raw_args_1 )</code>
+| Make a web request
+|- 
+| CreatePanel
+| <code>CreatePanel( js_raw_args js_raw_args_1 )</code>
+| Create a new panel
+|- 
+| Localize
+| <code>Localize( js_raw_args js_raw_args_1 )</code>
+| Localize a string
+|- 
+| Language
+| <code>Language( js_raw_args js_raw_args_1 )</code>
+| Get the current language
+|- 
+| Schedule
+| <code>Schedule( js_raw_args js_raw_args_1 )</code>
+| Schedule a function to be called later
+|- 
+| GetContextPanel
+| <code>GetContextPanel( js_raw_args js_raw_args_1 )</code>
+| Get the current panel context
+|- 
+| RegisterKeyBind
+| <code>RegisterKeyBind( js_raw_args js_raw_args_1 )</code>
+| Register a key binding
+|- 
+| Each
+| <code>Each( js_raw_args js_raw_args_1 )</code>
+| Call a function on each given item
+|}
+
+=== DOTA_GameState ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTA_GameState.DOTA_GAMERULES_STATE_INIT
+| 0
+| 
+|-
+| DOTA_GameState.DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD
+| 1
+| 
+|-
+| DOTA_GameState.DOTA_GAMERULES_STATE_HERO_SELECTION
+| 3
+| 
+|-
+| DOTA_GameState.DOTA_GAMERULES_STATE_STRATEGY_TIME
+| 4
+| 
+|-
+| DOTA_GameState.DOTA_GAMERULES_STATE_PRE_GAME
+| 6
+| 
+|-
+| DOTA_GameState.DOTA_GAMERULES_STATE_GAME_IN_PROGRESS
+| 7
+| 
+|-
+| DOTA_GameState.DOTA_GAMERULES_STATE_POST_GAME
+| 8
+| 
+|-
+| DOTA_GameState.DOTA_GAMERULES_STATE_DISCONNECT
+| 9
+| 
+|-
+| DOTA_GameState.DOTA_GAMERULES_STATE_TEAM_SHOWCASE
+| 5
+| 
+|-
+| DOTA_GameState.DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP
+| 2
+| 
+|-
+| DOTA_GameState.DOTA_GAMERULES_STATE_LAST
+| 0
+| 
+|}
+
+=== DOTA_GC_TEAM ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTA_GC_TEAM.DOTA_GC_TEAM_GOOD_GUYS
+| 0
+| 
+|-
+| DOTA_GC_TEAM.DOTA_GC_TEAM_BAD_GUYS
+| 1
+| 
+|-
+| DOTA_GC_TEAM.DOTA_GC_TEAM_BROADCASTER
+| 2
+| 
+|-
+| DOTA_GC_TEAM.DOTA_GC_TEAM_SPECTATOR
+| 3
+| 
+|-
+| DOTA_GC_TEAM.DOTA_GC_TEAM_PLAYER_POOL
+| 4
+| 
+|-
+| DOTA_GC_TEAM.DOTA_GC_TEAM_NOTEAM
+| 5
+| 
+|}
+
+=== DOTAConnectionState_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTAConnectionState_t.DOTA_CONNECTION_STATE_UNKNOWN
+| 0
+| 
+|-
+| DOTAConnectionState_t.DOTA_CONNECTION_STATE_NOT_YET_CONNECTED
+| 1
+| 
+|-
+| DOTAConnectionState_t.DOTA_CONNECTION_STATE_CONNECTED
+| 2
+| 
+|-
+| DOTAConnectionState_t.DOTA_CONNECTION_STATE_DISCONNECTED
+| 3
+| 
+|-
+| DOTAConnectionState_t.DOTA_CONNECTION_STATE_ABANDONED
+| 4
+| 
+|-
+| DOTAConnectionState_t.DOTA_CONNECTION_STATE_LOADING
+| 5
+| 
+|-
+| DOTAConnectionState_t.DOTA_CONNECTION_STATE_FAILED
+| 6
+| 
+|}
+
+=== dotaunitorder_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_NONE
+| 0
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_MOVE_TO_POSITION
+| 1
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_MOVE_TO_TARGET
+| 2
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_ATTACK_MOVE
+| 3
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_ATTACK_TARGET
+| 4
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_CAST_POSITION
+| 5
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_CAST_TARGET
+| 6
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_CAST_TARGET_TREE
+| 7
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_CAST_NO_TARGET
+| 8
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_CAST_TOGGLE
+| 9
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_HOLD_POSITION
+| 10
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_TRAIN_ABILITY
+| 11
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_DROP_ITEM
+| 12
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_GIVE_ITEM
+| 13
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_PICKUP_ITEM
+| 14
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_PICKUP_RUNE
+| 15
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_PURCHASE_ITEM
+| 16
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_SELL_ITEM
+| 17
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_DISASSEMBLE_ITEM
+| 18
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_MOVE_ITEM
+| 19
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO
+| 20
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_STOP
+| 21
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_TAUNT
+| 22
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_BUYBACK
+| 23
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_GLYPH
+| 24
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_EJECT_ITEM_FROM_STASH
+| 25
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_CAST_RUNE
+| 26
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_PING_ABILITY
+| 27
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_MOVE_TO_DIRECTION
+| 28
+| 
+|}
+
+=== DOTA_OVERHEAD_ALERT ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_GOLD
+| 0
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_DENY
+| 1
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_CRITICAL
+| 2
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_XP
+| 3
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_BONUS_SPELL_DAMAGE
+| 4
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_MISS
+| 5
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_DAMAGE
+| 6
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_EVADE
+| 7
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_BLOCK
+| 8
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_BONUS_POISON_DAMAGE
+| 9
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_HEAL
+| 10
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_MANA_ADD
+| 11
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_MANA_LOSS
+| 12
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_LAST_HIT_EARLY
+| 13
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_LAST_HIT_CLOSE
+| 14
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_LAST_HIT_MISS
+| 15
+| 
+|}
+
+=== DOTA_HeroPickState ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_NONE
+| 0
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_AP_SELECT
+| 1
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_SD_SELECT
+| 2
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_INTRO_SELECT
+| 3
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_RD_SELECT
+| 4
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_INTRO
+| 5
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_CAPTAINPICK
+| 6
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_BAN1
+| 7
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_BAN2
+| 8
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_BAN3
+| 9
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_BAN4
+| 10
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_BAN5
+| 11
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_BAN6
+| 12
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_BAN7
+| 13
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_BAN8
+| 14
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_BAN9
+| 15
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_BAN10
+| 16
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_SELECT1
+| 17
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_SELECT2
+| 18
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_SELECT3
+| 19
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_SELECT4
+| 20
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_SELECT5
+| 21
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_SELECT6
+| 22
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_SELECT7
+| 23
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_SELECT8
+| 24
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_SELECT9
+| 25
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_SELECT10
+| 26
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CM_PICK
+| 27
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_AR_SELECT
+| 28
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_MO_SELECT
+| 29
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_FH_SELECT
+| 30
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_INTRO
+| 31
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_CAPTAINPICK
+| 32
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_BAN1
+| 33
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_BAN2
+| 34
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_BAN3
+| 35
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_BAN4
+| 36
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_BAN5
+| 37
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_BAN6
+| 38
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_SELECT1
+| 39
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_SELECT2
+| 40
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_SELECT3
+| 41
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_SELECT4
+| 42
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_SELECT5
+| 43
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_SELECT6
+| 44
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_SELECT7
+| 45
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_SELECT8
+| 46
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_SELECT9
+| 47
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_SELECT10
+| 48
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_CD_PICK
+| 49
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_BD_SELECT
+| 50
+| 
+|-
+| DOTA_HeroPickState.DOTA_HERO_PICK_STATE_ABILITY_DRAFT_SELECT
+| 51
+| 
+|-
+| DOTA_HeroPickState.DOTA_HERO_PICK_STATE_ARDM_SELECT
+| 52
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_ALL_DRAFT_SELECT
+| 53
+| 
+|-
+| DOTA_HeroPickState.DOTA_HERO_PICK_STATE_CUSTOMGAME_SELECT
+| 54
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_COUNT
+| 55
+| 
+|}
+
+=== DOTATeam_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTATeam_t.DOTA_TEAM_FIRST
+| 2
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_GOODGUYS
+| 2
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_BADGUYS
+| 3
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_NEUTRALS
+| 4
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_NOTEAM
+| 5
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_CUSTOM_1
+| 6
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_CUSTOM_2
+| 7
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_CUSTOM_3
+| 8
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_CUSTOM_4
+| 9
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_CUSTOM_5
+| 10
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_CUSTOM_6
+| 11
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_CUSTOM_7
+| 12
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_CUSTOM_8
+| 13
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_COUNT
+| 14
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_CUSTOM_MIN
+| 6
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_CUSTOM_MAX
+| 13
+| 
+|-
+| DOTATeam_t.DOTA_TEAM_CUSTOM_COUNT
+| 8
+| 
+|}
+
+=== DOTA_RUNES ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTA_RUNES.DOTA_RUNE_INVALID
+| -1
+| 
+|-
+| DOTA_RUNES.DOTA_RUNE_DOUBLEDAMAGE
+| 0
+| 
+|-
+| DOTA_RUNES.DOTA_RUNE_HASTE
+| 1
+| 
+|-
+| DOTA_RUNES.DOTA_RUNE_ILLUSION
+| 2
+| 
+|-
+| DOTA_RUNES.DOTA_RUNE_INVISIBILITY
+| 3
+| 
+|-
+| DOTA_RUNES.DOTA_RUNE_REGENERATION
+| 4
+| 
+|-
+| DOTA_RUNES.DOTA_RUNE_BOUNTY
+| 5
+| 
+|-
+| DOTA_RUNES.DOTA_RUNE_COUNT
+| 6
+| 
+|-
+| DOTA_RUNES.DOTA_RUNE_HAUNTED
+| 7
+| 
+|-
+| DOTA_RUNES.DOTA_RUNE_SPOOKY
+| 8
+| 
+|-
+| DOTA_RUNES.DOTA_RUNE_RAPIER
+| 9
+| 
+|-
+| DOTA_RUNES.DOTA_RUNE_TURBO
+| 10
+| 
+|-
+| DOTA_RUNES.DOTA_RUNE_MYSTERY
+| 11
+| 
+|-
+| DOTA_RUNES.DOTA_HALLOWEEN_RUNE_COUNT
+| 12
+| 
+|}
+
+=== DOTA_UNIT_TARGET_TEAM ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTA_UNIT_TARGET_TEAM.DOTA_UNIT_TARGET_TEAM_NONE
+| 0
+| 
+|-
+| DOTA_UNIT_TARGET_TEAM.DOTA_UNIT_TARGET_TEAM_FRIENDLY
+| 1
+| 
+|-
+| DOTA_UNIT_TARGET_TEAM.DOTA_UNIT_TARGET_TEAM_ENEMY
+| 2
+| 
+|-
+| DOTA_UNIT_TARGET_TEAM.DOTA_UNIT_TARGET_TEAM_CUSTOM
+| 4
+| 
+|-
+| DOTA_UNIT_TARGET_TEAM.DOTA_UNIT_TARGET_TEAM_BOTH
+| 3
+| 
+|}
+
+=== DOTA_UNIT_TARGET_TYPE ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_NONE
+| 0
+| 
+|-
+| DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_HERO
+| 1
+| 
+|-
+| DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_CREEP
+| 2
+| 
+|-
+| DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_BUILDING
+| 4
+| 
+|-
+| DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_MECHANICAL
+| 8
+| 
+|-
+| DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_COURIER
+| 16
+| 
+|-
+| DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_OTHER
+| 32
+| 
+|-
+| DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_TREE
+| 64
+| 
+|-
+| DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_CUSTOM
+| 128
+| 
+|-
+| DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_BASIC
+| 18
+| 
+|-
+| DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_ALL
+| 63
+| 
+|}
+
+=== DOTA_UNIT_TARGET_FLAGS ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_NONE
+| 0
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_RANGED_ONLY
+| 2
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_MELEE_ONLY
+| 4
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_DEAD
+| 8
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
+| 16
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES
+| 32
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_INVULNERABLE
+| 64
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE
+| 128
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_NO_INVIS
+| 256
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS
+| 512
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED
+| 1024
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_NOT_DOMINATED
+| 2048
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_NOT_SUMMONED
+| 4096
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS
+| 8192
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE
+| 16384
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_MANA_ONLY
+| 32768
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_CHECK_DISABLE_HELP
+| 65536
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO
+| 131072
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD
+| 262144
+| 
+|-
+| DOTA_UNIT_TARGET_FLAGS.DOTA_UNIT_TARGET_FLAG_NOT_NIGHTMARED
+| 524288
+| 
+|}
+
+=== DOTALimits_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTALimits_t.DOTA_MAX_PLAYERS
+| 64
+| Max number of players connected to the server including spectators.
+|-
+| DOTALimits_t.DOTA_MAX_TEAM
+| 5
+| Max number of players per team.
+|-
+| DOTALimits_t.DOTA_MAX_PLAYER_TEAMS
+| 10
+| Max number of player teams supported.
+|-
+| DOTALimits_t.DOTA_MAX_TEAM_PLAYERS
+| 10
+| Max number of non-spectator players supported.
+|}
+
+=== DOTAInventoryFlags_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTAInventoryFlags_t.DOTA_INVENTORY_ALLOW_NONE
+| 0
+| 
+|-
+| DOTAInventoryFlags_t.DOTA_INVENTORY_ALLOW_MAIN
+| 1
+| 
+|-
+| DOTAInventoryFlags_t.DOTA_INVENTORY_ALLOW_STASH
+| 2
+| 
+|-
+| DOTAInventoryFlags_t.DOTA_INVENTORY_ALLOW_DROP_ON_GROUND
+| 4
+| 
+|-
+| DOTAInventoryFlags_t.DOTA_INVENTORY_ALLOW_DROP_AT_FOUNTAIN
+| 8
+| 
+|-
+| DOTAInventoryFlags_t.DOTA_INVENTORY_LIMIT_DROP_ON_GROUND
+| 16
+| 
+|-
+| DOTAInventoryFlags_t.DOTA_INVENTORY_ALL_ACCESS
+| 3
+| 
+|}
+
+=== EDOTA_ModifyGold_Reason ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_Unspecified
+| 0
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_Death
+| 1
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_Buyback
+| 2
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_PurchaseConsumable
+| 3
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_PurchaseItem
+| 4
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_AbandonedRedistribute
+| 5
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_SellItem
+| 6
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_AbilityCost
+| 7
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_CheatCommand
+| 8
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_SelectionPenalty
+| 9
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_GameTick
+| 10
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_Building
+| 11
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_HeroKill
+| 12
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_CreepKill
+| 13
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_RoshanKill
+| 14
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_CourierKill
+| 15
+| 
+|-
+| EDOTA_ModifyGold_Reason.DOTA_ModifyGold_SharedGold
+| 16
+| 
+|}
+
+=== DOTAUnitAttackCapability_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTAUnitAttackCapability_t.DOTA_UNIT_CAP_NO_ATTACK
+| 0
+| 
+|-
+| DOTAUnitAttackCapability_t.DOTA_UNIT_CAP_MELEE_ATTACK
+| 1
+| 
+|-
+| DOTAUnitAttackCapability_t.DOTA_UNIT_CAP_RANGED_ATTACK
+| 2
+| 
+|}
+
+=== DOTAUnitMoveCapability_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTAUnitMoveCapability_t.DOTA_UNIT_CAP_MOVE_NONE
+| 0
+| 
+|-
+| DOTAUnitMoveCapability_t.DOTA_UNIT_CAP_MOVE_GROUND
+| 1
+| 
+|-
+| DOTAUnitMoveCapability_t.DOTA_UNIT_CAP_MOVE_FLY
+| 2
+| 
+|}
+
+=== EShareAbility ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| EShareAbility.ITEM_FULLY_SHAREABLE
+| 0
+| 
+|-
+| EShareAbility.ITEM_PARTIALLY_SHAREABLE
+| 1
+| 
+|-
+| EShareAbility.ITEM_NOT_SHAREABLE
+| 2
+| 
+|}
+
+=== DOTAMusicStatus_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTAMusicStatus_t.DOTA_MUSIC_STATUS_NONE
+| 0
+| 
+|-
+| DOTAMusicStatus_t.DOTA_MUSIC_STATUS_EXPLORATION
+| 1
+| 
+|-
+| DOTAMusicStatus_t.DOTA_MUSIC_STATUS_BATTLE
+| 2
+| 
+|-
+| DOTAMusicStatus_t.DOTA_MUSIC_STATUS_PRE_GAME_EXPLORATION
+| 3
+| 
+|-
+| DOTAMusicStatus_t.DOTA_MUSIC_STATUS_DEAD
+| 4
+| 
+|-
+| DOTAMusicStatus_t.DOTA_MUSIC_STATUS_LAST
+| 5
+| 
+|}
+
+=== DOTA_ABILITY_BEHAVIOR ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_NONE
+| 0
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_HIDDEN
+| 1
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_PASSIVE
+| 2
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_NO_TARGET
+| 4
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_UNIT_TARGET
+| 8
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_POINT
+| 16
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_AOE
+| 32
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE
+| 64
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_CHANNELLED
+| 128
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_ITEM
+| 256
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_TOGGLE
+| 512
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_DIRECTIONAL
+| 1024
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_IMMEDIATE
+| 2048
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_AUTOCAST
+| 4096
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET
+| 8192
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_OPTIONAL_POINT
+| 16384
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_OPTIONAL_NO_TARGET
+| 32768
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_AURA
+| 65536
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_ATTACK
+| 131072
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT
+| 262144
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES
+| 524288
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_UNRESTRICTED
+| 1048576
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE
+| 2097152
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL
+| 4194304
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT
+| 8388608
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET
+| 16777216
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK
+| 33554432
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN
+| 67108864
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING
+| 134217728
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_RUNE_TARGET
+| 268435456
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL
+| 536870912
+| 
+|-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_LAST_BEHAVIOR
+| 536870912
+| 
+|}
+
+=== DAMAGE_TYPES ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DAMAGE_TYPES.DAMAGE_TYPE_NONE
+| 0
+| 
+|-
+| DAMAGE_TYPES.DAMAGE_TYPE_PHYSICAL
+| 1
+| 
+|-
+| DAMAGE_TYPES.DAMAGE_TYPE_MAGICAL
+| 2
+| 
+|-
+| DAMAGE_TYPES.DAMAGE_TYPE_PURE
+| 4
+| 
+|-
+| DAMAGE_TYPES.DAMAGE_TYPE_HP_REMOVAL
+| 8
+| 
+|-
+| DAMAGE_TYPES.DAMAGE_TYPE_ALL
+| 7
+| 
+|}
+
+=== ABILITY_TYPES ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| ABILITY_TYPES.ABILITY_TYPE_BASIC
+| 0
+| 
+|-
+| ABILITY_TYPES.ABILITY_TYPE_ULTIMATE
+| 1
+| 
+|-
+| ABILITY_TYPES.ABILITY_TYPE_ATTRIBUTES
+| 2
+| 
+|-
+| ABILITY_TYPES.ABILITY_TYPE_HIDDEN
+| 3
+| 
+|}
+
+=== SPELL_IMMUNITY_TYPES ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| SPELL_IMMUNITY_TYPES.SPELL_IMMUNITY_NONE
+| 0
+| 
+|-
+| SPELL_IMMUNITY_TYPES.SPELL_IMMUNITY_ALLIES_YES
+| 1
+| 
+|-
+| SPELL_IMMUNITY_TYPES.SPELL_IMMUNITY_ALLIES_NO
+| 2
+| 
+|-
+| SPELL_IMMUNITY_TYPES.SPELL_IMMUNITY_ENEMIES_YES
+| 3
+| 
+|-
+| SPELL_IMMUNITY_TYPES.SPELL_IMMUNITY_ENEMIES_NO
+| 4
+| 
+|}
+
+=== DOTADamageFlag_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTADamageFlag_t.DOTA_DAMAGE_FLAG_NONE
+| 0
+| 
+|-
+| DOTADamageFlag_t.DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR
+| 1
+| 
+|-
+| DOTADamageFlag_t.DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR
+| 2
+| 
+|-
+| DOTADamageFlag_t.DOTA_DAMAGE_FLAG_BYPASSES_INVULNERABILITY
+| 4
+| 
+|-
+| DOTADamageFlag_t.DOTA_DAMAGE_FLAG_BYPASSES_BLOCK
+| 8
+| 
+|-
+| DOTADamageFlag_t.DOTA_DAMAGE_FLAG_REFLECTION
+| 16
+| 
+|-
+| DOTADamageFlag_t.DOTA_DAMAGE_FLAG_HPLOSS
+| 32
+| 
+|-
+| DOTADamageFlag_t.DOTA_DAMAGE_FLAG_NO_DIRECTOR_EVENT
+| 64
+| 
+|-
+| DOTADamageFlag_t.DOTA_DAMAGE_FLAG_NON_LETHAL
+| 128
+| 
+|-
+| DOTADamageFlag_t.DOTA_DAMAGE_FLAG_USE_COMBAT_PROFICIENCY
+| 256
+| 
+|-
+| DOTADamageFlag_t.DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS
+| 512
+| 
+|}
+
+=== EDOTA_ModifyXP_Reason ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| EDOTA_ModifyXP_Reason.DOTA_ModifyXP_Unspecified
+| 0
+| 
+|-
+| EDOTA_ModifyXP_Reason.DOTA_ModifyXP_HeroKill
+| 1
+| 
+|-
+| EDOTA_ModifyXP_Reason.DOTA_ModifyXP_CreepKill
+| 2
+| 
+|-
+| EDOTA_ModifyXP_Reason.DOTA_ModifyXP_RoshanKill
+| 3
+| 
+|}
+
+=== GameActivity_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| GameActivity_t.ACT_DOTA_IDLE
+| 1500
+| 
+|-
+| GameActivity_t.ACT_DOTA_IDLE_RARE
+| 1501
+| 
+|-
+| GameActivity_t.ACT_DOTA_RUN
+| 1502
+| 
+|-
+| GameActivity_t.ACT_DOTA_ATTACK
+| 1503
+| 
+|-
+| GameActivity_t.ACT_DOTA_ATTACK2
+| 1504
+| 
+|-
+| GameActivity_t.ACT_DOTA_ATTACK_EVENT
+| 1505
+| 
+|-
+| GameActivity_t.ACT_DOTA_DIE
+| 1506
+| 
+|-
+| GameActivity_t.ACT_DOTA_FLINCH
+| 1507
+| 
+|-
+| GameActivity_t.ACT_DOTA_FLAIL
+| 1508
+| 
+|-
+| GameActivity_t.ACT_DOTA_DISABLED
+| 1509
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_1
+| 1510
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_2
+| 1511
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_3
+| 1512
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_4
+| 1513
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_5
+| 1514
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_6
+| 1515
+| 
+|-
+| GameActivity_t.ACT_DOTA_OVERRIDE_ABILITY_1
+| 1516
+| 
+|-
+| GameActivity_t.ACT_DOTA_OVERRIDE_ABILITY_2
+| 1517
+| 
+|-
+| GameActivity_t.ACT_DOTA_OVERRIDE_ABILITY_3
+| 1518
+| 
+|-
+| GameActivity_t.ACT_DOTA_OVERRIDE_ABILITY_4
+| 1519
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHANNEL_ABILITY_1
+| 1520
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHANNEL_ABILITY_2
+| 1521
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHANNEL_ABILITY_3
+| 1522
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHANNEL_ABILITY_4
+| 1523
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHANNEL_ABILITY_5
+| 1524
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHANNEL_ABILITY_6
+| 1525
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHANNEL_END_ABILITY_1
+| 1526
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHANNEL_END_ABILITY_2
+| 1527
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHANNEL_END_ABILITY_3
+| 1528
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHANNEL_END_ABILITY_4
+| 1529
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHANNEL_END_ABILITY_5
+| 1530
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHANNEL_END_ABILITY_6
+| 1531
+| 
+|-
+| GameActivity_t.ACT_DOTA_CONSTANT_LAYER
+| 1532
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAPTURE
+| 1533
+| 
+|-
+| GameActivity_t.ACT_DOTA_SPAWN
+| 1534
+| 
+|-
+| GameActivity_t.ACT_DOTA_KILLTAUNT
+| 1535
+| 
+|-
+| GameActivity_t.ACT_DOTA_TAUNT
+| 1536
+| 
+|-
+| GameActivity_t.ACT_DOTA_THIRST
+| 1537
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_DRAGONBREATH
+| 1538
+| 
+|-
+| GameActivity_t.ACT_DOTA_ECHO_SLAM
+| 1539
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_1_END
+| 1540
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_2_END
+| 1541
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_3_END
+| 1542
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_4_END
+| 1543
+| 
+|-
+| GameActivity_t.ACT_MIRANA_LEAP_END
+| 1544
+| 
+|-
+| GameActivity_t.ACT_WAVEFORM_START
+| 1545
+| 
+|-
+| GameActivity_t.ACT_WAVEFORM_END
+| 1546
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_ROT
+| 1547
+| 
+|-
+| GameActivity_t.ACT_DOTA_DIE_SPECIAL
+| 1548
+| 
+|-
+| GameActivity_t.ACT_DOTA_RATTLETRAP_BATTERYASSAULT
+| 1549
+| 
+|-
+| GameActivity_t.ACT_DOTA_RATTLETRAP_POWERCOGS
+| 1550
+| 
+|-
+| GameActivity_t.ACT_DOTA_RATTLETRAP_HOOKSHOT_START
+| 1551
+| 
+|-
+| GameActivity_t.ACT_DOTA_RATTLETRAP_HOOKSHOT_LOOP
+| 1552
+| 
+|-
+| GameActivity_t.ACT_DOTA_RATTLETRAP_HOOKSHOT_END
+| 1553
+| 
+|-
+| GameActivity_t.ACT_STORM_SPIRIT_OVERLOAD_RUN_OVERRIDE
+| 1554
+| 
+|-
+| GameActivity_t.ACT_DOTA_TINKER_REARM1
+| 1555
+| 
+|-
+| GameActivity_t.ACT_DOTA_TINKER_REARM2
+| 1556
+| 
+|-
+| GameActivity_t.ACT_DOTA_TINKER_REARM3
+| 1557
+| 
+|-
+| GameActivity_t.ACT_TINY_AVALANCHE
+| 1558
+| 
+|-
+| GameActivity_t.ACT_TINY_TOSS
+| 1559
+| 
+|-
+| GameActivity_t.ACT_TINY_GROWL
+| 1560
+| 
+|-
+| GameActivity_t.ACT_DOTA_WEAVERBUG_ATTACH
+| 1561
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_WILD_AXES_END
+| 1562
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_LIFE_BREAK_START
+| 1563
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_LIFE_BREAK_END
+| 1564
+| 
+|-
+| GameActivity_t.ACT_DOTA_NIGHTSTALKER_TRANSITION
+| 1565
+| 
+|-
+| GameActivity_t.ACT_DOTA_LIFESTEALER_RAGE
+| 1566
+| 
+|-
+| GameActivity_t.ACT_DOTA_LIFESTEALER_OPEN_WOUNDS
+| 1567
+| 
+|-
+| GameActivity_t.ACT_DOTA_SAND_KING_BURROW_IN
+| 1568
+| 
+|-
+| GameActivity_t.ACT_DOTA_SAND_KING_BURROW_OUT
+| 1569
+| 
+|-
+| GameActivity_t.ACT_DOTA_EARTHSHAKER_TOTEM_ATTACK
+| 1570
+| 
+|-
+| GameActivity_t.ACT_DOTA_WHEEL_LAYER
+| 1571
+| 
+|-
+| GameActivity_t.ACT_DOTA_ALCHEMIST_CHEMICAL_RAGE_START
+| 1572
+| 
+|-
+| GameActivity_t.ACT_DOTA_ALCHEMIST_CONCOCTION
+| 1573
+| 
+|-
+| GameActivity_t.ACT_DOTA_JAKIRO_LIQUIDFIRE_START
+| 1574
+| 
+|-
+| GameActivity_t.ACT_DOTA_JAKIRO_LIQUIDFIRE_LOOP
+| 1575
+| 
+|-
+| GameActivity_t.ACT_DOTA_LIFESTEALER_INFEST
+| 1576
+| 
+|-
+| GameActivity_t.ACT_DOTA_LIFESTEALER_INFEST_END
+| 1577
+| 
+|-
+| GameActivity_t.ACT_DOTA_LASSO_LOOP
+| 1578
+| 
+|-
+| GameActivity_t.ACT_DOTA_ALCHEMIST_CONCOCTION_THROW
+| 1579
+| 
+|-
+| GameActivity_t.ACT_DOTA_ALCHEMIST_CHEMICAL_RAGE_END
+| 1580
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_COLD_SNAP
+| 1581
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_GHOST_WALK
+| 1582
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_TORNADO
+| 1583
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_EMP
+| 1584
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ALACRITY
+| 1585
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_CHAOS_METEOR
+| 1586
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_SUN_STRIKE
+| 1587
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_FORGE_SPIRIT
+| 1588
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ICE_WALL
+| 1589
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_DEAFENING_BLAST
+| 1590
+| 
+|-
+| GameActivity_t.ACT_DOTA_VICTORY
+| 1591
+| 
+|-
+| GameActivity_t.ACT_DOTA_DEFEAT
+| 1592
+| 
+|-
+| GameActivity_t.ACT_DOTA_SPIRIT_BREAKER_CHARGE_POSE
+| 1593
+| 
+|-
+| GameActivity_t.ACT_DOTA_SPIRIT_BREAKER_CHARGE_END
+| 1594
+| 
+|-
+| GameActivity_t.ACT_DOTA_TELEPORT
+| 1595
+| 
+|-
+| GameActivity_t.ACT_DOTA_TELEPORT_END
+| 1596
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_REFRACTION
+| 1597
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_7
+| 1598
+| 
+|-
+| GameActivity_t.ACT_DOTA_CANCEL_SIREN_SONG
+| 1599
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHANNEL_ABILITY_7
+| 1600
+| 
+|-
+| GameActivity_t.ACT_DOTA_LOADOUT
+| 1601
+| 
+|-
+| GameActivity_t.ACT_DOTA_FORCESTAFF_END
+| 1602
+| 
+|-
+| GameActivity_t.ACT_DOTA_POOF_END
+| 1603
+| 
+|-
+| GameActivity_t.ACT_DOTA_SLARK_POUNCE
+| 1604
+| 
+|-
+| GameActivity_t.ACT_DOTA_MAGNUS_SKEWER_START
+| 1605
+| 
+|-
+| GameActivity_t.ACT_DOTA_MAGNUS_SKEWER_END
+| 1606
+| 
+|-
+| GameActivity_t.ACT_DOTA_MEDUSA_STONE_GAZE
+| 1607
+| 
+|-
+| GameActivity_t.ACT_DOTA_RELAX_START
+| 1608
+| 
+|-
+| GameActivity_t.ACT_DOTA_RELAX_LOOP
+| 1609
+| 
+|-
+| GameActivity_t.ACT_DOTA_RELAX_END
+| 1610
+| 
+|-
+| GameActivity_t.ACT_DOTA_CENTAUR_STAMPEDE
+| 1611
+| 
+|-
+| GameActivity_t.ACT_DOTA_BELLYACHE_START
+| 1612
+| 
+|-
+| GameActivity_t.ACT_DOTA_BELLYACHE_LOOP
+| 1613
+| 
+|-
+| GameActivity_t.ACT_DOTA_BELLYACHE_END
+| 1614
+| 
+|-
+| GameActivity_t.ACT_DOTA_ROQUELAIRE_LAND
+| 1615
+| 
+|-
+| GameActivity_t.ACT_DOTA_ROQUELAIRE_LAND_IDLE
+| 1616
+| 
+|-
+| GameActivity_t.ACT_DOTA_GREEVIL_CAST
+| 1617
+| 
+|-
+| GameActivity_t.ACT_DOTA_GREEVIL_OVERRIDE_ABILITY
+| 1618
+| 
+|-
+| GameActivity_t.ACT_DOTA_GREEVIL_HOOK_START
+| 1619
+| 
+|-
+| GameActivity_t.ACT_DOTA_GREEVIL_HOOK_END
+| 1620
+| 
+|-
+| GameActivity_t.ACT_DOTA_GREEVIL_BLINK_BONE
+| 1621
+| 
+|-
+| GameActivity_t.ACT_DOTA_IDLE_SLEEPING
+| 1622
+| 
+|-
+| GameActivity_t.ACT_DOTA_INTRO
+| 1623
+| 
+|-
+| GameActivity_t.ACT_DOTA_GESTURE_POINT
+| 1624
+| 
+|-
+| GameActivity_t.ACT_DOTA_GESTURE_ACCENT
+| 1625
+| 
+|-
+| GameActivity_t.ACT_DOTA_SLEEPING_END
+| 1626
+| 
+|-
+| GameActivity_t.ACT_DOTA_AMBUSH
+| 1627
+| 
+|-
+| GameActivity_t.ACT_DOTA_ITEM_LOOK
+| 1628
+| 
+|-
+| GameActivity_t.ACT_DOTA_STARTLE
+| 1629
+| 
+|-
+| GameActivity_t.ACT_DOTA_FRUSTRATION
+| 1630
+| 
+|-
+| GameActivity_t.ACT_DOTA_TELEPORT_REACT
+| 1631
+| 
+|-
+| GameActivity_t.ACT_DOTA_TELEPORT_END_REACT
+| 1632
+| 
+|-
+| GameActivity_t.ACT_DOTA_SHRUG
+| 1633
+| 
+|-
+| GameActivity_t.ACT_DOTA_RELAX_LOOP_END
+| 1634
+| 
+|-
+| GameActivity_t.ACT_DOTA_PRESENT_ITEM
+| 1635
+| 
+|-
+| GameActivity_t.ACT_DOTA_IDLE_IMPATIENT
+| 1636
+| 
+|-
+| GameActivity_t.ACT_DOTA_SHARPEN_WEAPON
+| 1637
+| 
+|-
+| GameActivity_t.ACT_DOTA_SHARPEN_WEAPON_OUT
+| 1638
+| 
+|-
+| GameActivity_t.ACT_DOTA_IDLE_SLEEPING_END
+| 1639
+| 
+|-
+| GameActivity_t.ACT_DOTA_BRIDGE_DESTROY
+| 1640
+| 
+|-
+| GameActivity_t.ACT_DOTA_TAUNT_SNIPER
+| 1641
+| 
+|-
+| GameActivity_t.ACT_DOTA_DEATH_BY_SNIPER
+| 1642
+| 
+|-
+| GameActivity_t.ACT_DOTA_LOOK_AROUND
+| 1643
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAGED_CREEP_RAGE
+| 1644
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAGED_CREEP_RAGE_OUT
+| 1645
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAGED_CREEP_SMASH
+| 1646
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAGED_CREEP_SMASH_OUT
+| 1647
+| 
+|-
+| GameActivity_t.ACT_DOTA_IDLE_IMPATIENT_SWORD_TAP
+| 1648
+| 
+|-
+| GameActivity_t.ACT_DOTA_INTRO_LOOP
+| 1649
+| 
+|-
+| GameActivity_t.ACT_DOTA_BRIDGE_THREAT
+| 1650
+| 
+|-
+| GameActivity_t.ACT_DOTA_DAGON
+| 1651
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_2_ES_ROLL_START
+| 1652
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_2_ES_ROLL
+| 1653
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_ABILITY_2_ES_ROLL_END
+| 1654
+| 
+|-
+| GameActivity_t.ACT_DOTA_NIAN_PIN_START
+| 1655
+| 
+|-
+| GameActivity_t.ACT_DOTA_NIAN_PIN_LOOP
+| 1656
+| 
+|-
+| GameActivity_t.ACT_DOTA_NIAN_PIN_END
+| 1657
+| 
+|-
+| GameActivity_t.ACT_DOTA_LEAP_STUN
+| 1658
+| 
+|-
+| GameActivity_t.ACT_DOTA_LEAP_SWIPE
+| 1659
+| 
+|-
+| GameActivity_t.ACT_DOTA_NIAN_INTRO_LEAP
+| 1660
+| 
+|-
+| GameActivity_t.ACT_DOTA_AREA_DENY
+| 1661
+| 
+|-
+| GameActivity_t.ACT_DOTA_NIAN_PIN_TO_STUN
+| 1662
+| 
+|-
+| GameActivity_t.ACT_DOTA_RAZE_1
+| 1663
+| 
+|-
+| GameActivity_t.ACT_DOTA_RAZE_2
+| 1664
+| 
+|-
+| GameActivity_t.ACT_DOTA_RAZE_3
+| 1665
+| 
+|-
+| GameActivity_t.ACT_DOTA_UNDYING_DECAY
+| 1666
+| 
+|-
+| GameActivity_t.ACT_DOTA_UNDYING_SOUL_RIP
+| 1667
+| 
+|-
+| GameActivity_t.ACT_DOTA_UNDYING_TOMBSTONE
+| 1668
+| 
+|-
+| GameActivity_t.ACT_DOTA_WHIRLING_AXES_RANGED
+| 1669
+| 
+|-
+| GameActivity_t.ACT_DOTA_SHALLOW_GRAVE
+| 1670
+| 
+|-
+| GameActivity_t.ACT_DOTA_COLD_FEET
+| 1671
+| 
+|-
+| GameActivity_t.ACT_DOTA_ICE_VORTEX
+| 1672
+| 
+|-
+| GameActivity_t.ACT_DOTA_CHILLING_TOUCH
+| 1673
+| 
+|-
+| GameActivity_t.ACT_DOTA_ENFEEBLE
+| 1674
+| 
+|-
+| GameActivity_t.ACT_DOTA_FATAL_BONDS
+| 1675
+| 
+|-
+| GameActivity_t.ACT_DOTA_MIDNIGHT_PULSE
+| 1676
+| 
+|-
+| GameActivity_t.ACT_DOTA_ANCESTRAL_SPIRIT
+| 1677
+| 
+|-
+| GameActivity_t.ACT_DOTA_THUNDER_STRIKE
+| 1678
+| 
+|-
+| GameActivity_t.ACT_DOTA_KINETIC_FIELD
+| 1679
+| 
+|-
+| GameActivity_t.ACT_DOTA_STATIC_STORM
+| 1680
+| 
+|-
+| GameActivity_t.ACT_DOTA_MINI_TAUNT
+| 1681
+| 
+|-
+| GameActivity_t.ACT_DOTA_ARCTIC_BURN_END
+| 1682
+| 
+|-
+| GameActivity_t.ACT_DOTA_LOADOUT_RARE
+| 1683
+| 
+|-
+| GameActivity_t.ACT_DOTA_SWIM
+| 1684
+| 
+|-
+| GameActivity_t.ACT_DOTA_FLEE
+| 1685
+| 
+|-
+| GameActivity_t.ACT_DOTA_TROT
+| 1686
+| 
+|-
+| GameActivity_t.ACT_DOTA_SHAKE
+| 1687
+| 
+|-
+| GameActivity_t.ACT_DOTA_SWIM_IDLE
+| 1688
+| 
+|-
+| GameActivity_t.ACT_DOTA_WAIT_IDLE
+| 1689
+| 
+|-
+| GameActivity_t.ACT_DOTA_GREET
+| 1690
+| 
+|-
+| GameActivity_t.ACT_DOTA_TELEPORT_COOP_START
+| 1691
+| 
+|-
+| GameActivity_t.ACT_DOTA_TELEPORT_COOP_WAIT
+| 1692
+| 
+|-
+| GameActivity_t.ACT_DOTA_TELEPORT_COOP_END
+| 1693
+| 
+|-
+| GameActivity_t.ACT_DOTA_TELEPORT_COOP_EXIT
+| 1694
+| 
+|-
+| GameActivity_t.ACT_DOTA_SHOPKEEPER_PET_INTERACT
+| 1695
+| 
+|-
+| GameActivity_t.ACT_DOTA_ITEM_PICKUP
+| 1696
+| 
+|-
+| GameActivity_t.ACT_DOTA_ITEM_DROP
+| 1697
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAPTURE_PET
+| 1698
+| 
+|-
+| GameActivity_t.ACT_DOTA_PET_WARD_OBSERVER
+| 1699
+| 
+|-
+| GameActivity_t.ACT_DOTA_PET_WARD_SENTRY
+| 1700
+| 
+|-
+| GameActivity_t.ACT_DOTA_PET_LEVEL
+| 1701
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAST_BURROW_END
+| 1702
+| 
+|-
+| GameActivity_t.ACT_DOTA_LIFESTEALER_ASSIMILATE
+| 1703
+| 
+|-
+| GameActivity_t.ACT_DOTA_LIFESTEALER_EJECT
+| 1704
+| 
+|}
+
+=== DOTAMinimapEvent_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_ANCIENT_UNDER_ATTACK
+| 2
+| 
+|-
+| DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_BASE_UNDER_ATTACK
+| 4
+| 
+|-
+| DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_BASE_GLYPHED
+| 8
+| 
+|-
+| DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_TEAMMATE_UNDER_ATTACK
+| 16
+| 
+|-
+| DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_TEAMMATE_TELEPORTING
+| 32
+| 
+|-
+| DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_TEAMMATE_DIED
+| 64
+| 
+|-
+| DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_TUTORIAL_TASK_ACTIVE
+| 128
+| 
+|-
+| DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_TUTORIAL_TASK_FINISHED
+| 256
+| 
+|-
+| DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_HINT_LOCATION
+| 512
+| 
+|-
+| DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_ENEMY_TELEPORTING
+| 1024
+| 
+|-
+| DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_CANCEL_TELEPORTING
+| 2048
+| 
+|}
+
+=== DOTASlotType_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_INVALID
+| -1
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_WEAPON
+| 0
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_OFFHAND_WEAPON
+| 1
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_WEAPON2
+| 2
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_OFFHAND_WEAPON2
+| 3
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_HEAD
+| 4
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_SHOULDER
+| 5
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_ARMS
+| 6
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_ARMOR
+| 7
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_BELT
+| 8
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_NECK
+| 9
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_BACK
+| 10
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_LEGS
+| 11
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_GLOVES
+| 12
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_TAIL
+| 13
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_MISC
+| 14
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_BODY_HEAD
+| 15
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_MOUNT
+| 16
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_SUMMON
+| 17
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_SHAPESHIFT
+| 18
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_TAUNT
+| 19
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_AMBIENT_EFFECTS
+| 20
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_ABILITY_ATTACK
+| 21
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_ABILITY1
+| 22
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_ABILITY2
+| 23
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_ABILITY3
+| 24
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_ABILITY4
+| 25
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_ABILITY_ULTIMATE
+| 26
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_VOICE
+| 27
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_ACTION_ITEM
+| 28
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_COURIER
+| 29
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_ANNOUNCER
+| 30
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_MEGA_KILLS
+| 31
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_MUSIC
+| 32
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_WARD
+| 33
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_HUD_SKIN
+| 34
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_LOADING_SCREEN
+| 35
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_WEATHER
+| 36
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_HEROIC_STATUE
+| 37
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_MULTIKILL_BANNER
+| 38
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_CURSOR_PACK
+| 39
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_TELEPORT_EFFECT
+| 40
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_BLINK_EFFECT
+| 41
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_TEAM_SHOWCASE
+| 42
+| 
+|-
+| DOTASlotType_t.DOTA_PLAYER_LOADOUT_START
+| 28
+| 
+|-
+| DOTASlotType_t.DOTA_PLAYER_LOADOUT_END
+| 42
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_NONE
+| 43
+| 
+|-
+| DOTASlotType_t.DOTA_LOADOUT_TYPE_COUNT
+| 44
+| 
+|}
+
+=== modifierfunction ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| modifierfunction.MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
+| 0
+| GetModifierPreAttack_BonusDamage
+|-
+| modifierfunction.MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_POST_CRIT
+| 1
+| GetModifierPreAttack_BonusDamagePostCrit
+|-
+| modifierfunction.MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE
+| 2
+| GetModifierBaseAttack_BonusDamage
+|-
+| modifierfunction.MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL
+| 3
+| GetModifierProcAttack_BonusDamage_Physical
+|-
+| modifierfunction.MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL
+| 4
+| GetModifierProcAttack_BonusDamage_Magical
+|-
+| modifierfunction.MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE
+| 5
+| GetModifierProcAttack_BonusDamage_Pure
+|-
+| modifierfunction.MODIFIER_PROPERTY_PROCATTACK_FEEDBACK
+| 6
+| GetModifierProcAttack_Feedback
+|-
+| modifierfunction.MODIFIER_PROPERTY_PRE_ATTACK
+| 7
+| GetModifierPreAttack
+|-
+| modifierfunction.MODIFIER_PROPERTY_INVISIBILITY_LEVEL
+| 8
+| GetModifierInvisibilityLevel
+|-
+| modifierfunction.MODIFIER_PROPERTY_PERSISTENT_INVISIBILITY
+| 9
+| GetModifierPersistentInvisibility
+|-
+| modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
+| 10
+| GetModifierMoveSpeedBonus_Constant
+|-
+| modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE
+| 11
+| GetModifierMoveSpeedOverride
+|-
+| modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
+| 12
+| GetModifierMoveSpeedBonus_Percentage
+|-
+| modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE
+| 13
+| GetModifierMoveSpeedBonus_Percentage_Unique
+|-
+| modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE
+| 14
+| GetModifierMoveSpeedBonus_Special_Boots
+|-
+| modifierfunction.MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
+| 15
+| GetModifierMoveSpeed_Absolute
+|-
+| modifierfunction.MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN
+| 16
+| GetModifierMoveSpeed_AbsoluteMin
+|-
+| modifierfunction.MODIFIER_PROPERTY_MOVESPEED_LIMIT
+| 17
+| GetModifierMoveSpeed_Limit
+|-
+| modifierfunction.MODIFIER_PROPERTY_MOVESPEED_MAX
+| 18
+| GetModifierMoveSpeed_Max
+|-
+| modifierfunction.MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+| 19
+| GetModifierAttackSpeedBonus_Constant
+|-
+| modifierfunction.MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_POWER_TREADS
+| 20
+| GetModifierAttackSpeedBonus_Constant_PowerTreads
+|-
+| modifierfunction.MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY
+| 21
+| GetModifierAttackSpeedBonus_Constant_Secondary
+|-
+| modifierfunction.MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT
+| 22
+| GetModifierCooldownReduction_Constant
+|-
+| modifierfunction.MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT
+| 23
+| GetModifierBaseAttackTimeConstant
+|-
+| modifierfunction.MODIFIER_PROPERTY_ATTACK_POINT_CONSTANT
+| 24
+| GetModifierAttackPointConstant
+|-
+| modifierfunction.MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
+| 25
+| GetModifierDamageOutgoing_Percentage
+|-
+| modifierfunction.MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_ILLUSION
+| 26
+| GetModifierDamageOutgoing_Percentage_Illusion
+|-
+| modifierfunction.MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE
+| 27
+| GetModifierTotalDamageOutgoing_Percentage
+|-
+| modifierfunction.MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE
+| 28
+| GetModifierBaseDamageOutgoing_Percentage
+|-
+| modifierfunction.MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE_UNIQUE
+| 29
+| GetModifierBaseDamageOutgoing_PercentageUnique
+|-
+| modifierfunction.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
+| 30
+| GetModifierIncomingDamage_Percentage
+|-
+| modifierfunction.MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE
+| 31
+| GetModifierIncomingPhysicalDamage_Percentage
+|-
+| modifierfunction.MODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT
+| 32
+| GetModifierIncomingSpellDamageConstant
+|-
+| modifierfunction.MODIFIER_PROPERTY_EVASION_CONSTANT
+| 33
+| GetModifierEvasion_Constant
+|-
+| modifierfunction.MODIFIER_PROPERTY_AVOID_DAMAGE
+| 34
+| GetModifierAvoidDamage
+|-
+| modifierfunction.MODIFIER_PROPERTY_AVOID_SPELL
+| 35
+| GetModifierAvoidSpell
+|-
+| modifierfunction.MODIFIER_PROPERTY_MISS_PERCENTAGE
+| 36
+| GetModifierMiss_Percentage
+|-
+| modifierfunction.MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
+| 37
+| GetModifierPhysicalArmorBonus
+|-
+| modifierfunction.MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_ILLUSIONS
+| 38
+| GetModifierPhysicalArmorBonusIllusions
+|-
+| modifierfunction.MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE
+| 39
+| GetModifierPhysicalArmorBonusUnique
+|-
+| modifierfunction.MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE_ACTIVE
+| 40
+| GetModifierPhysicalArmorBonusUniqueActive
+|-
+| modifierfunction.MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
+| 41
+| GetModifierMagicalResistanceBonus
+|-
+| modifierfunction.MODIFIER_PROPERTY_MAGICAL_RESISTANCE_ITEM_UNIQUE
+| 42
+| GetModifierMagicalResistanceItemUnique
+|-
+| modifierfunction.MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE
+| 43
+| GetModifierMagicalResistanceDecrepifyUnique
+|-
+| modifierfunction.MODIFIER_PROPERTY_BASE_MANA_REGEN
+| 44
+| GetModifierBaseRegen
+|-
+| modifierfunction.MODIFIER_PROPERTY_MANA_REGEN_CONSTANT
+| 45
+| GetModifierConstantManaRegen
+|-
+| modifierfunction.MODIFIER_PROPERTY_MANA_REGEN_CONSTANT_UNIQUE
+| 46
+| GetModifierConstantManaRegenUnique
+|-
+| modifierfunction.MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE
+| 47
+| GetModifierPercentageManaRegen
+|-
+| modifierfunction.MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE
+| 48
+| GetModifierTotalPercentageManaRegen
+|-
+| modifierfunction.MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT
+| 49
+| GetModifierConstantHealthRegen
+|-
+| modifierfunction.MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE
+| 50
+| GetModifierHealthRegenPercentage
+|-
+| modifierfunction.MODIFIER_PROPERTY_HEALTH_BONUS
+| 51
+| GetModifierHealthBonus
+|-
+| modifierfunction.MODIFIER_PROPERTY_MANA_BONUS
+| 52
+| GetModifierManaBonus
+|-
+| modifierfunction.MODIFIER_PROPERTY_EXTRA_STRENGTH_BONUS
+| 53
+| GetModifierExtraStrengthBonus
+|-
+| modifierfunction.MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS
+| 54
+| GetModifierExtraHealthBonus
+|-
+| modifierfunction.MODIFIER_PROPERTY_EXTRA_MANA_BONUS
+| 55
+| GetModifierExtraManaBonus
+|-
+| modifierfunction.MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE
+| 56
+| GetModifierExtraHealthPercentage
+|-
+| modifierfunction.MODIFIER_PROPERTY_STATS_STRENGTH_BONUS
+| 57
+| GetModifierBonusStats_Strength
+|-
+| modifierfunction.MODIFIER_PROPERTY_STATS_AGILITY_BONUS
+| 58
+| GetModifierBonusStats_Agility
+|-
+| modifierfunction.MODIFIER_PROPERTY_STATS_INTELLECT_BONUS
+| 59
+| GetModifierBonusStats_Intellect
+|-
+| modifierfunction.MODIFIER_PROPERTY_ATTACK_RANGE_BONUS
+| 60
+| GetModifierAttackRangeBonus
+|-
+| modifierfunction.MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS
+| 61
+| GetModifierProjectileSpeedBonus
+|-
+| modifierfunction.MODIFIER_PROPERTY_REINCARNATION
+| 62
+| ReincarnateTime
+|-
+| modifierfunction.MODIFIER_PROPERTY_RESPAWNTIME
+| 63
+| GetModifierConstantRespawnTime
+|-
+| modifierfunction.MODIFIER_PROPERTY_RESPAWNTIME_PERCENTAGE
+| 64
+| GetModifierPercentageRespawnTime
+|-
+| modifierfunction.MODIFIER_PROPERTY_RESPAWNTIME_STACKING
+| 65
+| GetModifierStackingRespawnTime
+|-
+| modifierfunction.MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE
+| 66
+| GetModifierPercentageCooldown
+|-
+| modifierfunction.MODIFIER_PROPERTY_CASTTIME_PERCENTAGE
+| 67
+| GetModifierPercentageCasttime
+|-
+| modifierfunction.MODIFIER_PROPERTY_MANACOST_PERCENTAGE
+| 68
+| GetModifierPercentageManacost
+|-
+| modifierfunction.MODIFIER_PROPERTY_DEATHGOLDCOST
+| 69
+| GetModifierConstantDeathGoldCost
+|-
+| modifierfunction.MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE
+| 70
+| GetModifierPreAttack_CriticalStrike
+|-
+| modifierfunction.MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK
+| 71
+| GetModifierPhysical_ConstantBlock
+|-
+| modifierfunction.MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_UNAVOIDABLE_PRE_ARMOR
+| 72
+| GetModifierPhysical_ConstantBlockUnavoidablePreArmor
+|-
+| modifierfunction.MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK
+| 73
+| GetModifierTotal_ConstantBlock
+|-
+| modifierfunction.MODIFIER_PROPERTY_OVERRIDE_ANIMATION
+| 74
+| GetOverrideAnimation
+|-
+| modifierfunction.MODIFIER_PROPERTY_OVERRIDE_ANIMATION_WEIGHT
+| 75
+| GetOverrideAnimationWeight
+|-
+| modifierfunction.MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE
+| 76
+| GetOverrideAnimationRate
+|-
+| modifierfunction.MODIFIER_PROPERTY_ABSORB_SPELL
+| 77
+| GetAbsorbSpell
+|-
+| modifierfunction.MODIFIER_PROPERTY_REFLECT_SPELL
+| 78
+| GetReflectSpell
+|-
+| modifierfunction.MODIFIER_PROPERTY_DISABLE_AUTOATTACK
+| 79
+| GetDisableAutoAttack
+|-
+| modifierfunction.MODIFIER_PROPERTY_BONUS_DAY_VISION
+| 80
+| GetBonusDayVision
+|-
+| modifierfunction.MODIFIER_PROPERTY_BONUS_NIGHT_VISION
+| 81
+| GetBonusNightVision
+|-
+| modifierfunction.MODIFIER_PROPERTY_BONUS_NIGHT_VISION_UNIQUE
+| 82
+| GetBonusNightVisionUnique
+|-
+| modifierfunction.MODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE
+| 83
+| GetBonusVisionPercentage
+|-
+| modifierfunction.MODIFIER_PROPERTY_FIXED_DAY_VISION
+| 84
+| GetFixedDayVision
+|-
+| modifierfunction.MODIFIER_PROPERTY_FIXED_NIGHT_VISION
+| 85
+| GetFixedNightVision
+|-
+| modifierfunction.MODIFIER_PROPERTY_MIN_HEALTH
+| 86
+| GetMinHealth
+|-
+| modifierfunction.MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL
+| 87
+| GetAbsoluteNoDamagePhysical
+|-
+| modifierfunction.MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL
+| 88
+| GetAbsoluteNoDamageMagical
+|-
+| modifierfunction.MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE
+| 89
+| GetAbsoluteNoDamagePure
+|-
+| modifierfunction.MODIFIER_PROPERTY_IS_ILLUSION
+| 90
+| GetIsIllusion
+|-
+| modifierfunction.MODIFIER_PROPERTY_ILLUSION_LABEL
+| 91
+| GetModifierIllusionLabel
+|-
+| modifierfunction.MODIFIER_PROPERTY_SUPER_ILLUSION
+| 92
+| GetModifierSuperIllusion
+|-
+| modifierfunction.MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE
+| 93
+| GetModifierTurnRate_Percentage
+|-
+| modifierfunction.MODIFIER_PROPERTY_DISABLE_HEALING
+| 94
+| GetDisableHealing
+|-
+| modifierfunction.MODIFIER_PROPERTY_OVERRIDE_ATTACK_MAGICAL
+| 95
+| GetOverrideAttackMagical
+|-
+| modifierfunction.MODIFIER_PROPERTY_UNIT_STATS_NEEDS_REFRESH
+| 96
+| GetModifierUnitStatsNeedsRefresh
+|-
+| modifierfunction.MODIFIER_PROPERTY_BOUNTY_CREEP_MULTIPLIER
+| 97
+| GetModifierBountyCreepMultiplier
+|-
+| modifierfunction.MODIFIER_PROPERTY_BOUNTY_OTHER_MULTIPLIER
+| 98
+| GetModifierBountyOtherMultiplier
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ATTACK_RECORD
+| 99
+| OnAttackRecord
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ATTACK_START
+| 100
+| OnAttackStart
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ATTACK
+| 101
+| OnAttack
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ATTACK_LANDED
+| 102
+| OnAttackLanded
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ATTACK_FAIL
+| 103
+| OnAttackFail
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ATTACK_ALLIED
+| 104
+| OnAttackAllied
+|-
+| modifierfunction.MODIFIER_EVENT_ON_PROJECTILE_DODGE
+| 105
+| OnProjectileDodge
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ORDER
+| 106
+| OnOrder
+|-
+| modifierfunction.MODIFIER_EVENT_ON_UNIT_MOVED
+| 107
+| OnUnitMoved
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ABILITY_START
+| 108
+| OnAbilityStart
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ABILITY_EXECUTED
+| 109
+| OnAbilityExecuted
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ABILITY_FULLY_CAST
+| 110
+| OnAbilityFullyCast
+|-
+| modifierfunction.MODIFIER_EVENT_ON_BREAK_INVISIBILITY
+| 111
+| OnBreakInvisibility
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ABILITY_END_CHANNEL
+| 112
+| OnAbilityEndChannel
+|-
+| modifierfunction.MODIFIER_EVENT_ON_PROCESS_UPGRADE
+| 113
+| 
+|-
+| modifierfunction.MODIFIER_EVENT_ON_REFRESH
+| 114
+| 
+|-
+| modifierfunction.MODIFIER_EVENT_ON_TAKEDAMAGE
+| 115
+| OnTakeDamage
+|-
+| modifierfunction.MODIFIER_EVENT_ON_STATE_CHANGED
+| 116
+| OnStateChanged
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ORB_EFFECT
+| 117
+| 
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ATTACKED
+| 118
+| OnAttacked
+|-
+| modifierfunction.MODIFIER_EVENT_ON_DEATH
+| 119
+| OnDeath
+|-
+| modifierfunction.MODIFIER_EVENT_ON_RESPAWN
+| 120
+| OnRespawn
+|-
+| modifierfunction.MODIFIER_EVENT_ON_SPENT_MANA
+| 121
+| OnSpentMana
+|-
+| modifierfunction.MODIFIER_EVENT_ON_TELEPORTING
+| 122
+| OnTeleporting
+|-
+| modifierfunction.MODIFIER_EVENT_ON_TELEPORTED
+| 123
+| OnTeleported
+|-
+| modifierfunction.MODIFIER_EVENT_ON_SET_LOCATION
+| 124
+| OnSetLocation
+|-
+| modifierfunction.MODIFIER_EVENT_ON_HEALTH_GAINED
+| 125
+| OnHealthGained
+|-
+| modifierfunction.MODIFIER_EVENT_ON_MANA_GAINED
+| 126
+| OnManaGained
+|-
+| modifierfunction.MODIFIER_EVENT_ON_TAKEDAMAGE_KILLCREDIT
+| 127
+| OnTakeDamageKillCredit
+|-
+| modifierfunction.MODIFIER_EVENT_ON_HERO_KILLED
+| 128
+| OnHeroKilled
+|-
+| modifierfunction.MODIFIER_EVENT_ON_HEAL_RECEIVED
+| 129
+| OnHealReceived
+|-
+| modifierfunction.MODIFIER_EVENT_ON_BUILDING_KILLED
+| 130
+| OnBuildingKilled
+|-
+| modifierfunction.MODIFIER_EVENT_ON_MODEL_CHANGED
+| 131
+| OnModelChanged
+|-
+| modifierfunction.MODIFIER_PROPERTY_TOOLTIP
+| 132
+| OnTooltip
+|-
+| modifierfunction.MODIFIER_PROPERTY_MODEL_CHANGE
+| 133
+| GetModifierModelChange
+|-
+| modifierfunction.MODIFIER_PROPERTY_MODEL_SCALE
+| 134
+| GetModifierModelScale
+|-
+| modifierfunction.MODIFIER_PROPERTY_IS_SCEPTER
+| 135
+| GetModifierScepter
+|-
+| modifierfunction.MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS
+| 136
+| GetActivityTranslationModifiers
+|-
+| modifierfunction.MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND
+| 137
+| GetAttackSound
+|-
+| modifierfunction.MODIFIER_PROPERTY_LIFETIME_FRACTION
+| 138
+| GetUnitLifetimeFraction
+|-
+| modifierfunction.MODIFIER_PROPERTY_PROVIDES_FOW_POSITION
+| 139
+| GetModifierProvidesFOWVision
+|-
+| modifierfunction.MODIFIER_PROPERTY_SPELLS_REQUIRE_HP
+| 140
+| GetModifierSpellsRequireHP
+|-
+| modifierfunction.MODIFIER_PROPERTY_FORCE_DRAW_MINIMAP
+| 141
+| GetForceDrawOnMinimap
+|-
+| modifierfunction.MODIFIER_PROPERTY_DISABLE_TURNING
+| 142
+| GetModifierDisableTurning
+|-
+| modifierfunction.MODIFIER_PROPERTY_IGNORE_CAST_ANGLE
+| 143
+| GetModifierIgnoreCastAngle
+|-
+| modifierfunction.MODIFIER_PROPERTY_CHANGE_ABILITY_VALUE
+| 144
+| GetModifierChangeAbilityValue
+|-
+| modifierfunction.MODIFIER_PROPERTY_ABILITY_LAYOUT
+| 145
+| GetModifierAbilityLayout
+|-
+| modifierfunction.MODIFIER_EVENT_ON_DOMINATED
+| 146
+| OnDominated
+|-
+| modifierfunction.MODIFIER_FUNCTION_LAST
+| 147
+| 
+|-
+| modifierfunction.MODIFIER_FUNCTION_INVALID
+| 255
+| 
+|}
+
+=== modifierstate ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| modifierstate.MODIFIER_STATE_ROOTED
+| 0
+| 
+|-
+| modifierstate.MODIFIER_STATE_DISARMED
+| 1
+| 
+|-
+| modifierstate.MODIFIER_STATE_ATTACK_IMMUNE
+| 2
+| 
+|-
+| modifierstate.MODIFIER_STATE_SILENCED
+| 3
+| 
+|-
+| modifierstate.MODIFIER_STATE_MUTED
+| 4
+| 
+|-
+| modifierstate.MODIFIER_STATE_STUNNED
+| 5
+| 
+|-
+| modifierstate.MODIFIER_STATE_HEXED
+| 6
+| 
+|-
+| modifierstate.MODIFIER_STATE_INVISIBLE
+| 7
+| 
+|-
+| modifierstate.MODIFIER_STATE_INVULNERABLE
+| 8
+| 
+|-
+| modifierstate.MODIFIER_STATE_MAGIC_IMMUNE
+| 9
+| 
+|-
+| modifierstate.MODIFIER_STATE_PROVIDES_VISION
+| 10
+| 
+|-
+| modifierstate.MODIFIER_STATE_NIGHTMARED
+| 11
+| 
+|-
+| modifierstate.MODIFIER_STATE_BLOCK_DISABLED
+| 12
+| 
+|-
+| modifierstate.MODIFIER_STATE_EVADE_DISABLED
+| 13
+| 
+|-
+| modifierstate.MODIFIER_STATE_UNSELECTABLE
+| 14
+| 
+|-
+| modifierstate.MODIFIER_STATE_CANNOT_MISS
+| 15
+| 
+|-
+| modifierstate.MODIFIER_STATE_SPECIALLY_DENIABLE
+| 16
+| 
+|-
+| modifierstate.MODIFIER_STATE_FROZEN
+| 17
+| 
+|-
+| modifierstate.MODIFIER_STATE_COMMAND_RESTRICTED
+| 18
+| 
+|-
+| modifierstate.MODIFIER_STATE_NOT_ON_MINIMAP
+| 19
+| 
+|-
+| modifierstate.MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES
+| 20
+| 
+|-
+| modifierstate.MODIFIER_STATE_LOW_ATTACK_PRIORITY
+| 21
+| 
+|-
+| modifierstate.MODIFIER_STATE_NO_HEALTH_BAR
+| 22
+| 
+|-
+| modifierstate.MODIFIER_STATE_FLYING
+| 23
+| 
+|-
+| modifierstate.MODIFIER_STATE_NO_UNIT_COLLISION
+| 24
+| 
+|-
+| modifierstate.MODIFIER_STATE_NO_TEAM_MOVE_TO
+| 25
+| 
+|-
+| modifierstate.MODIFIER_STATE_NO_TEAM_SELECT
+| 26
+| 
+|-
+| modifierstate.MODIFIER_STATE_PASSIVES_DISABLED
+| 27
+| 
+|-
+| modifierstate.MODIFIER_STATE_DOMINATED
+| 28
+| 
+|-
+| modifierstate.MODIFIER_STATE_BLIND
+| 29
+| 
+|-
+| modifierstate.MODIFIER_STATE_OUT_OF_GAME
+| 30
+| 
+|-
+| modifierstate.MODIFIER_STATE_FAKE_ALLY
+| 31
+| 
+|-
+| modifierstate.MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY
+| 32
+| 
+|-
+| modifierstate.MODIFIER_STATE_TRUESIGHT_IMMUNE
+| 33
+| 
+|-
+| modifierstate.MODIFIER_STATE_LAST
+| 34
+| 
+|}
+
+=== DOTAModifierAttribute_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTAModifierAttribute_t.MODIFIER_ATTRIBUTE_NONE
+| 0
+| 
+|-
+| DOTAModifierAttribute_t.MODIFIER_ATTRIBUTE_PERMANENT
+| 1
+| 
+|-
+| DOTAModifierAttribute_t.MODIFIER_ATTRIBUTE_MULTIPLE
+| 2
+| 
+|-
+| DOTAModifierAttribute_t.MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
+| 4
+| 
+|}
+
+=== Attributes ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| Attributes.DOTA_ATTRIBUTE_STRENGTH
+| 0
+| 
+|-
+| Attributes.DOTA_ATTRIBUTE_AGILITY
+| 1
+| 
+|-
+| Attributes.DOTA_ATTRIBUTE_INTELLECT
+| 2
+| 
+|-
+| Attributes.DOTA_ATTRIBUTE_MAX
+| 3
+| 
+|-
+| Attributes.DOTA_ATTRIBUTE_INVALID
+| -1
+| 
+|}
+
+=== ParticleAttachment_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| ParticleAttachment_t.PATTACH_INVALID
+| -1
+| 
+|-
+| ParticleAttachment_t.PATTACH_ABSORIGIN
+| 0
+| 
+|-
+| ParticleAttachment_t.PATTACH_ABSORIGIN_FOLLOW
+| 1
+| 
+|-
+| ParticleAttachment_t.PATTACH_CUSTOMORIGIN
+| 2
+| 
+|-
+| ParticleAttachment_t.PATTACH_CUSTOMORIGIN_FOLLOW
+| 3
+| 
+|-
+| ParticleAttachment_t.PATTACH_POINT
+| 4
+| 
+|-
+| ParticleAttachment_t.PATTACH_POINT_FOLLOW
+| 5
+| 
+|-
+| ParticleAttachment_t.PATTACH_EYES_FOLLOW
+| 6
+| 
+|-
+| ParticleAttachment_t.PATTACH_OVERHEAD_FOLLOW
+| 7
+| 
+|-
+| ParticleAttachment_t.PATTACH_WORLDORIGIN
+| 8
+| 
+|-
+| ParticleAttachment_t.PATTACH_ROOTBONE_FOLLOW
+| 9
+| 
+|-
+| ParticleAttachment_t.PATTACH_RENDERORIGIN_FOLLOW
+| 10
+| 
+|-
+| ParticleAttachment_t.PATTACH_MAIN_VIEW
+| 11
+| 
+|-
+| ParticleAttachment_t.PATTACH_WATERWAKE
+| 12
+| 
+|-
+| ParticleAttachment_t.MAX_PATTACH_TYPES
+| 13
+| 
+|}
+
+=== DOTA_MOTION_CONTROLLER_PRIORITY ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTA_MOTION_CONTROLLER_PRIORITY.DOTA_MOTION_CONTROLLER_PRIORITY_LOWEST
+| 0
+| 
+|-
+| DOTA_MOTION_CONTROLLER_PRIORITY.DOTA_MOTION_CONTROLLER_PRIORITY_LOW
+| 1
+| 
+|-
+| DOTA_MOTION_CONTROLLER_PRIORITY.DOTA_MOTION_CONTROLLER_PRIORITY_MEDIUM
+| 2
+| 
+|-
+| DOTA_MOTION_CONTROLLER_PRIORITY.DOTA_MOTION_CONTROLLER_PRIORITY_HIGH
+| 3
+| 
+|-
+| DOTA_MOTION_CONTROLLER_PRIORITY.DOTA_MOTION_CONTROLLER_PRIORITY_HIGHEST
+| 4
+| 
+|}
+
+=== DOTASpeechType_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTASpeechType_t.DOTA_SPEECH_USER_INVALID
+| 0
+| 
+|-
+| DOTASpeechType_t.DOTA_SPEECH_USER_SINGLE
+| 1
+| 
+|-
+| DOTASpeechType_t.DOTA_SPEECH_USER_TEAM
+| 2
+| 
+|-
+| DOTASpeechType_t.DOTA_SPEECH_USER_TEAM_NEARBY
+| 3
+| 
+|-
+| DOTASpeechType_t.DOTA_SPEECH_USER_NEARBY
+| 4
+| 
+|-
+| DOTASpeechType_t.DOTA_SPEECH_USER_ALL
+| 5
+| 
+|-
+| DOTASpeechType_t.DOTA_SPEECH_GOOD_TEAM
+| 6
+| 
+|-
+| DOTASpeechType_t.DOTA_SPEECH_BAD_TEAM
+| 7
+| 
+|-
+| DOTASpeechType_t.DOTA_SPEECH_SPECTATOR
+| 8
+| 
+|-
+| DOTASpeechType_t.DOTA_SPEECH_RECIPIENT_TYPE_MAX
+| 9
+| 
+|}
+
+=== DOTAAbilitySpeakTrigger_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DOTAAbilitySpeakTrigger_t.DOTA_ABILITY_SPEAK_START_ACTION_PHASE
+| 0
+| 
+|-
+| DOTAAbilitySpeakTrigger_t.DOTA_ABILITY_SPEAK_CAST
+| 1
+| 
+|}
+
+=== DotaCustomUIType_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DotaCustomUIType_t.DOTA_CUSTOM_UI_TYPE_HUD
+| 0
+| 
+|-
+| DotaCustomUIType_t.DOTA_CUSTOM_UI_TYPE_HERO_SELECTION
+| 1
+| 
+|-
+| DotaCustomUIType_t.DOTA_CUSTOM_UI_TYPE_GAME_INFO
+| 2
+| 
+|-
+| DotaCustomUIType_t.DOTA_CUSTOM_UI_TYPE_GAME_SETUP
+| 3
+| 
+|-
+| DotaCustomUIType_t.DOTA_CUSTOM_UI_TYPE_FLYOUT_SCOREBOARD
+| 4
+| 
+|-
+| DotaCustomUIType_t.DOTA_CUSTOM_UI_TYPE_HUD_TOP_BAR
+| 5
+| 
+|-
+| DotaCustomUIType_t.DOTA_CUSTOM_UI_TYPE_END_SCREEN
+| 6
+| 
+|-
+| DotaCustomUIType_t.DOTA_CUSTOM_UI_TYPE_COUNT
+| 7
+| 
+|-
+| DotaCustomUIType_t.DOTA_CUSTOM_UI_TYPE_INVALID
+| -1
+| 
+|}
+
+=== DotaDefaultUIElement_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_TIMEOFDAY
+| 0
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES
+| 1
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD
+| 2
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_PANEL
+| 3
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ACTION_MINIMAP
+| 4
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_PANEL
+| 5
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_SHOP
+| 6
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_ITEMS
+| 7
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_QUICKBUY
+| 8
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_COURIER
+| 9
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_PROTECT
+| 10
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_GOLD
+| 11
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS
+| 12
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_HERO_SELECTION_TEAMS
+| 13
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_HERO_SELECTION_GAME_NAME
+| 14
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_HERO_SELECTION_CLOCK
+| 15
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_MENU_BUTTONS
+| 16
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND
+| 17
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME
+| 18
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ELEMENT_COUNT
+| 19
+| 
+|}
+
+=== PlayerUltimateStateOrTime_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_READY
+| 0
+| 
+|-
+| PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_NO_MANA
+| -1
+| 
+|-
+| PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_NOT_LEVELED
+| -2
+| 
+|-
+| PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_HIDDEN
+| -3
+| 
+|}
+
+=== PlayerOrderIssuer_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| PlayerOrderIssuer_t.DOTA_ORDER_ISSUER_SELECTED_UNITS
+| 0
+| 
+|-
+| PlayerOrderIssuer_t.DOTA_ORDER_ISSUER_CURRENT_UNIT_ONLY
+| 1
+| 
+|-
+| PlayerOrderIssuer_t.DOTA_ORDER_ISSUER_HERO_ONLY
+| 2
+| 
+|-
+| PlayerOrderIssuer_t.DOTA_ORDER_ISSUER_PASSED_UNIT_ONLY
+| 3
+| 
+|}
+
+=== CLICK_BEHAVIORS ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE
+| 0
+| 
+|-
+| CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_MOVE
+| 1
+| 
+|-
+| CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_ATTACK
+| 2
+| 
+|-
+| CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_CAST
+| 3
+| 
+|-
+| CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_DROP_ITEM
+| 4
+| 
+|-
+| CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_DROP_SHOP_ITEM
+| 5
+| 
+|-
+| CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_DRAG
+| 6
+| 
+|-
+| CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_LEARN_ABILITY
+| 7
+| 
+|-
+| CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_LAST
+| 8
+| 
+|}

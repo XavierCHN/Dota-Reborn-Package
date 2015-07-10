@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA["Properties"
+{
+	"${1:MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT}" "%${2:bonus_attack_speed}"
+    "${3:MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE}" "%${4:bonus_movement_speed}" 
+}
+]]></content>
+	<tabTrigger>Properties</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Apply Modifier Properties</description>
+</snippet>
+
+
+

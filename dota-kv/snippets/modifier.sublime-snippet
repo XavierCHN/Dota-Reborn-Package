@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA["modifier_${1:name}"
+{
+	"Passive"			"${2:0}"
+	"IsHidden"			"${3:0}"
+	"IsDebuff"			"${4:0}"
+
+	"EffectName"		"${6:particle_name}"
+	"EffectAttachType"	"${7:follow_origin}"
+
+	${8:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>modifier_</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Add one modifier</description>
+</snippet>
+
+
+

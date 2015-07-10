@@ -1,0 +1,6 @@
+<snippet>
+    <description>Panorama Image</description>
+    <content><![CDATA[<Image src="file://{images}/${1:your_image_path/your_image.png}" scaling="${2:stretch-to-fit-preserve-aspect}" />]]></content>
+    <tabTrigger>&lt;Image</tabTrigger>
+    <scope>text.dotaxml</scope>	
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+"Attributes"		"MODIFIER_ATTRIBUTE_${1:MULTIPLE}"
+]]></content>
+	<tabTrigger>Attributes</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>in a modifier</description>
+</snippet>

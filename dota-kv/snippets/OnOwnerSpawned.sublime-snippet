@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["OnOwnerSpawned"
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnOwnerSpawned</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Ability owner spaw</description>
+</snippet>

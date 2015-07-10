@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["OnStateChanged"
+// Might trigger when the unit gets a modifier.
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnStateChanged</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>modifier event</description>
+</snippet>

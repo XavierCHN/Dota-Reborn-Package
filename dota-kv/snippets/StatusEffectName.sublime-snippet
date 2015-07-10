@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+"StatusEffectName" 		"${1:particle_name}" 	   
+"StatusEffectPriority"  "10"
+]]></content>
+	<tabTrigger>StatusEffectName</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Texture Particles</description>
+</snippet>

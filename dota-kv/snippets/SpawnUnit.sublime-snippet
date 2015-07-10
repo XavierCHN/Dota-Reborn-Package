@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA["SpawnUnit"
+{
+	"UnitName"		"${1:npc_name}"
+	"Target" 		"${2:CASTER}"
+	"Duration"		"%${3:duration}"
+	"UnitCount"		"${4:1}"
+	"UnitLimit"		"0"
+	"GrantsGold"	"1"
+	"GrantsXP"		"1"
+	"SpawnRadius"	"10"
+	"OnSpawn"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_phased"
+			"Target"		"TARGET"
+			"Duration"		"0.03"
+		}
+
+		${5:[ACTIONS]}
+	}
+}
+]]></content>
+	<tabTrigger>SpawnUnit</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>from npc_units _custom</description>
+</snippet>

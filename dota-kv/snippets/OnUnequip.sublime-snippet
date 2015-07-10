@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["OnUnequip"
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnUnequip</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Item dropped</description>
+</snippet>

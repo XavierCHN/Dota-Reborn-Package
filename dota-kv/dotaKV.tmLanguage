@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>txt</string>
+	</array>
+	<key>name</key>
+	<string>Dota KV</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Ability Special Vars</string>
+			<key>match</key>
+			<string>%\w+</string>
+			<key>name</key>
+			<string>keyword.other.txt</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Single line comment</string>
+			<key>match</key>
+			<string>(^|(\t|\s?)+)//.*</string>
+			<key>name</key>
+			<string>comment.line.txt</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Key color</string>
+			<key>match</key>
+			<string>^(\t|\s?)+"[a-zA-z\s]+"</string>
+			<key>name</key>
+			<string>entity.name.tag.txt</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Value color</string>
+			<key>match</key>
+			<string>(\t|\s)+"[a-zA-z0-9./|_\s]+"</string>
+			<key>name</key>
+			<string>string.quoted.txt</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>dota.kv</string>
+	<key>uuid</key>
+	<string>04c4bbdb-39e5-49da-be05-91103efa01e4</string>
+</dict>
+</plist>

@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["OnCreated"
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnCreated</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Modifier Created</description>
+</snippet>

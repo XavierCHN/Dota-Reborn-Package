@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA["AttachEffect"
+{
+	"EffectName"        "${1:particle_name}"
+	"EffectAttachType"  "${2:follow_origin}"
+	"Target"            "${3:TARGET}"
+}
+]]></content>
+	<tabTrigger>AttachEffect</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>particle on Modifier</description>
+</snippet>

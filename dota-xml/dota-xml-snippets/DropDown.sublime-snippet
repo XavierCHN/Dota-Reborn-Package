@@ -1,0 +1,9 @@
+<snippet>
+    <description>Panorama DropDown</description>
+    <content><![CDATA[<DropDown oninputsubmit="${1:OnDropDownChanged()}">
+  <Label text="$2_1}" id="$3_1"/>
+  <Label text="$2_2}" id="$3_2"/>
+</DropDown>]]></content>
+    <tabTrigger>&lt;DropDown</tabTrigger>
+    <scope>text.dotaxml</scope>	
+</snippet>

@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+"Aura"          	"modifier_${1:name_aura_effect}"
+"Aura_Radius"   	"%${2:radius}"
+"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_${3:FRIENDLY}"
+"Aura_Types"    	"${4:DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC}"
+"Aura_Flags"    	"${5:DOTA_UNIT_TARGET_FLAG_NONE}"
+"Aura_ApplyToCaster" "${6:1}"
+]]></content>
+	<tabTrigger>Aura</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Constantly Apply Modifier</description>
+</snippet>

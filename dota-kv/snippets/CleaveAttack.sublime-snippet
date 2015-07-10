@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA["CleaveAttack"
+{
+	"CleavePercent"         "%${1:great_cleave_damage}"
+	"CleaveRadius"          "%${2:great_cleave_radius}"
+	"CleaveEffect"          "${3:particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf}"
+}
+]]></content>
+	<tabTrigger>CleaveAttack</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>On Attack</description>
+</snippet>

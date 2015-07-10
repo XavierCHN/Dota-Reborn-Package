@@ -1,0 +1,6 @@
+<snippet>
+    <description>Panorama DOTAHeroImage</description>
+    <content><![CDATA[<DOTAHeroImage heroname="${1:npc_dota_hero_pudge}" heroimagestyle="${2:portrait}" />]]></content>
+    <tabTrigger>&lt;DOTAHeroImage</tabTrigger>
+    <scope>text.dotaxml</scope>	
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["OnTakeDamage"
+// "%attack_damage" is set to the damage value after mitigation
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnTakeDamage</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>modf owner took dmg</description>
+</snippet>

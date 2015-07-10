@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA["ActOnTargets"
+{
+	"Target"
+	{
+		"Center"  	"${1:TARGET}"
+		"Radius" 	"%${2:radius}"
+		"Teams" 	"DOTA_UNIT_TARGET_TEAM_${3:ENEMY}"
+		"Types" 	"${4:DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC}"
+	}
+
+	"Action"    
+	{
+		${5:[ACTIONS]}
+	}
+}
+]]></content>
+	<tabTrigger>ActOnTargets</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Shared Target scope</description>
+</snippet>

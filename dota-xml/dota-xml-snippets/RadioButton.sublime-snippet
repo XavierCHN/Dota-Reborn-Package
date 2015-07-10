@@ -1,0 +1,8 @@
+<snippet>
+    <description>Panorama RadioButton</description>
+    <content><![CDATA[<RadioButton checked="checked" group="$1" id="$2_1" text="$3_1"/>
+<RadioButton group="$1" id="$2_2" text="$3_2"/>
+<RadioButton group="$1" id="$2_3" text="$3_3"/>]]></content>
+    <tabTrigger>&lt;RadioButton</tabTrigger>
+    <scope>text.dotaxml</scope>	
+</snippet>

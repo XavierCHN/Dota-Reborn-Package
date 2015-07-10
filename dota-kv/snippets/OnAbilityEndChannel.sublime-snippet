@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["OnAbilityEndChannel"
+// Unit that has this modifier ends a channel (be it OnChannelFinish, Interrupted or Succeeded)
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnAbilityEndChannel</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>modifier event</description>
+</snippet>

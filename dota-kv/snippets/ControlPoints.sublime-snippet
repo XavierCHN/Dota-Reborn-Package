@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["ControlPoints"
+{
+	"01"	"%${1:radius} 0 0"
+	"02"	"0 0 0"
+}
+]]></content>
+	<tabTrigger>ControlPoints</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>CP1 CP2</description>
+</snippet>

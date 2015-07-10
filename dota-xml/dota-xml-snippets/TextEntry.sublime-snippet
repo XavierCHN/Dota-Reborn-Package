@@ -1,0 +1,6 @@
+<snippet>
+    <description>Panorama TextEntry</description>
+    <content><![CDATA[<TextEntry id="${1:MyEntry}" maxchars="${2:100}" placeholder="${3:Type here...}" oninputsubmit="${4:OnSubmitted()}" />]]></content>
+    <tabTrigger>&lt;TextEntry</tabTrigger>
+    <scope>text.dotaxml</scope>	
+</snippet>

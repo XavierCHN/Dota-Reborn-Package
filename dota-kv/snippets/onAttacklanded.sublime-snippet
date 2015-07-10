@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["OnAttackLanded"
+// "%attack_damage" is set to the damage value before mitigation
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnAttackLanded</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Hit</description>
+</snippet>

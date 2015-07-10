@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["OnUpgrade"
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnUpgrade</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Ability Leveled</description>
+</snippet>

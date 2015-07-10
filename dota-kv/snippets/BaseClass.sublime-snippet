@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+"BaseClass"             		"ability_datadriven"
+"AbilityTextureName"			"${1:ability_name}"
+"MaxLevel" 						"${2:7}"
+]]></content>
+	<tabTrigger>BaseClass</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>ability_datadriven</description>
+</snippet>

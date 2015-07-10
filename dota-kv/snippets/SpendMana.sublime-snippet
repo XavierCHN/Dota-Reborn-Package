@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA["SpendMana"
+{
+	"Mana"		"%${1:AbilityManaCost}"
+}
+]]></content>
+	<tabTrigger>SpendMana</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>modf owner event</description>
+</snippet>
+
+

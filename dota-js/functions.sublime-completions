@@ -1,8 +1,8 @@
 {
-	"scope":"source.js",
+	"scope":"source.js,source.xml",
 	"completions":
 	[
-		{"trigger":"GameEvents_Subscribe", "contents":"GameEvents.Subscribe( ${1:cstring pEventName}, ${2:js_value funcVal} )"},
+		{"trigger":"GameEvents_Subscribe", "contents":"GameEvents.Subscribe( ${1:cstring pEventName#test}, ${2:js_value funcVal} )"},
 		{"trigger":"GameEvents_Unsubscribe", "contents":"GameEvents.Unsubscribe( ${1:integer nCallbackHandle} )"},
 		{"trigger":"GameEvents_SendCustomGameEventToServer", "contents":"GameEvents.SendCustomGameEventToServer( ${1:cstring pEventName}, ${2:js_object jsObject} )"},
 		{"trigger":"GameUI_SetDefaultUIEnabled", "contents":"GameUI.SetDefaultUIEnabled( ${1:integer nElementType}, ${2:boolean bVisible} )"},

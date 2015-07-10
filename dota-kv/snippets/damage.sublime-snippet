@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA["Damage"
+{
+	"Target"		"${1:TARGET}"
+	"Type"			"${2:DAMAGE_TYPE_MAGICAL}"
+	"Damage"		"%${3:AbilityDamage}"
+}
+]]></content>
+	<tabTrigger>Damage</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Deal Damage on Target</description>
+</snippet>
+
+

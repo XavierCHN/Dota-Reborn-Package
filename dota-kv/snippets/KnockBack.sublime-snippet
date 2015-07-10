@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA["Knockback"
+{
+	"Target"            "${1:TARGET}"
+	"Center" 	        "${2:CASTER}"
+	"Distance"	        "%${3:distance}"
+	"Duration"	        "%${4:air_time}"
+	"Height"	        "${5:200}"
+	"IsFixedDistance"	"1"
+	"ShouldStun"        "1"	
+}
+]]></content>
+	<tabTrigger>Knockback</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Applies modifier_knockback</description>
+</snippet>

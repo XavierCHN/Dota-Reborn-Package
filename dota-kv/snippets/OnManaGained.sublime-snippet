@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA["OnManaGained"
+// Example: Wisp Tether
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnManaGained</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>modifier event</description>
+</snippet>

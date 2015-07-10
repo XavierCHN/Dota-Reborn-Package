@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA["Random"
+{
+	"Chance"			"%${1:chance}"
+	"OnSuccess"
+	{
+		${2:[ACTIONS]}
+	}
+	"OnFailure"
+	{
+		${3:[ACTIONS]}
+	}
+}
+]]></content>
+	<tabTrigger>Random</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Random chance</description>
+</snippet>

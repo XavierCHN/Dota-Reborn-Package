@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA["OnChannelInterrupted"
+{
+	${1:[ACTIONS]}
+}
+]]></content>
+	<tabTrigger>OnChannelInterrupted</tabTrigger>
+ 	<scope>source.txt</scope>
+ 	<description>Prematurely</description>
+</snippet>
