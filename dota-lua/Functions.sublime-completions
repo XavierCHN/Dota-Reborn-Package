@@ -684,6 +684,7 @@
 		{ "trigger": "SetRuneSpawnFilter", "contents": "SetRuneSpawnFilter(${1:handle hFunction}, ${2:handle hContext})" },
 		{ "trigger": "SetStashPurchasingDisabled", "contents": "SetStashPurchasingDisabled(${1:bool bDisabled})" },
 		{ "trigger": "SetTrackingProjectileFilter", "contents": "SetTrackingProjectileFilter(${1:handle hFunction}, ${2:handle hContext})" },
+		{ "trigger": "SetUnseenFogOfWarEnabled", "contents": "SetUnseenFogOfWarEnabled(${1:boolean bEnabled})"}
 		{ "trigger": "AddMinimapDebugPoint", "contents": "AddMinimapDebugPoint(${1:int int_1}, ${2:Vector Vector_2}, ${3:int int_3}, ${4:int int_4}, ${5:int int_5}, ${6:int int_6}, ${7:float float_7})" },
 		{ "trigger": "AddMinimapDebugPointForTeam", "contents": "AddMinimapDebugPointForTeam(${1:int int_1}, ${2:Vector Vector_2}, ${3:int int_3}, ${4:int int_4}, ${5:int int_5}, ${6:int int_6}, ${7:float float_7}, ${8:int int_8})" },
 		{ "trigger": "EnableCustomGameSetupAutoLaunch", "contents": "EnableCustomGameSetupAutoLaunch(${1:bool bool_1})" },
@@ -823,7 +824,9 @@
 		{ "trigger": "CreateParticleForTeam", "contents": "CreateParticleForTeam(${1:string string_1}, ${2:int int_2}, ${3:handle handle_3}, ${4:int int_4})" },
 		{ "trigger": "SetParticleControlForward", "contents": "SetParticleControlForward(${1:int int_1}, ${2:int int_2}, ${3:Vector Vector_3})" },
 		{ "trigger": "SetParticleControlOrientation", "contents": "SetParticleControlOrientation(${1:int int_1}, ${2:int int_2}, ${3:Vector Vector_3}, ${4:Vector Vector_4}, ${5:Vector Vector_5})" },
+		{ "trigger": "CanFindPath", "contents": "CanFindPath(${1:Vector Vector_1}, ${2:Vector Vector_2})" },
 		{ "trigger": "DestroyTreesAroundPoint", "contents": "DestroyTreesAroundPoint(${1:Vector Vector_1}, ${2:float float_2}, ${3:bool bool_3})" },
+		{ "trigger": "FindPathLength", "contents": "FindPathLength(${1:Vector Vector_1}, ${2:float float_2}, ${3:bool bool_3})" },
 		{ "trigger": "GetAllTreesAroundPoint", "contents": "GetAllTreesAroundPoint(${1:Vector Vector_1}, ${2:float float_2}, ${3:bool bool_3})" },
 		{ "trigger": "GetLinearProjectileVelocity", "contents": "GetLinearProjectileVelocity(${1:int int_1})" },
 		{ "trigger": "AppendToLogFile", "contents": "AppendToLogFile(${1:string string_1}, ${2:string string_2})" },
