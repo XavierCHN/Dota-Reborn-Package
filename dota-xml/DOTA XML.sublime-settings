@@ -1,3 +1,7 @@
 {
-	"extensions": ["xml"]
+	"extensions": ["xml"],
+	"auto_complete_triggers": [
+		{"selector": "text.dotaxml", "characters": "<"},
+		{"selector": "text.dotaxml", "characters": "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPADSFGHJKLZXCVBNM"}
+	]
 }
