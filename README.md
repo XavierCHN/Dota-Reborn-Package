@@ -1,7 +1,7 @@
 Dota Sublime Package
 ================================
 
-#### Version: 2015.07.10 GMT+8
+#### Version: 2015.07.11 GMT+8
 
 Code completion and syntax for DOTA 2 mod development
 
@@ -18,7 +18,7 @@ Code completion and syntax for DOTA 2 mod development
 * Drag the `Dota-Sublime-Package` folder into your packages folder.
 ```sh
 # Sublime text 2
-> C:\Users\USERNAME\AppData\Roaming\Sublime Text 2\Packages\Lua Dota
+> C:\Users\USERNAME\AppData\Roaming\Sublime Text 2\Packages\Dota-Sublime-Package
 # Sublime text 3 Method 1
 > C:\Users\USERNAME\AppData\Roaming\Sublime Text 3\Packages
 # Sublime text 3 Method 2
