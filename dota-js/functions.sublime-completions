@@ -1,7 +1,17 @@
 {
-	"scope":"source.js,source.xml",
+	"scope":"source.js,source.xml,text.dotaxml",
 	"completions":
 	[
+		// #region July 10th, 2015 update
+		{"trigger":"GameUI_SetCameraPitchMax", "contents":"GameUI.SetCameraPitchMax( ${1:float flPitchMax} )"},
+		{"trigger":"GameUI_SetCameraDistance", "contents":"GameUI.SetCameraDistance( ${1:float flDistance} )"},
+		{"trigger":"GameUI_SetRenderBottomInsetOverride", "contents":"GameUI.SetRenderBottomInsetOverride( ${1:integer nInset} )"},
+		{"trigger":"GameUI_SetRenderTopInsetOverride", "contents":"GameUI.SetRenderTopInsetOverride( ${1:integer nInset} )"},
+		{"trigger":"Entities_IsValidEntity", "contents":"Entities.IsValidEntity( ${1:integer nEntityIndex} )"},
+		{"trigger":"Entities_IsItemPhysical", "contents":"Entities.IsItemPhysical( ${1:integer nEntityIndex} )"},
+		{"trigger":"Entities_GetContainedItem", "contents":"Entities.GetContainedItem( ${1:integer nEntityIndex} )"},
+		// #endregion July 10th, 2015 update
+
 		{"trigger":"GameEvents_Subscribe", "contents":"GameEvents.Subscribe( ${1:cstring pEventName#test}, ${2:js_value funcVal} )"},
 		{"trigger":"GameEvents_Unsubscribe", "contents":"GameEvents.Unsubscribe( ${1:integer nCallbackHandle} )"},
 		{"trigger":"GameEvents_SendCustomGameEventToServer", "contents":"GameEvents.SendCustomGameEventToServer( ${1:cstring pEventName}, ${2:js_object jsObject} )"},

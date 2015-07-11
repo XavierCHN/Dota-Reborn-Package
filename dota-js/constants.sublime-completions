@@ -1,5 +1,5 @@
 {
-	"scope":"source.js,text.txt",
+	"scope":"source.js,text.txt,text.dotaxml",
 	"completions":
 	[
 		"DOTA_GameState.DOTA_GAMERULES_STATE_INIT",

@@ -3,6 +3,10 @@
 
 	"completions":
 	[
+		// #region July 10th, 2015 update
+		{ "trigger": "SetEnabledExclusively", "contents": "SetEnabledExclusively()" },
+		// #endregion July 10th, 2015 update
+		
 		{ "trigger": "SpawnEntityGroupFromTable", "contents": "SpawnEntityGroupFromTable(${1:handle groupSpawnTables}, ${2:bool bAsync}, ${3:handle hCallback})" },
 		{ "trigger": "Say", "contents": "Say(${1:handle entity}, ${2:string message}, ${3:bool teamOnly})" },
 		{ "trigger": "IsDedicatedServer", "contents": "IsDedicatedServer()" },
@@ -684,7 +688,7 @@
 		{ "trigger": "SetRuneSpawnFilter", "contents": "SetRuneSpawnFilter(${1:handle hFunction}, ${2:handle hContext})" },
 		{ "trigger": "SetStashPurchasingDisabled", "contents": "SetStashPurchasingDisabled(${1:bool bDisabled})" },
 		{ "trigger": "SetTrackingProjectileFilter", "contents": "SetTrackingProjectileFilter(${1:handle hFunction}, ${2:handle hContext})" },
-		{ "trigger": "SetUnseenFogOfWarEnabled", "contents": "SetUnseenFogOfWarEnabled(${1:boolean bEnabled})"}
+		{ "trigger": "SetUnseenFogOfWarEnabled", "contents": "SetUnseenFogOfWarEnabled(${1:boolean bEnabled})"},
 		{ "trigger": "AddMinimapDebugPoint", "contents": "AddMinimapDebugPoint(${1:int int_1}, ${2:Vector Vector_2}, ${3:int int_3}, ${4:int int_4}, ${5:int int_5}, ${6:int int_6}, ${7:float float_7})" },
 		{ "trigger": "AddMinimapDebugPointForTeam", "contents": "AddMinimapDebugPointForTeam(${1:int int_1}, ${2:Vector Vector_2}, ${3:int int_3}, ${4:int int_4}, ${5:int int_5}, ${6:int int_6}, ${7:float float_7}, ${8:int int_8})" },
 		{ "trigger": "EnableCustomGameSetupAutoLaunch", "contents": "EnableCustomGameSetupAutoLaunch(${1:bool bool_1})" },

@@ -59,6 +59,6 @@
 		<string>^\s*&lt;(([^!/?]|%)(?!.+?([/%]&gt;|&lt;/.+?&gt;))|[%!]--\s*$)</string>
 	</dict>
 	<key>uuid</key>
-	<string>95788610-7E2E-45CE-9CCE-708FE0C90BF7</string>
+	<string>afb2d50b-f566-40bf-a8a9-663e9b4f3a2d</string>
 </dict>
 </plist>
