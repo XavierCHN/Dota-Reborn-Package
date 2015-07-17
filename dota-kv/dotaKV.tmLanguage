@@ -30,7 +30,7 @@
 			<key>comment</key>
 			<string>Key color</string>
 			<key>match</key>
-			<string>^(\t|\s?)+"[a-zA-z\s]+"</string>
+			<string>^(\t|\s)*"[\w\s]+"</string>
 			<key>name</key>
 			<string>entity.name.tag.txt</string>
 		</dict>
@@ -38,7 +38,7 @@
 			<key>comment</key>
 			<string>Value color</string>
 			<key>match</key>
-			<string>(\t|\s)+"[a-zA-z0-9./|_\s]+"</string>
+			<string>*"[\+\-\*\%\|\.\;\w\s\/]*"</string>
 			<key>name</key>
 			<string>string.quoted.txt</string>
 		</dict>
