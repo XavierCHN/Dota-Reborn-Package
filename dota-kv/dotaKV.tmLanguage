@@ -38,7 +38,7 @@
 			<key>comment</key>
 			<string>Value color</string>
 			<key>match</key>
-			<string>*"[\+\-\*\%\|\.\;\w\s\/]*"</string>
+			<string>(\t|\s)*"[\+\-\*\%\|\.\;\w\s\/]*"</string>
 			<key>name</key>
 			<string>string.quoted.txt</string>
 		</dict>
