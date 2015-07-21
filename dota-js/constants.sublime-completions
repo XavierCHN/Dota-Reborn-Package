@@ -2,6 +2,9 @@
 	"scope":"source.js,text.txt,text.dotaxml",
 	"completions":
 	[
+		// TODO OrderQueueBehavior_t  @ 2015.07.20
+		//
+
 		"DOTA_GameState.DOTA_GAMERULES_STATE_INIT",
 		"DOTA_GameState.DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD",
 		"DOTA_GameState.DOTA_GAMERULES_STATE_HERO_SELECTION",
