@@ -3,10 +3,19 @@
 
 	"completions":
 	[
+
+		// #region July 24th, 2015 update
+		{ "trigger": "GetTreeIdForEntityIndex", "contents": "GetTreeIdForEntityIndex(${1:int entindex})"},
+		// #endregion July 24th, 2015 update
+
+		// #region July 23th, 2015 update
+		{ "trigger": "GetEntityIndexForTreeId", "contents": "GetEntityIndexForTreeId(${1:unsigned TreeID})"},
+		// #endregion Jult 23th, 2015 update
+
 		// #region July 10th, 2015 update
 		{ "trigger": "SetEnabledExclusively", "contents": "SetEnabledExclusively()" },
 		// #endregion July 10th, 2015 update
-		
+
 		{ "trigger": "SpawnEntityGroupFromTable", "contents": "SpawnEntityGroupFromTable(${1:handle groupSpawnTables}, ${2:bool bAsync}, ${3:handle hCallback})" },
 		{ "trigger": "Say", "contents": "Say(${1:handle entity}, ${2:string message}, ${3:bool teamOnly})" },
 		{ "trigger": "IsDedicatedServer", "contents": "IsDedicatedServer()" },
