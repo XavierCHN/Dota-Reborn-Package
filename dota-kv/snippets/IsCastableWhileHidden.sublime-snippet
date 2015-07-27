@@ -2,7 +2,7 @@
 	<content><![CDATA[
 "IsCastableWhileHidden"		"${1:0}"
 ]]></content>
-	<tabTrigger>Attributes</tabTrigger>
+	<tabTrigger>IsCastableWhileHidden</tabTrigger>
  	<scope>source.txt</scope>
  	<description>is castable when hidden</description>
 </snippet>
