@@ -1,0 +1,27 @@
+{
+	"scope": "source.lua",
+	"completions":
+	[
+		{ "trigger": "assert", "contents": "assert(${1:variable}${0:, optional sMessage})"},
+		{ "trigger": "collectgarbage", "contents": "collectgarbage(${1:\"Collect\"}${2:, optional int arg})"},
+		{ "trigger": "dofile", "contents": "dofile(${1:filename})"},
+		{ "trigger": "error", "contents": "error(${1:message}${2:, optional int level })"},
+		{ "trigger": "getfenv", "contents": "getfenv(${1:function foo})"},
+		{ "trigger": "getmetatable", "contents": "getmetatable(${1:object})"},
+		{ "trigger": "load", "contents": "load(${1:function func}${2:, optional string chunkname})"},
+		{ "trigger": "loadfile", "contents": "loadfile(${1:string filename})"},
+		{ "trigger": "loadstring", "contents": "loadstring(${1:string str}${2:, optional string chunkname})"},
+		{ "trigger": "next", "contents": "next(${1:table t}${2:, optional previndex})"},
+		{ "trigger": "pcall", "contents": "pcall(${1:function foo}${2:, optional arg, ...})"},
+		{ "trigger": "xpcall", "contents": "xpcall(${1:function foo}, ${2:err})"},
+		{ "trigger": "print", "contents": "print(${1:args})"},
+		{ "trigger": "rawequal", "contents": "rawequal(${1:v1}, ${2:v2})"},
+		{ "trigger": "rawget", "contents": "rawget(${1:table}, ${2:index})"},
+		{ "trigger": "rawset", "contents": "rawset(${1:table}, ${2:index}, ${3:value})"},
+		{ "trigger": "select", "contents": "select(${1:#}, ${2:...})"},
+		{ "trigger": "setfenv", "contents": "setfenv(${1:function foo}, ${2:table})"},
+		{ "trigger": "setmetatable", "contents": "setmetatable(${1:table}, ${2:metatable})"},
+		{ "trigger": "tonumber", "contents": "tonumber(${1:string}${2:, optional base})"},
+		{ "trigger": "type", "contents": "type(${1:v}) = \"${2:table}\""}
+	]
+}

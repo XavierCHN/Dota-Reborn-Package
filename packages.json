@@ -1,0 +1,10 @@
+{
+	"name": "Dota 2 Sublime Package All in 1",
+	"details": "https://github.com/XavierCHN/Dota-Sublime-Package",
+	"releases": [
+		{
+			"sublime_text": "*",
+			"tags": true
+		}
+	]
+}

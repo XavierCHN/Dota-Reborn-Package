@@ -1,0 +1,13 @@
+{
+	"scope": "source.lua",
+	"completions":
+	[
+		{"trigger":"table_insert", "contents": "table.insert(${1:table}${2:, opt_pos}, ${3:value})"},
+		{"trigger":"table_maxn", "contents": "table.maxn(${1:table})"},
+		{"trigger":"table_remove", "contents": "table.remove(${1:table}, ${2:pos})"},
+		{"trigger":"table_foreachi", "contents": "table.foreachi(${table}, ${2:function(i, v))}"},
+		{"trigger":"table_foreach", "contents": "table.foreach(${table}, ${2:function(${i}, v)})"},
+		{"trigger":"table_getn", "contents": "table.getn(${table})"},
+		{"trigger":"table_setn", "contents": "table.setn(${table}, ${2:nSize})"}
+	]
+}
