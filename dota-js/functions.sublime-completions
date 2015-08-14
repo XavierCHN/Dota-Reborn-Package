@@ -2,6 +2,17 @@
 	"scope":"source.js,source.xml,text.dotaxml",
 	"completions":
 	[
+		// #region Aug 13th, 2015update
+		{"tirgger":"Entities_GetCurrentXP", "contents":"Entities.GetCurrentXP(${1:nEntityIndex})"},
+		{"tirgger":"Entities_GetNeededXPToLevel", "contents":"Entities.GetNeededXPToLevel(${1:nEntityIndex})"},
+
+		// todo: Particles Object haven't appear in cl_panorama_script_help_2 yet
+
+		// from cl_panorama_script_help2 
+		{"trigger":"GameEvents_SendEventClientSide", "contents":"GameEvents.SendEventClientSide(${1:cstring pEventName}, ${2:js_object objectEventArgs})"},
+
+		// #endregion Aug 13th, 2015 update
+		
 		// #region July 28th, 2015 update
 		// buff related apis
 		{"trigger":"Buffs_GetStackCount", "contents":"Buffs.GetStackCount( ${1:nQueryUnitEntityIndex}, ${2:nBuffSerial});"},

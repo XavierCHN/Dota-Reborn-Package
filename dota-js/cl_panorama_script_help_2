@@ -1,3 +1,4 @@
+8 CPUs (4 physical), Frequency: 2.1 Ghz,  Features: GenuineIntel SSE SSE2 SSE4.1 SSE4.2 AVX MMX RDTSC CMOV FCMOV 
 === CDOTA_PanoramaScript_GameEvents ===
 {| class="standard-table" style="width: 100%;"
 ! Function
@@ -15,6 +16,10 @@
 | SendCustomGameEventToServer
 | <code>GameEvents.SendCustomGameEventToServer( cstring pEventName, js_object jsObject )</code>
 | Send a custom game event
+|- 
+| SendEventClientSide
+| <code>GameEvents.SendEventClientSide( cstring pEventName, js_object jsObject )</code>
+| Send a client-side event using gameeventmanager (only useful for a few specific events)
 |}
 
 
@@ -84,9 +89,21 @@
 | <code>GameUI.SelectUnit( integer nEntityIndex, boolean bAddToGroup )</code>
 | Select a unit, adding it to the group or replacing the current selection.
 |- 
+| SetCameraPitchMin
+| <code>GameUI.SetCameraPitchMin( float flPitchMin )</code>
+| Set the minimum camera pitch angle.
+|- 
 | SetCameraPitchMax
 | <code>GameUI.SetCameraPitchMax( float flPitchMax )</code>
 | Set the maximum camera pitch angle.
+|- 
+| SetCameraYaw
+| <code>GameUI.SetCameraYaw( float flCameraYaw )</code>
+| Set the camera's yaw.
+|- 
+| SetCameraLookAtPositionHeightOffset
+| <code>GameUI.SetCameraLookAtPositionHeightOffset( float flCameraLookAtHeightOffset )</code>
+| Offset the camera's look at point.
 |- 
 | SetCameraDistance
 | <code>GameUI.SetCameraDistance( float flDistance )</code>
@@ -144,8 +161,8 @@
 | <code>Players.GetLocalPlayer()</code>
 | Get the local player ID.
 |- 
-| IsValidPlayer
-| <code>Players.IsValidPlayer( integer iPlayerID )</code>
+| IsValidPlayerID
+| <code>Players.IsValidPlayerID( integer iPlayerID )</code>
 | Is the nth player a valid player?
 |- 
 | GetPlayerName
@@ -195,10 +212,6 @@
 | GetGold
 | <code>Players.GetGold( integer iPlayerID )</code>
 | The amount of gold a player has.
-|- 
-| GetGoldBagsCollected
-| <code>Players.GetGoldBagsCollected( integer iPlayerID )</code>
-| The number of gold bags collected by a player.
 |- 
 | GetKills
 | <code>Players.GetKills( integer iPlayerID )</code>
@@ -275,6 +288,14 @@
 | IsSpectator
 | <code>Players.IsSpectator( integer iPlayerID )</code>
 | Is this player a spectator.
+|- 
+| PlayerPortraitClicked
+| <code>Players.PlayerPortraitClicked( integer nClickedPlayerID, boolean bHoldingCtrl, boolean bHoldingAlt )</code>
+| .
+|- 
+| BuffClicked
+| <code>Players.BuffClicked( integer nEntity, integer nBuffSerial, boolean bAlert )</code>
+| .
 |}
 
 
@@ -680,6 +701,10 @@
 | <code>Entities.GetTotalPurchasedUpgradeGoldCost( integer nEntityIndex )</code>
 | 
 |- 
+| GetTeamNumber
+| <code>Entities.GetTeamNumber( integer nEntityIndex )</code>
+| 
+|- 
 | GetAttackRange
 | <code>Entities.GetAttackRange( integer nEntityIndex )</code>
 | 
@@ -856,6 +881,26 @@
 | <code>Entities.GetAbilityByName( integer nEntityIndex, cstring pszAbilityName )</code>
 | 
 |- 
+| GetNumBuffs
+| <code>Entities.GetNumBuffs( integer nEntityIndex )</code>
+| 
+|- 
+| GetBuff
+| <code>Entities.GetBuff( integer nEntityIndex, integer nBufIndex )</code>
+| 
+|- 
+| GetAbilityPoints
+| <code>Entities.GetAbilityPoints( integer nEntityIndex )</code>
+| 
+|- 
+| GetCurrentXP
+| <code>Entities.GetCurrentXP( integer nEntityIndex )</code>
+| 
+|- 
+| GetNeededXPToLevel
+| <code>Entities.GetNeededXPToLevel( integer nEntityIndex )</code>
+| 
+|- 
 | GetSelectionEntities
 | <code>Entities.GetSelectionEntities( integer nEntityIndex )</code>
 | Get the currently selected entities
@@ -914,7 +959,7 @@
 |- 
 | CanAbilityBeUpgraded
 | <code>Abilities.CanAbilityBeUpgraded( integer nEntityIndex )</code>
-| 
+| Returns an AbilityLearnResult_t
 |- 
 | CanBeExecuted
 | <code>Abilities.CanBeExecuted( integer nEntityIndex )</code>
@@ -1088,6 +1133,10 @@
 | <code>Abilities.IsStolen( integer nEntityIndex )</code>
 | 
 |- 
+| IsToggle
+| <code>Abilities.IsToggle( integer nEntityIndex )</code>
+| 
+|- 
 | GetAOERadius
 | <code>Abilities.GetAOERadius( integer nEntityIndex )</code>
 | 
@@ -1131,6 +1180,10 @@
 | GetUpgradeBlend
 | <code>Abilities.GetUpgradeBlend( integer nEntityIndex )</code>
 | 
+|- 
+| GetLocalPlayerActiveAbility
+| <code>Abilities.GetLocalPlayerActiveAbility()</code>
+| Get the local player's current active ability. (Pre-cast targetting state.)
 |- 
 | GetCaster
 | <code>Abilities.GetCaster( integer nAbilityIndex )</code>
@@ -1307,6 +1360,26 @@
 | GetPurchaser
 | <code>Items.GetPurchaser( integer nItemID )</code>
 | 
+|- 
+| LocalPlayerDisassembleItem
+| <code>Items.LocalPlayerDisassembleItem( integer nItem )</code>
+| Attempt to have the local player disassemble the specified item. Returns false if the order wasn't issued.
+|- 
+| LocalPlayerDropItemFromStash
+| <code>Items.LocalPlayerDropItemFromStash( integer nItem )</code>
+| Attempt to have the local player drop the specified item from its stash. Returns false if the order wasn't issued.
+|- 
+| LocalPlayerItemAlertAllies
+| <code>Items.LocalPlayerItemAlertAllies( integer nItem )</code>
+| Attempt to have the local player alert allies about the specified item. Returns false if the order wasn't issued.
+|- 
+| LocalPlayerMoveItemToStash
+| <code>Items.LocalPlayerMoveItemToStash( integer nItem )</code>
+| Attempt to have the local player move the specified item to its stash. Returns false if the order wasn't issued.
+|- 
+| LocalPlayerSellItem
+| <code>Items.LocalPlayerSellItem( integer nItem )</code>
+| Attempt to have the local player sell the specified item. Returns false if the order wasn't issued.
 |}
 
 
@@ -1474,11 +1547,11 @@
 |- 
 | EmitSound
 | <code>Game.EmitSound( cstring pSoundEventName )</code>
-| Emit a sound for the local player
+| Emit a sound for the local player. Returns an integer handle that can be passed to StopSound. (Returns 0 on failure.)
 |- 
 | StopSound
-| <code>Game.StopSound( cstring pSoundEventName )</code>
-| Stop a current playing sound on the local player
+| <code>Game.StopSound( integer nHandle )</code>
+| Stop a current playing sound on the local player. Takes handle from a call to EmitSound.
 |- 
 | GetMapInfo
 | <code>Game.GetMapInfo()</code>
@@ -1486,11 +1559,23 @@
 |- 
 | PrepareUnitOrders
 | <code>Game.PrepareUnitOrders( js_raw_args args )</code>
-| Orders from the local player - takes a single arguments object that supports: dotaunitorder_t OrderType, ent_index TargetIndex, vector Position, ent_index AbilityIndex, OrderIssuer_t OrderIssuer, ent_index UnitIndex, bool Queue, bool ShowEffects.
+| Orders from the local player - takes a single arguments object that supports: dotaunitorder_t OrderType, ent_index TargetIndex, vector Position, ent_index AbilityIndex, OrderIssuer_t OrderIssuer, ent_index UnitIndex, OrderQueueBehavior_t QueueBehavior, bool ShowEffects.
 |- 
 | DropItemAtCursor
 | <code>Game.DropItemAtCursor( integer nControlledUnitEnt, integer nItemEnt )</code>
 | Order a unit to drop the specified item at the current cursor location.
+|- 
+| EnterAbilityLearnMode
+| <code>Game.EnterAbilityLearnMode()</code>
+| 
+|- 
+| EndAbilityLearnMode
+| <code>Game.EndAbilityLearnMode()</code>
+| 
+|- 
+| IsInAbilityLearnMode
+| <code>Game.IsInAbilityLearnMode()</code>
+| 
 |}
 
 
@@ -2417,7 +2502,7 @@
 | Max number of players connected to the server including spectators.
 |-
 | DOTALimits_t.DOTA_MAX_TEAM
-| 5
+| 24
 | Max number of players per team.
 |-
 | DOTALimits_t.DOTA_MAX_PLAYER_TEAMS
@@ -2425,8 +2510,16 @@
 | Max number of player teams supported.
 |-
 | DOTALimits_t.DOTA_MAX_TEAM_PLAYERS
-| 10
+| 24
 | Max number of non-spectator players supported.
+|-
+| DOTALimits_t.DOTA_DEFAULT_MAX_TEAM
+| 5
+| Default number of players per team.
+|-
+| DOTALimits_t.DOTA_DEFAULT_MAX_TEAM_PLAYERS
+| 10
+| Default number of non-spectator players supported.
 |}
 
 === DOTAInventoryFlags_t ===
@@ -3741,6 +3834,10 @@
 |-
 | GameActivity_t.ACT_DOTA_LIFESTEALER_EJECT
 | 1704
+| 
+|-
+| GameActivity_t.ACT_DOTA_ATTACK_EVENT_BASH
+| 1705
 | 
 |}
 
@@ -5126,6 +5223,25 @@
 | 
 |}
 
+=== OrderQueueBehavior_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| OrderQueueBehavior_t.DOTA_ORDER_QUEUE_DEFAULT
+| 0
+| 
+|-
+| OrderQueueBehavior_t.DOTA_ORDER_QUEUE_NEVER
+| 1
+| 
+|-
+| OrderQueueBehavior_t.DOTA_ORDER_QUEUE_ALWAYS
+| 2
+| 
+|}
+
 === CLICK_BEHAVIORS ===
 {| class="standard-table" style="width: 100%;"
 ! Enumerator
@@ -5166,5 +5282,32 @@
 |-
 | CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_LAST
 | 8
+| 
+|}
+
+=== AbilityLearnResult_t ===
+{| class="standard-table" style="width: 100%;"
+! Enumerator
+! Value
+! Description
+|-
+| AbilityLearnResult_t.ABILITY_CAN_BE_UPGRADED
+| 0
+| 
+|-
+| AbilityLearnResult_t.ABILITY_CANNOT_BE_UPGRADED_NOT_UPGRADABLE
+| 1
+| 
+|-
+| AbilityLearnResult_t.ABILITY_CANNOT_BE_UPGRADED_AT_MAX
+| 2
+| 
+|-
+| AbilityLearnResult_t.ABILITY_CANNOT_BE_UPGRADED_REQUIRES_LEVEL
+| 3
+| 
+|-
+| AbilityLearnResult_t.ABILITY_NOT_LEARNABLE
+| 4
 | 
 |}
