@@ -4,44 +4,58 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
+		<string>kv</string>
 		<string>txt</string>
 	</array>
 	<key>name</key>
-	<string>DOTA KV</string>
+	<string>Dota 2 KV</string>
 	<key>patterns</key>
 	<array>
 		<dict>
 			<key>comment</key>
-			<string>Ability Special Vars</string>
+			<string>A single line comment</string>
 			<key>match</key>
-			<string>%\w+</string>
-			<key>name</key>
-			<string>keyword.other.txt</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Single line comment</string>
-			<key>match</key>
-			<string>(^|(\t|\s?)+)//.*</string>
+			<string>//.*</string>
 			<key>name</key>
 			<string>comment.line.txt</string>
 		</dict>
 		<dict>
-			<key>comment</key>
-			<string>Key color</string>
 			<key>match</key>
-			<string>^(\t|\s)*"[\w\s]+"</string>
+			<string>BaseClass</string>
 			<key>name</key>
-			<string>entity.name.tag.txt</string>
+			<string>support.function.library</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Value color</string>
+			<string>A group of other sections or KV pairs</string>
 			<key>match</key>
-			<string>(\t|\s)*"[\+\-\*\%\|\.\;\w\s\/]*"</string>
+			<string>^\s*(?!".*?"\s*".*?")".*?"</string>
 			<key>name</key>
-			<string>string.quoted.txt</string>
+			<string>support.class</string>
 		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>string.qupted.txt</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>string.quoted.txt</string>
+				</dict>
+
+			</dict>
+			<key>comment</key>
+			<string>A key value pair</string>
+			<key>match</key>
+			<string>(".*?")\s*(".*?")</string>
+			<key>name</key>
+			<string>entity.name.tag.txt</string>
+		</dict>
+		
 	</array>
 	<key>scopeName</key>
 	<string>source.txt</string>
