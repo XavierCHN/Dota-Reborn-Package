@@ -1,8 +1,6 @@
 Dota Sublime Package
 ================================
 
-#### Version: 2015.07.11 GMT+8
-
 Code completion and syntax for DOTA 2 mod development
 
 # Includes
