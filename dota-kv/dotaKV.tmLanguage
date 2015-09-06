@@ -4,43 +4,117 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
+		<string>kv</string>
 		<string>txt</string>
 	</array>
 	<key>name</key>
-	<string>DOTA KV</string>
+	<string>Dota KV</string>
 	<key>patterns</key>
 	<array>
+		<!-- the syntax highlight should help to find syntax error
+		should not be just wow! looks amazing -->
 		<dict>
 			<key>comment</key>
-			<string>Ability Special Vars</string>
+			<string>A single line comment</string>
 			<key>match</key>
-			<string>%\w+</string>
-			<key>name</key>
-			<string>keyword.other.txt</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Single line comment</string>
-			<key>match</key>
-			<string>(^|(\t|\s?)+)//.*</string>
+			<string>//.*</string>
 			<key>name</key>
 			<string>comment.line.txt</string>
 		</dict>
+
 		<dict>
-			<key>comment</key>
-			<string>Key color</string>
 			<key>match</key>
-			<string>^(\t|\s)*"[\w\s]+"</string>
+			<string>\"(-?\d+)(\.\d+)?\"</string>
 			<key>name</key>
-			<string>entity.name.tag.txt</string>
+			<string>constant.numeric.single</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\"((-?\d+)(\.\d+)?(\s*)?)+\"</string>
+			<key>name</key>
+			<string>constant.numeric.single</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\"(BaseClass|AbilityBehavior|AbilityUnitTargetType|AbilityUnitTargetTeam|AbilityTextureName|MaxLevel|AbilityCastRange|AbilityCastPoint|AbilityCooldown|AbilityManaCost|AbilityDamage|SpellImmunityType|AbilityUnitDamageType|var_type|OnSpellStart|LevelsBetweenUpgrades|UnitName|Duration|UnitCount|Dodgeable|ProvidesVision|VisionRadius|MoveSpeed|SourceAttachment|Type|Damage|particle_folder|Passive|IsHidden|IsDebuff|AbilityChannelTime|ModifierName|ThinkInterval|Types|Teams|Flags|Center|SpawnRadius|TARGET|CASTER|ExcludeFlags|StartPosition|MaxTargets|Random|AbilityCastMinimumRange|Line|POINT|StartRadius|EndRadius|FixedDistance|TargetTeams|TargetTypes|TargetFlags|HasFrontalCone|DeleteOnHit|AbilityUnitTargetFlags|AbilityType|RequiredLevel|AbilityCastAnimation|AbilitySharedCooldown|AbilitySharedWithTeammates|AbilityGoldCost|AnimationPlaybackRate|AnimationIgnoresModelScale|AbilityCastRangeBuffer|AbilityChannelledManaCostPerSecond|AbilityDuration|AoERadius|Radius|EffectAttachType|EffectName|Delay|UnitLimit|GrantsGold|GrantsXP|Function|ScriptFile|AbilityModifierSupportBonus|AbilityProcsMagicStick|HotKeyOverride|DisplayAdditionalHeroes|FightRecapLevel|OnCastbar|Attributes|TextureName|IsPurgable|StatusEffectName|StatusEffectPriority|OverrideAnimation|IsBuff|EffectRadius|AllowIllusionDuplicate|IsStunDebuff|OnLearnbar|AbilityModifierSupportValue)\"</string>
+			<key>name</key>
+			<string>support.function.library.abilitykv</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>Value color</string>
+			<string>item specfic strings</string>
 			<key>match</key>
-			<string>(\t|\s)*"[\+\-\*\%\|\.\;\w\s\/]*"</string>
+			<string>\"(ItemDroppable|ItemSellable|ItemPurchasable|ItemKillable|ItemPermanent|ItemStackable|ItemShareability|ID|ItemCost)\"</string>
 			<key>name</key>
-			<string>string.quoted.txt</string>
+			<string>support.function.library.abilitykv</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\"(Ability([0-9]{1}|1[0-5]{1})|AbilityLayout|ArmorGain|ArmorPhysical|AttachWearables|AttackAcquisitionRange|AttackAnimationPoint|AttackCapabilities|AttackDamageMax|AttackDamageMin|AttackDamageType|AttackRange|AttackRangeBuffer|AttackRate|AttributeAgilityGain|AttributeBaseAgility|AttributeBaseIntelligence|AttributeBaseStrength|AttributeIntelligenceGain|AttributePrimary|AttributeStrengthGain|AutoAttacksByDefault|BaseClass|BoundsHullName|BountyGain|BountyGoldMax|BountyGoldMin|BountyXP|CanBeDominated|CanRespawn|CombatClassAttack|CombatClassDefend|ConsideredHero|Creature|DamageGain|DisableClumpingBehavior|DisableResistance|EquippedItems|FollowRange|GameSoundsFile|HasAggressiveStance|HasInventory|HealthBarOffset|HPGain|IdleSoundLoop|IgnoreAddSummonedToSelection|IsAncient|IsNeutralUnitType|Level|MagicalResistance|MagicResistGain|MinimapIcon|MinimapIconSize|Model|ModelScale|MovementCapabilities|MovementSpeed|MovementTurnRate|MoveSpeedGain|ProjectileModel|ProjectileSpeed|RingRadius|SelectionGroup|SelectOnSpawn|ShouldDoFlyHeightVisual|SoundSet|StatusHealth|StatusHealthRegen|StatusMana|StatusManaRegen|TeamName|UnitLabel|UnitRelationshipClass|UnitRelationShipClass|VisionDaytimeRange|VisionNighttimeRange|vscripts|WakesNeutrals|Wearable[0-9]|XPGain)\"</string>
+			<key>name</key>
+			<string>support.function.library.unitskv</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\"%[^\s\"]*\"</string>
+			<key>name</key>
+			<string>variable.parameter</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>constant.character.targetblock</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>target block</string>
+			<key>match</key>
+			<string>("Target")\s*("(TARGET|CASTER|POINT)")</string>
+			<key>name</key>
+			<string>entity.name.tag.target</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>constant.character.targetblock</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>target block</string>
+			<key>match</key>
+			<string>("EffectName")\s*(".*?.vpcf")</string>
+			<key>name</key>
+			<string>entity.name.tag.target</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>A group of other sections or KV pairs</string>
+			<key>match</key>
+			<string>^\s*(?!".*?"\s*".*?")".*?"</string>
+			<key>name</key>
+			<string>keyword.control</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\".*?\"</string>
+			<key>name</key>
+			<string>string.quoted</string>
 		</dict>
 	</array>
 	<key>scopeName</key>
