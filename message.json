@@ -1,4 +1,5 @@
 {
 	"install": "readme.md",
-	"1.0.0": "messages/1.0.0.md"
+	"1.0.0": "messages/1.0.0.md",
+	"1.0.1": "messages/1.0.1.md"
 }
