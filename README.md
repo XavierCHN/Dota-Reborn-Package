@@ -1,7 +1,7 @@
-Dota Sublime Package
+Dota Reborn Package
 ================================
 
-Code completion and syntax for DOTA 2 mod development
+Code completion and KV/VCSS/VLUA/VXML syntax for DOTA 2 reborn custom gamemode development
 
 # Includes
 
