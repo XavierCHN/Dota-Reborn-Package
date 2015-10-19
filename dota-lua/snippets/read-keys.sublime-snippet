@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[local caster = keys.caster
+local target = keys.target
+local ability = keys.ability
+local level = ability:GetLevel() - 1
+local $1 = ability:GetLevelSpecialValueFor("$1", level)]]></content>
+    <tabTrigger>readkeys</tabTrigger>
+    <scope>source.lua</scope>
+    <description>read caster target and ability</description>
+</snippet>

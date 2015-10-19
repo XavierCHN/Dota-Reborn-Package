@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[local $1 = ability:GetLevelSpecialValueFor("$1", level)]]></content>
+    <tabTrigger>readspecial</tabTrigger>
+    <scope>source.lua</scope>
+    <description>line comment</description>
+</snippet>
