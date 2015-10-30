@@ -3,6 +3,17 @@
 
 	"completions":
 	[
+		// #region 2015.10.30 update
+		{ "trigger":"EmitAnnouncerSound", "contents":"EmitAnnouncerSound(${1:string soundName})"},
+		{ "trigger":"EmitAnnouncerSoundForPlayer", "contents":"EmitAnnouncerSoundForPlayer(${1:string soundName}, ${1:int playerID})"},
+		{ "trigger":"EmitAnnouncerSoundForTeam", "contents":"EmitAnnouncerSoundForTeam(${1:string soundName}, ${2:int teamNumber})"},
+		{ "trigger":"EmitAnnouncerSoundForTeamOnLocation", "contents":"EmitAnnouncerSoundForTeamOnLocation(${1:string soundName}, ${2:int teamNumber}, ${3:vector location})"},
+		{ "trigger":"IsClient", "contents":"IsClient()"},
+		{ "trigger":"GetStickyItemDisabled", "contents":"GetStickyItemDisabled()"},
+		{ "trigger":"GetPlayerCustomGameAccountRecord", "contents":"GetPlayerCustomGameAccountRecord(${1:int playerID}) ${2:-- marked as unreleased at the moment}"},
+		{ "trigger":"SetCustomGameAccountRecordSaveFunction", "contents":"SetCustomGameAccountRecordSaveFunction(${1:handle unknown}, ${2:handle unknown})))"},
+		{ "trigger":"SetStartingGold", "contents":"SetStartingGold()"},
+		// #endregion 2015.10.30 upadte
 
 		// #region Lua Modifier Functions
 		{ "trigger":"DeclareFunctions", "contents":"DeclareFunctions()"},
