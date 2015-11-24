@@ -2,6 +2,13 @@
 	"scope":"source.js,source.xml,text.dotaxml",
 	"completions":
 	[
+		// #region 2015.11.24 update
+		{"tirgger":"Entities_GetPhysicalArmorValue", "contents":"Entities.GetPhysicalArmorValue(${1:nEntityIndex})"},
+		{"tirgger":"Entities_GetMagicalArmorValue", "contents":"Entities.GetMagicalArmorValue(${1:nEntityIndex})"},
+		{"tirgger":"Entities_GetBonusPhysicalArmor", "contents":"Entities.GetBonusPhysicalArmor(${1:nEntityIndex})"},
+		// #endregion 2015.11.24 update
+
+
 		// #region Aug 13th, 2015update
 		{"tirgger":"Entities_GetCurrentXP", "contents":"Entities.GetCurrentXP(${1:nEntityIndex})"},
 		{"tirgger":"Entities_GetNeededXPToLevel", "contents":"Entities.GetNeededXPToLevel(${1:nEntityIndex})"},
