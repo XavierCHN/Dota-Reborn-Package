@@ -1,0 +1,9 @@
+Entities=CEntities
+PlayerResource=CDOTA_PlayerResource
+ParticleManager=CScriptParticleManager
+HeroList=CScriptHeroList
+GameRules=CDOTAGamerules
+ConVars=Convars
+Vector=Vector
+CustomGameEventManager=CCustomGameEventManager
+CustomNetTables=CCustomNetTableManager
