@@ -13,6 +13,18 @@ Code completion and KV/VCSS/VLUA/VXML syntax for DOTA 2 reborn custom gamemode d
 
 # Installation
 
+### Install With Package Control
+
+1. Install Package control [Package Control Installation Guide](https://packagecontrol.io/installation);
+
+2. Press `Ctrl+Shift+P`, Type `Package Control: Install Package` and hit `Enter`;
+
+3. Type `Dota Reborn Package` after the repositories are loaded and hit `Enter`;
+
+4. Done! 
+
+### Manual
+
 * Drag the `Dota-Sublime-Package` folder into your packages folder.
 ```sh
 # Sublime text 2
