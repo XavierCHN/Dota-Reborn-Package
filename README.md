@@ -13,7 +13,7 @@ Code completion and KV/VCSS/VLUA/VXML syntax for DOTA 2 reborn custom gamemode d
 
 # Installation
 
-### Install With Package Control
+### ~~Install With Package Control~~
 
 1. Install Package control [Package Control Installation Guide](https://packagecontrol.io/installation);
 
