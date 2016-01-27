@@ -21,7 +21,6 @@ Code completion and KV/VCSS/VLUA/VXML syntax for DOTA 2 reborn custom gamemode d
 
 ~~3. Type `Dota Reborn Package` after the repositories are loaded and hit `Enter`;~~
 
-~~4. Done! ~~
 
 ### Manual
 
