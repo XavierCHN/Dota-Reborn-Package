@@ -2,6 +2,19 @@
 	"scope":"source.js,source.xml,text.dotaxml",
 	"completions":
 	[
+		// #region 2016.1.27 update
+		{"tirgger":"Players_GetTeam", "contents":"Players.GetTeam(${1:integer iPlayerID})"},
+
+		// TODO
+		// {"tirgger":"Panel_hittestchildren", "contents":"Panel.hittestchildren"},
+		// Panel.ClearPropertyFromCode
+
+		{"trigger":"Panel_UpdateFocusInContext", "contents":"Panel.UpdateFocusInContext()"},
+		{"trigger":"Panel_RegisterForReadyEvents", "contents":"Panel.RegisterForReadyEvents(${1:boolean boolean_1})"},
+		{"trigger":"Panel_BReadyForDisplay", "contents":"Panel.SetReadyForDisplay(${1:boolean boolean_1})"},
+		
+		// #endregion 2016.1.27 update
+
 		// #region 2015.11.24 update
 		{"tirgger":"Entities_GetPhysicalArmorValue", "contents":"Entities.GetPhysicalArmorValue(${1:nEntityIndex})"},
 		{"tirgger":"Entities_GetMagicalArmorValue", "contents":"Entities.GetMagicalArmorValue(${1:nEntityIndex})"},
