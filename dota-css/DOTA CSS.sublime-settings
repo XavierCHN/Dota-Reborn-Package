@@ -1,6 +1,0 @@
-{
-	"extensions": ["css"],
-	"auto_complete_triggers": [
-		{"selector": "source.css", "characters": ":-qwertyuiopasdfghjklzxcvbnmQWERTYUIOPADSFGHJKLZXCVBNM"}
-	]
-}
