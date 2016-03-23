@@ -2,6 +2,10 @@
 	"scope":"source.js,source.xml,text.dotaxml",
 	"completions":
 	[
+		// #region spring cleaning 2016 update
+		{"tirgger":"GameUI_EnableAliMode", "contents":"GameUI.EnableAliMode( ${1:boolean bEnable}, ${2:integer nPort}, ${3:js_value offsetVal}, ${4:integer nScale} )"},
+
+
 		// #region 2016.1.27 update
 		{"tirgger":"Players_GetTeam", "contents":"Players.GetTeam(${1:integer iPlayerID})"},
 
