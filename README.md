@@ -15,11 +15,11 @@ Code completion and KV/VCSS/VLUA/VXML syntax for DOTA 2 reborn custom gamemode d
 
 ### ~~Install With Package Control~~
 
-~~1. Install Package control [Package Control Installation Guide](https://packagecontrol.io/installation);~~
+1. Install Package control [Package Control Installation Guide](https://packagecontrol.io/installation);
 
-~~2. Press `Ctrl+Shift+P`, Type `Package Control: Install Package` and hit `Enter`;~~
+2. Press `Ctrl+Shift+P`, Type `Package Control: Install Package` and hit `Enter`;
 
-~~3. Type `Dota Reborn Package` after the repositories are loaded and hit `Enter`;~~
+3. Type `Dota Reborn Package` after the repositories are loaded and hit `Enter`;
 
 
 ### Manual
