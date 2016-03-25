@@ -4,6 +4,9 @@
 	[
 		// #region spring cleaning 2016 update
 		{"tirgger":"GameUI_EnableAliMode", "contents":"GameUI.EnableAliMode( ${1:boolean bEnable}, ${2:integer nPort}, ${3:js_value offsetVal}, ${4:integer nScale} )"},
+		{"trigger":"Entities_GetForward", "contents":"Entities.GetForward(${1:integer nEntityIndex})"},
+		{"trigger":"Entities_Right", "contents":"Entities.GetRight(${1:integer nEntityIndex})"},
+		{"trigger":"Entities_Up", "contents":"Entities.GetUp(${1:integer nEntityIndex})"},
 
 
 		// #region 2016.1.27 update
