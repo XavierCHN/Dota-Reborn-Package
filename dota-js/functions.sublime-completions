@@ -2,6 +2,12 @@
 	"scope":"source.js,source.xml,text.dotaxml",
 	"completions":
 	[
+		// #region 6.87 update
+		{"trigger":"Game_GetCustomGameDifficulity","contents":"Game.GetCustomGameDifficulty()"},
+		{"trigger":"Game_GetScreenWidth","contents":"Game.GetScreenWidth()"},
+		{"trigger":"Game_GetScreenHeight","contents":"Game.GetScreenHeight()"},
+		// #endregion 6.87 update
+
 		// #region spring cleaning 2016 update
 		{"tirgger":"GameUI_EnableAliMode", "contents":"GameUI.EnableAliMode( ${1:boolean bEnable}, ${2:integer nPort}, ${3:js_value offsetVal}, ${4:integer nScale} )"},
 		{"trigger":"Entities_GetForward", "contents":"Entities.GetForward(${1:integer nEntityIndex})"},
