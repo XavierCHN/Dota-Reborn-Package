@@ -1,0 +1,233 @@
+[   General ]: {| class="wikitable"
+[   General ]: ! Event
+[   General ]: ! Panel Event
+[   General ]: ! Description
+[   General ]: |-
+[   General ]: | <code>AddStyle(string class)</code>
+[   General ]: | Yes
+[   General ]: | Add a CSS class to a panel.
+[   General ]: |-
+[   General ]: | <code>AddStyleToEachChild(string class)</code>
+[   General ]: | Yes
+[   General ]: | Add a CSS class to all children of this panel.
+[   General ]: |-
+[   General ]: | <code>AsyncEvent(float delay, event eventToFire)</code>
+[   General ]: | No
+[   General ]: | Fire another event after a delay (in seconds).
+[   General ]: |-
+[   General ]: | <code>DOTAHideAbilityTooltip()</code>
+[   General ]: | Yes
+[   General ]: | Hide the ability tooltip
+[   General ]: |-
+[   General ]: | <code>DOTAHideBuffTooltip()</code>
+[   General ]: | Yes
+[   General ]: | Hide the buff tooltip
+[   General ]: |-
+[   General ]: | <code>DOTAHideEconItemTooltip()</code>
+[   General ]: | Yes
+[   General ]: | Hide the econ item tooltip.
+[   General ]: |-
+[   General ]: | <code>DOTAHideProfileCardTooltip()</code>
+[   General ]: | Yes
+[   General ]: | Hide the profile card tooltip.
+[   General ]: |-
+[   General ]: | <code>DOTAHideTextTooltip()</code>
+[   General ]: | Yes
+[   General ]: | Hide the text tooltip
+[   General ]: |-
+[   General ]: | <code>DOTAHideTitleImageTextTooltip()</code>
+[   General ]: | Yes
+[   General ]: | Hide the title image text tooltip.
+[   General ]: |-
+[   General ]: | <code>DOTAHideTitleTextTooltip()</code>
+[   General ]: | Yes
+[   General ]: | Hide the title text tooltip.
+[   General ]: |-
+[   General ]: | <code>DOTAShowAbilityInventoryItemTooltip(int32 entityIndex, int32 inventorySlot)</code>
+[   General ]: | Yes
+[   General ]: | Show tooltip for an item in the entityIndex NPC's inventory.
+[   General ]: |-
+[   General ]: | <code>DOTAShowAbilityTooltip(string abilityName)</code>
+[   General ]: | Yes
+[   General ]: | Show an ability tooltip.
+[   General ]: |-
+[   General ]: | <code>DOTAShowAbilityTooltipForEntityIndex(string abilityName, int32 entityIndex)</code>
+[   General ]: | Yes
+[   General ]: | Show an ability tooltip. Level information comes from the entity specified by the entityIndex.
+[   General ]: |-
+[   General ]: | <code>DOTAShowAbilityTooltipForLevel(string abilityName, int32)</code>
+[   General ]: | Yes
+[   General ]: | Show an ability tooltip for a specific level.
+[   General ]: |-
+[   General ]: | <code>DOTAShowBuffTooltip(int32 entityIndex, int32 buffSerial, bool bOnEnemy)</code>
+[   General ]: | Yes
+[   General ]: | Show a buff tooltip for the specified entityIndex + buff serial.
+[   General ]: |-
+[   General ]: | <code>DOTAShowEconItemTooltip(class item_definition_index_t itemDef, class style_index_t styleIndex, int32 heroID)</code>
+[   General ]: | Yes
+[   General ]: | Show the econ item tooltip for a given item, style, and hero. Use 0 for the default style, and -1 for the default hero.
+[   General ]: |-
+[   General ]: | <code>DOTAShowProfileCardTooltip(uint64 steamID, bool useProName)</code>
+[   General ]: | Yes
+[   General ]: | Show a user's profile card. Use pro name determines whether to use their professional team name if applicable.
+[   General ]: |-
+[   General ]: | <code>DOTAShowTextTooltip(string text)</code>
+[   General ]: | Yes
+[   General ]: | Show a tooltip with the given text.
+[   General ]: |-
+[   General ]: | <code>DOTAShowTextTooltipStyled(string text, string style)</code>
+[   General ]: | Yes
+[   General ]: | Show a tooltip with the given text. Also apply a CSS class named "style" to allow custom styling.
+[   General ]: |-
+[   General ]: | <code>DOTAShowTitleImageTextTooltip(string title, string imagePath, string text)</code>
+[   General ]: | Yes
+[   General ]: | Show a tooltip with the given title, image, and text.
+[   General ]: |-
+[   General ]: | <code>DOTAShowTitleImageTextTooltipStyled(string title, string imagePath, string text, string style)</code>
+[   General ]: | Yes
+[   General ]: | Show a tooltip with the given title, image, and text. Also apply a CSS class named "style" to allow custom styling.
+[   General ]: |-
+[   General ]: | <code>DOTAShowTitleTextTooltip(string title, string text)</code>
+[   General ]: | Yes
+[   General ]: | Show a tooltip with the given title and text.
+[   General ]: |-
+[   General ]: | <code>DOTAShowTitleTextTooltipStyled(string title, string text, string style)</code>
+[   General ]: | Yes
+[   General ]: | Show a tooltip with the given title and text. Also apply a CSS class named "style" to allow custom styling.
+[   General ]: |-
+[   General ]: | <code>IfHasClassEvent(string class, event eventToFire)</code>
+[   General ]: | Yes
+[   General ]: | Fire another event if this panel has a given class.
+[   General ]: |-
+[   General ]: | <code>IfHoverOtherEvent(string otherPanelID, event eventToFire)</code>
+[   General ]: | Yes
+[   General ]: | Fire another event if currently hovering over a panel with the given ID.
+[   General ]: |-
+[   General ]: | <code>IfNotHasClassEvent(string class, event eventToFire)</code>
+[   General ]: | Yes
+[   General ]: | Fire another event if this panel does not have a given class.
+[   General ]: |-
+[   General ]: | <code>IfNotHoverOtherEvent(string otherPanelID, event eventToFire)</code>
+[   General ]: | Yes
+[   General ]: | Fire another event if not currently hovering over a panel with the given ID.
+[   General ]: |-
+[   General ]: | <code>MovePanelDown(int32 repeatCount)</code>
+[   General ]: | Yes
+[   General ]: | Move down from the panel. By default, this will change the focus position, but other panel types may implement this differently.
+[   General ]: |-
+[   General ]: | <code>MovePanelLeft(int32 repeatCount)</code>
+[   General ]: | Yes
+[   General ]: | Move left from the panel. By default, this will change the focus position, but other panel types may implement this differently.
+[   General ]: |-
+[   General ]: | <code>MovePanelRight(int32 repeatCount)</code>
+[   General ]: | Yes
+[   General ]: | Move right from the panel. By default, this will change the focus position, but other panel types may implement this differently.
+[   General ]: |-
+[   General ]: | <code>MovePanelUp(int32 repeatCount)</code>
+[   General ]: | Yes
+[   General ]: | Move up from the panel. By default, this will change the focus position, but other panel types may implement this differently.
+[   General ]: |-
+[   General ]: | <code>PageDown()</code>
+[   General ]: | No
+[   General ]: | Scroll the panel down by one page.
+[   General ]: |-
+[   General ]: | <code>PageLeft()</code>
+[   General ]: | No
+[   General ]: | Scroll the panel left by one page.
+[   General ]: |-
+[   General ]: | <code>PagePanelDown()</code>
+[   General ]: | Yes
+[   General ]: | Scroll the panel down by one page.
+[   General ]: |-
+[   General ]: | <code>PagePanelLeft()</code>
+[   General ]: | Yes
+[   General ]: | Scroll the panel left by one page.
+[   General ]: |-
+[   General ]: | <code>PagePanelRight()</code>
+[   General ]: | Yes
+[   General ]: | Scroll the panel left by one page.
+[   General ]: |-
+[   General ]: | <code>PagePanelUp()</code>
+[   General ]: | Yes
+[   General ]: | Scroll the panel up by one page.
+[   General ]: |-
+[   General ]: | <code>PageRight()</code>
+[   General ]: | No
+[   General ]: | Scroll the panel right by one page.
+[   General ]: |-
+[   General ]: | <code>PageUp()</code>
+[   General ]: | No
+[   General ]: | Scroll the panel up by one page.
+[   General ]: |-
+[   General ]: | <code>RemoveStyle(string class)</code>
+[   General ]: | Yes
+[   General ]: | Remove a CSS class from a panel.
+[   General ]: |-
+[   General ]: | <code>RemoveStyleFromEachChild(string class)</code>
+[   General ]: | Yes
+[   General ]: | Remove a CSS class from all children of this panel.
+[   General ]: |-
+[   General ]: | <code>ScrollDown()</code>
+[   General ]: | No
+[   General ]: | Scroll the panel down by one line.
+[   General ]: |-
+[   General ]: | <code>ScrollLeft()</code>
+[   General ]: | No
+[   General ]: | Scroll the panel left by one line.
+[   General ]: |-
+[   General ]: | <code>ScrollPanelDown()</code>
+[   General ]: | Yes
+[   General ]: | Scroll the panel down by one line.
+[   General ]: |-
+[   General ]: | <code>ScrollPanelLeft()</code>
+[   General ]: | Yes
+[   General ]: | Scroll the panel left by one line.
+[   General ]: |-
+[   General ]: | <code>ScrollPanelRight()</code>
+[   General ]: | Yes
+[   General ]: | Scroll the panel right by one line.
+[   General ]: |-
+[   General ]: | <code>ScrollPanelUp()</code>
+[   General ]: | Yes
+[   General ]: | Scroll the panel up by one line.
+[   General ]: |-
+[   General ]: | <code>ScrollRight()</code>
+[   General ]: | No
+[   General ]: | Scroll the panel right by one line.
+[   General ]: |-
+[   General ]: | <code>ScrollToBottom()</code>
+[   General ]: | Yes
+[   General ]: | Scroll this panel to the bottom.
+[   General ]: |-
+[   General ]: | <code>ScrollToTop()</code>
+[   General ]: | Yes
+[   General ]: | Scroll this panel to the top.
+[   General ]: |-
+[   General ]: | <code>ScrollUp()</code>
+[   General ]: | No
+[   General ]: | Scroll the panel up by one line.
+[   General ]: |-
+[   General ]: | <code>SetChildPanelsSelected(bool selected)</code>
+[   General ]: | Yes
+[   General ]: | Set whether any child panels are :selected.
+[   General ]: |-
+[   General ]: | <code>SetInputFocus()</code>
+[   General ]: | Yes
+[   General ]: | Set focus to this panel.
+[   General ]: |-
+[   General ]: | <code>SetPanelEnabled(bool enabled)</code>
+[   General ]: | Yes
+[   General ]: | Sets whether the given panel is enabled
+[   General ]: |-
+[   General ]: | <code>SetPanelSelected(bool selected)</code>
+[   General ]: | Yes
+[   General ]: | Set whether this panel is :selected.
+[   General ]: |-
+[   General ]: | <code>TogglePanelSelected()</code>
+[   General ]: | Yes
+[   General ]: | Toggle whether this panel is :selected.
+[   General ]: |-
+[   General ]: | <code>ToggleStyle(string class)</code>
+[   General ]: | Yes
+[   General ]: | Toggle whether a panel has the given CSS class.
+[   General ]: |}
