@@ -5,15 +5,13 @@ Code completion and KV/VCSS/VLUA/VXML syntax for DOTA 2 reborn custom gamemode d
 
 # Includes
 
-* Panorama css ( properties completions ) -- TODO
 * Panorama js ( functions and constants completions)
-* Panorama xml ( syntax , functions/constants completions and snippets)
-* Lua scripts ( functions and constants completions) -- Credits to [hex6](https://github.com/hex6)
-* KeyValue scripts ( syntax, constants and snippets) -- Credits to [bhargavrpatel](https://github.com/bhargavrpatel)
+* Lua scripts ( functions and constants completions) -- Thanks to [hex6](https://github.com/hex6)
+* KeyValue scripts ( syntax, constants and snippets) -- Thanks to [bhargavrpatel](https://github.com/bhargavrpatel)
 
 # Installation
 
-### ~~Install With Package Control~~
+### Install With Package Control
 
 1. Install Package control [Package Control Installation Guide](https://packagecontrol.io/installation);
 
