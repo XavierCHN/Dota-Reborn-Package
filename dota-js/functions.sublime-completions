@@ -245,7 +245,7 @@
 		{"trigger":"Entities_IsLootGreevil", "contents":"Entities.IsLootGreevil(${1:integer nEntityIndex})"},
 		{"trigger":"Entities_IsLowAttackPriority", "contents":"Entities.IsLowAttackPriority(${1:integer nEntityIndex})"},
 		{"trigger":"Entities_IsMagicImmune", "contents":"Entities.IsMagicImmune(${1:integer nEntityIndex})"},
-		{"trigger":"Entities_IsMechanical", "contents":"Entities.IsMechanical(${1:integer nEntityIndex})"},
+		// {"trigger":"Entities_IsMechanical", "contents":"Entities.IsMechanical(${1:integer nEntityIndex})"},
 		{"trigger":"Entities_IsMuted", "contents":"Entities.IsMuted(${1:integer nEntityIndex})"},
 		{"trigger":"Entities_IsNeutralUnitType", "contents":"Entities.IsNeutralUnitType(${1:integer nEntityIndex})"},
 		{"trigger":"Entities_IsNightmared", "contents":"Entities.IsNightmared(${1:integer nEntityIndex})"},
