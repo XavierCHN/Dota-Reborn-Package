@@ -2,6 +2,13 @@
 	"scope":"source.js,source.xml,text.dotaxml",
 	"completions":
 	[
+		// #region 2016.7.17 update
+		{"trigger":"GameUI_SetCameraTargetPosition","contents":"GameUI.SetCameraTargetPosition( ${1:js_value vec3}, ${2:float flLerp} )"},
+		{"trigger":"RunScriptInPanelContext","contents","RunScriptInPanelContext(${1:js_args_unknown})"},
+		{"trigger":"DOTAHideProfileCardBattleCupTooltip","contents":"DOTAHideProfileCardBattleCupTooltip()"},
+		{"trigger","DOTAShowProfileCardBattleCupTooltip","contents":"DOTAShowProfileCardBattleCupTooltip(${1:uint64 SteamID64})"},
+		// #endregion 2016.7.17 update
+	
 		// #region 6.87 update
 		{"trigger":"Game_GetCustomGameDifficulity","contents":"Game.GetCustomGameDifficulty()"},
 		{"trigger":"Game_GetScreenWidth","contents":"Game.GetScreenWidth()"},
