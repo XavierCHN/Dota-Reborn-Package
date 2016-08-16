@@ -4,11 +4,11 @@
 	[
 		// #region 2016.7.17 update
 		{"trigger":"GameUI_SetCameraTargetPosition","contents":"GameUI.SetCameraTargetPosition( ${1:js_value vec3}, ${2:float flLerp} )"},
-		{"trigger":"RunScriptInPanelContext","contents","RunScriptInPanelContext(${1:js_args_unknown})"},
+		{"trigger":"RunScriptInPanelContext","contents":"RunScriptInPanelContext(${1:js_args_unknown})"},
 		{"trigger":"DOTAHideProfileCardBattleCupTooltip","contents":"DOTAHideProfileCardBattleCupTooltip()"},
-		{"trigger","DOTAShowProfileCardBattleCupTooltip","contents":"DOTAShowProfileCardBattleCupTooltip(${1:uint64 SteamID64})"},
+		{"trigger":"DOTAShowProfileCardBattleCupTooltip","contents":"DOTAShowProfileCardBattleCupTooltip(${1:uint64 SteamID64})"},
 		// #endregion 2016.7.17 update
-	
+
 		// #region 6.87 update
 		{"trigger":"Game_GetCustomGameDifficulity","contents":"Game.GetCustomGameDifficulty()"},
 		{"trigger":"Game_GetScreenWidth","contents":"Game.GetScreenWidth()"},
@@ -32,7 +32,7 @@
 		{"trigger":"Panel_UpdateFocusInContext", "contents":"Panel.UpdateFocusInContext()"},
 		{"trigger":"Panel_RegisterForReadyEvents", "contents":"Panel.RegisterForReadyEvents(${1:boolean boolean_1})"},
 		{"trigger":"Panel_BReadyForDisplay", "contents":"Panel.SetReadyForDisplay(${1:boolean boolean_1})"},
-		
+
 		// #endregion 2016.1.27 update
 
 		// #region 2015.11.24 update
@@ -48,11 +48,11 @@
 
 		// todo: Particles Object haven't appear in cl_panorama_script_help_2 yet
 
-		// from cl_panorama_script_help2 
+		// from cl_panorama_script_help2
 		{"trigger":"GameEvents_SendEventClientSide", "contents":"GameEvents.SendEventClientSide(${1:cstring pEventName}, ${2:js_object objectEventArgs})"},
 
 		// #endregion Aug 13th, 2015 update
-		
+
 		// #region July 28th, 2015 update
 		// buff related apis
 		{"trigger":"Buffs_GetStackCount", "contents":"Buffs.GetStackCount( ${1:nQueryUnitEntityIndex}, ${2:nBuffSerial});"},
