@@ -2,6 +2,13 @@
 	"scope":"source.js,source.xml,text.dotaxml",
 	"completions":
 	[
+		// #region 2016.8.23 upate
+		{"trigger":"Entities_IsMoving", "contents":"Entities.IsMoving(${1:integer nEntityIndex})"},
+		{"trigger":"Game_IsGamePaused","contents":"Game.IsGamePaused()"},
+		{"trigger":"Game_IsInToolsMode","contents":"Game.IsInToolsMode()"},
+		{"trigger":"Panel_BLoadLayoutSnippet","contents":"BLoadLayoutSnippet(${1:string SnippetName})"},
+		// #endregion 2016.8.23 update
+
 		// #region 2016.7.17 update
 		{"trigger":"GameUI_SetCameraTargetPosition","contents":"GameUI.SetCameraTargetPosition( ${1:js_value vec3}, ${2:float flLerp} )"},
 		{"trigger":"RunScriptInPanelContext","contents":"RunScriptInPanelContext(${1:js_args_unknown})"},

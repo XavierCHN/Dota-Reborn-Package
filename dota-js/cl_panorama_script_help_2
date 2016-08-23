@@ -45,7 +45,7 @@
 | Install a mouse input filter
 |- 
 | EnableAliMode
-| <code>GameUI.EnableAliMode( boolean bEnable, integer nPort, js_value offsetVal, integer nScale )</code>
+| <code>GameUI.EnableAliMode( boolean bEnable, integer nPort, js_value offsetVal, float flScale )</code>
 | 
 |- 
 | GetCursorPosition
@@ -119,6 +119,14 @@
 | SetRenderTopInsetOverride
 | <code>GameUI.SetRenderTopInsetOverride( integer nInset )</code>
 | Set the gap between the top of the screen and the game rendering viewport. (Value expressed as pixels in a normalized 1024x768 viewport.)
+|- 
+| SetCameraTarget
+| <code>GameUI.SetCameraTarget( integer nTargetEntIndex )</code>
+| Set the camera target for the local player, or -1 to clear.
+|- 
+| SetCameraTargetPosition
+| <code>GameUI.SetCameraTargetPosition( js_value vec3, float flLerp )</code>
+| Set the camera target as position for the local player over specified lerp.
 |}
 
 
@@ -532,10 +540,6 @@
 | <code>Entities.IsMagicImmune( integer nEntityIndex )</code>
 | 
 |- 
-| IsMechanical
-| <code>Entities.IsMechanical( integer nEntityIndex )</code>
-| 
-|- 
 | IsMuted
 | <code>Entities.IsMuted( integer nEntityIndex )</code>
 | 
@@ -650,6 +654,10 @@
 |- 
 | UsesHeroAbilityNumbers
 | <code>Entities.UsesHeroAbilityNumbers( integer nEntityIndex )</code>
+| 
+|- 
+| IsMoving
+| <code>Entities.IsMoving( integer nEntityIndex )</code>
 | 
 |- 
 | GetAbilityCount
@@ -1428,6 +1436,14 @@
 | <code>Game.GetDOTATime( boolean bIncludePreGame, boolean bIncludeNegativeTime )</code>
 | 
 |- 
+| IsGamePaused
+| <code>Game.IsGamePaused()</code>
+| 
+|- 
+| IsInToolsMode
+| <code>Game.IsInToolsMode()</code>
+| 
+|- 
 | GetGameWinner
 | <code>Game.GetGameWinner()</code>
 | Return the team id of the winning team.
@@ -1436,17 +1452,29 @@
 | <code>Game.GetStateTransitionTime()</code>
 | 
 |- 
+| GetCustomGameDifficulty
+| <code>Game.GetCustomGameDifficulty()</code>
+| Get the difficulty setting of the game.
+|- 
 | IsHUDFlipped
 | <code>Game.IsHUDFlipped()</code>
 | Returns true if the user has enabled flipped HUD
 |- 
+| GetScreenWidth
+| <code>Game.GetScreenWidth()</code>
+| Returns the width of the display.
+|- 
+| GetScreenHeight
+| <code>Game.GetScreenHeight()</code>
+| Returns the height of the display.
+|- 
 | WorldToScreenX
 | <code>Game.WorldToScreenX( float x, float y, float z )</code>
-| Converts the specified x,y,z world co-ordinate into an x screen coordinate. Returns -1 if offscreen
+| Converts the specified x,y,z world co-ordinate into an x screen coordinate. Returns -1 if behind the camera
 |- 
 | WorldToScreenY
 | <code>Game.WorldToScreenY( float x, float y, float z )</code>
-| Converts the specified x,y,z world co-ordinate into a y screen coordinate. Returns -1 if offscreen
+| Converts the specified x,y,z world co-ordinate into a y screen coordinate. Returns -1 if behind the camera
 |- 
 | ScreenXYToWorld
 | <code>Game.ScreenXYToWorld( integer nX, integer nY )</code>
@@ -1696,7 +1724,7 @@
 | 
 |-
 | DOTA_GameState.DOTA_GAMERULES_STATE_STRATEGY_TIME
-| 4
+| 5
 | 
 |-
 | DOTA_GameState.DOTA_GAMERULES_STATE_PRE_GAME
@@ -1716,7 +1744,7 @@
 | 
 |-
 | DOTA_GameState.DOTA_GAMERULES_STATE_TEAM_SHOWCASE
-| 5
+| 4
 | 
 |-
 | DOTA_GameState.DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP
@@ -1923,6 +1951,18 @@
 | dotaunitorder_t.DOTA_UNIT_ORDER_VECTOR_TARGET_POSITION
 | 30
 | 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_RADAR
+| 31
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_SET_ITEM_COMBINE_LOCK
+| 32
+| 
+|-
+| dotaunitorder_t.DOTA_UNIT_ORDER_CONTINUE
+| 33
+| 
 |}
 
 === DOTA_OVERHEAD_ALERT ===
@@ -1993,6 +2033,10 @@
 |-
 | DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_LAST_HIT_MISS
 | 15
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_MAGICAL_BLOCK
+| 16
 | 
 |}
 
@@ -2394,10 +2438,6 @@
 | 4
 | 
 |-
-| DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_MECHANICAL
-| 8
-| 
-|-
 | DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_COURIER
 | 16
 | 
@@ -2419,7 +2459,7 @@
 | 
 |-
 | DOTA_UNIT_TARGET_TYPE.DOTA_UNIT_TARGET_ALL
-| 63
+| 55
 | 
 |}
 
@@ -2539,6 +2579,10 @@
 | DOTALimits_t.DOTA_MAX_SPECTATOR_TEAM_SIZE
 | 40
 | How many spectators can watch.
+|-
+| DOTALimits_t.DOTA_MAX_SPECTATOR_LOBBY_SIZE
+| 15
+| Max number of viewers in a spectator lobby.
 |-
 | DOTALimits_t.DOTA_DEFAULT_MAX_TEAM
 | 5
@@ -3906,6 +3950,10 @@
 | GameActivity_t.ACT_DOTA_ES_STONE_CALLER
 | 1714
 | 
+|-
+| GameActivity_t.ACT_DOTA_MK_STRIKE
+| 1715
+| 
 |}
 
 === DOTAMinimapEvent_t ===
@@ -3956,6 +4004,14 @@
 |-
 | DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_CANCEL_TELEPORTING
 | 2048
+| 
+|-
+| DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_RADAR
+| 4096
+| 
+|-
+| DOTAMinimapEvent_t.DOTA_MINIMAP_EVENT_RADAR_TARGET
+| 8192
 | 
 |}
 
@@ -4224,592 +4280,628 @@
 | 13
 | GetModifierMoveSpeedBonus_Percentage_Unique
 |-
-| modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE
+| modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE_2
 | 14
+| GetModifierMoveSpeedBonus_Percentage_Unique_2
+|-
+| modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE
+| 15
 | GetModifierMoveSpeedBonus_Special_Boots
 |-
+| modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE_2
+| 16
+| GetModifierMoveSpeedBonus_Special_Boots_2
+|-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
-| 15
+| 17
 | GetModifierMoveSpeed_Absolute
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN
-| 16
+| 18
 | GetModifierMoveSpeed_AbsoluteMin
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_LIMIT
-| 17
+| 19
 | GetModifierMoveSpeed_Limit
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_MAX
-| 18
+| 20
 | GetModifierMoveSpeed_Max
 |-
 | modifierfunction.MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
-| 19
+| 21
 | GetModifierAttackSpeedBonus_Constant
 |-
 | modifierfunction.MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_POWER_TREADS
-| 20
+| 22
 | GetModifierAttackSpeedBonus_Constant_PowerTreads
 |-
 | modifierfunction.MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY
-| 21
+| 23
 | GetModifierAttackSpeedBonus_Constant_Secondary
 |-
 | modifierfunction.MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT
-| 22
+| 24
 | GetModifierCooldownReduction_Constant
 |-
 | modifierfunction.MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT
-| 23
+| 25
 | GetModifierBaseAttackTimeConstant
 |-
 | modifierfunction.MODIFIER_PROPERTY_ATTACK_POINT_CONSTANT
-| 24
+| 26
 | GetModifierAttackPointConstant
 |-
 | modifierfunction.MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
-| 25
+| 27
 | GetModifierDamageOutgoing_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_ILLUSION
-| 26
+| 28
 | GetModifierDamageOutgoing_Percentage_Illusion
 |-
 | modifierfunction.MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE
-| 27
+| 29
 | GetModifierTotalDamageOutgoing_Percentage
 |-
+| modifierfunction.MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
+| 30
+| GetModifierSpellAmplify_Percentage
+|-
 | modifierfunction.MODIFIER_PROPERTY_MAGICDAMAGEOUTGOING_PERCENTAGE
-| 28
+| 31
 | GetModifierMagicDamageOutgoing_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE
-| 29
+| 32
 | GetModifierBaseDamageOutgoing_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE_UNIQUE
-| 30
+| 33
 | GetModifierBaseDamageOutgoing_PercentageUnique
 |-
 | modifierfunction.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
-| 31
+| 34
 | GetModifierIncomingDamage_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE
-| 32
+| 35
 | GetModifierIncomingPhysicalDamage_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_CONSTANT
-| 33
+| 36
 | GetModifierIncomingPhysicalDamageConstant
 |-
 | modifierfunction.MODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT
-| 34
+| 37
 | GetModifierIncomingSpellDamageConstant
 |-
 | modifierfunction.MODIFIER_PROPERTY_EVASION_CONSTANT
-| 35
+| 38
 | GetModifierEvasion_Constant
 |-
 | modifierfunction.MODIFIER_PROPERTY_NEGATIVE_EVASION_CONSTANT
-| 36
+| 39
 | GetModifierNegativeEvasion_Constant
 |-
 | modifierfunction.MODIFIER_PROPERTY_AVOID_DAMAGE
-| 37
+| 40
 | GetModifierAvoidDamage
 |-
 | modifierfunction.MODIFIER_PROPERTY_AVOID_SPELL
-| 38
+| 41
 | GetModifierAvoidSpell
 |-
 | modifierfunction.MODIFIER_PROPERTY_MISS_PERCENTAGE
-| 39
+| 42
 | GetModifierMiss_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
-| 40
+| 43
 | GetModifierPhysicalArmorBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_ILLUSIONS
-| 41
+| 44
 | GetModifierPhysicalArmorBonusIllusions
 |-
 | modifierfunction.MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE
-| 42
+| 45
 | GetModifierPhysicalArmorBonusUnique
 |-
 | modifierfunction.MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE_ACTIVE
-| 43
+| 46
 | GetModifierPhysicalArmorBonusUniqueActive
 |-
 | modifierfunction.MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
-| 44
+| 47
 | GetModifierMagicalResistanceBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_MAGICAL_RESISTANCE_ITEM_UNIQUE
-| 45
+| 48
 | GetModifierMagicalResistanceItemUnique
 |-
 | modifierfunction.MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE
-| 46
+| 49
 | GetModifierMagicalResistanceDecrepifyUnique
 |-
 | modifierfunction.MODIFIER_PROPERTY_BASE_MANA_REGEN
-| 47
+| 50
 | GetModifierBaseRegen
 |-
 | modifierfunction.MODIFIER_PROPERTY_MANA_REGEN_CONSTANT
-| 48
+| 51
 | GetModifierConstantManaRegen
 |-
 | modifierfunction.MODIFIER_PROPERTY_MANA_REGEN_CONSTANT_UNIQUE
-| 49
+| 52
 | GetModifierConstantManaRegenUnique
 |-
 | modifierfunction.MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE
-| 50
+| 53
 | GetModifierPercentageManaRegen
 |-
 | modifierfunction.MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE
-| 51
+| 54
 | GetModifierTotalPercentageManaRegen
 |-
 | modifierfunction.MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT
-| 52
+| 55
 | GetModifierConstantHealthRegen
 |-
 | modifierfunction.MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE
-| 53
+| 56
 | GetModifierHealthRegenPercentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_HEALTH_BONUS
-| 54
+| 57
 | GetModifierHealthBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_MANA_BONUS
-| 55
+| 58
 | GetModifierManaBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_EXTRA_STRENGTH_BONUS
-| 56
+| 59
 | GetModifierExtraStrengthBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS
-| 57
+| 60
 | GetModifierExtraHealthBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_EXTRA_MANA_BONUS
-| 58
+| 61
 | GetModifierExtraManaBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE
-| 59
+| 62
 | GetModifierExtraHealthPercentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_STATS_STRENGTH_BONUS
-| 60
+| 63
 | GetModifierBonusStats_Strength
 |-
 | modifierfunction.MODIFIER_PROPERTY_STATS_AGILITY_BONUS
-| 61
+| 64
 | GetModifierBonusStats_Agility
 |-
 | modifierfunction.MODIFIER_PROPERTY_STATS_INTELLECT_BONUS
-| 62
+| 65
 | GetModifierBonusStats_Intellect
 |-
 | modifierfunction.MODIFIER_PROPERTY_CAST_RANGE_BONUS
-| 63
+| 66
 | GetModifierCastRangeBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_ATTACK_RANGE_BONUS
-| 64
+| 67
 | GetModifierAttackRangeBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_UNIQUE
-| 65
+| 68
 | GetModifierAttackRangeBonusUnique
 |-
 | modifierfunction.MODIFIER_PROPERTY_MAX_ATTACK_RANGE
-| 66
+| 69
 | GetModifierMaxAttackRange
 |-
 | modifierfunction.MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS
-| 67
+| 70
 | GetModifierProjectileSpeedBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_REINCARNATION
-| 68
+| 71
 | ReincarnateTime
 |-
 | modifierfunction.MODIFIER_PROPERTY_RESPAWNTIME
-| 69
+| 72
 | GetModifierConstantRespawnTime
 |-
 | modifierfunction.MODIFIER_PROPERTY_RESPAWNTIME_PERCENTAGE
-| 70
+| 73
 | GetModifierPercentageRespawnTime
 |-
 | modifierfunction.MODIFIER_PROPERTY_RESPAWNTIME_STACKING
-| 71
+| 74
 | GetModifierStackingRespawnTime
 |-
 | modifierfunction.MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE
-| 72
+| 75
 | GetModifierPercentageCooldown
 |-
 | modifierfunction.MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING
-| 73
+| 76
 | GetModifierPercentageCooldownStacking
 |-
 | modifierfunction.MODIFIER_PROPERTY_CASTTIME_PERCENTAGE
-| 74
+| 77
 | GetModifierPercentageCasttime
 |-
 | modifierfunction.MODIFIER_PROPERTY_MANACOST_PERCENTAGE
-| 75
+| 78
 | GetModifierPercentageManacost
 |-
 | modifierfunction.MODIFIER_PROPERTY_DEATHGOLDCOST
-| 76
+| 79
 | GetModifierConstantDeathGoldCost
 |-
 | modifierfunction.MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE
-| 77
+| 80
 | GetModifierPreAttack_CriticalStrike
 |-
+| modifierfunction.MODIFIER_PROPERTY_PREATTACK_TARGET_CRITICALSTRIKE
+| 81
+| GetModifierPreAttack_Target_CriticalStrike
+|-
+| modifierfunction.MODIFIER_PROPERTY_MAGICAL_CONSTANT_BLOCK
+| 82
+| GetModifierMagical_ConstantBlock
+|-
 | modifierfunction.MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK
-| 78
+| 83
 | GetModifierPhysical_ConstantBlock
 |-
+| modifierfunction.MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK_SPECIAL
+| 84
+| GetModifierPhysical_ConstantBlockSpecial
+|-
 | modifierfunction.MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_UNAVOIDABLE_PRE_ARMOR
-| 79
+| 85
 | GetModifierPhysical_ConstantBlockUnavoidablePreArmor
 |-
 | modifierfunction.MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK
-| 80
+| 86
 | GetModifierTotal_ConstantBlock
 |-
 | modifierfunction.MODIFIER_PROPERTY_OVERRIDE_ANIMATION
-| 81
+| 87
 | GetOverrideAnimation
 |-
 | modifierfunction.MODIFIER_PROPERTY_OVERRIDE_ANIMATION_WEIGHT
-| 82
+| 88
 | GetOverrideAnimationWeight
 |-
 | modifierfunction.MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE
-| 83
+| 89
 | GetOverrideAnimationRate
 |-
 | modifierfunction.MODIFIER_PROPERTY_ABSORB_SPELL
-| 84
+| 90
 | GetAbsorbSpell
 |-
 | modifierfunction.MODIFIER_PROPERTY_REFLECT_SPELL
-| 85
+| 91
 | GetReflectSpell
 |-
 | modifierfunction.MODIFIER_PROPERTY_DISABLE_AUTOATTACK
-| 86
+| 92
 | GetDisableAutoAttack
 |-
 | modifierfunction.MODIFIER_PROPERTY_BONUS_DAY_VISION
-| 87
+| 93
 | GetBonusDayVision
 |-
 | modifierfunction.MODIFIER_PROPERTY_BONUS_NIGHT_VISION
-| 88
+| 94
 | GetBonusNightVision
 |-
 | modifierfunction.MODIFIER_PROPERTY_BONUS_NIGHT_VISION_UNIQUE
-| 89
+| 95
 | GetBonusNightVisionUnique
 |-
 | modifierfunction.MODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE
-| 90
+| 96
 | GetBonusVisionPercentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_FIXED_DAY_VISION
-| 91
+| 97
 | GetFixedDayVision
 |-
 | modifierfunction.MODIFIER_PROPERTY_FIXED_NIGHT_VISION
-| 92
+| 98
 | GetFixedNightVision
 |-
 | modifierfunction.MODIFIER_PROPERTY_MIN_HEALTH
-| 93
+| 99
 | GetMinHealth
 |-
 | modifierfunction.MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL
-| 94
+| 100
 | GetAbsoluteNoDamagePhysical
 |-
 | modifierfunction.MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL
-| 95
+| 101
 | GetAbsoluteNoDamageMagical
 |-
 | modifierfunction.MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE
-| 96
+| 102
 | GetAbsoluteNoDamagePure
 |-
 | modifierfunction.MODIFIER_PROPERTY_IS_ILLUSION
-| 97
+| 103
 | GetIsIllusion
 |-
 | modifierfunction.MODIFIER_PROPERTY_ILLUSION_LABEL
-| 98
+| 104
 | GetModifierIllusionLabel
 |-
 | modifierfunction.MODIFIER_PROPERTY_SUPER_ILLUSION
-| 99
+| 105
 | GetModifierSuperIllusion
 |-
 | modifierfunction.MODIFIER_PROPERTY_SUPER_ILLUSION_WITH_ULTIMATE
-| 100
+| 106
 | GetModifierSuperIllusionWithUltimate
 |-
 | modifierfunction.MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE
-| 101
+| 107
 | GetModifierTurnRate_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_DISABLE_HEALING
-| 102
+| 108
 | GetDisableHealing
 |-
+| modifierfunction.MODIFIER_PROPERTY_ALWAYS_ALLOW_ATTACK
+| 109
+| GetAlwaysAllowAttack
+|-
 | modifierfunction.MODIFIER_PROPERTY_OVERRIDE_ATTACK_MAGICAL
-| 103
+| 110
 | GetOverrideAttackMagical
 |-
 | modifierfunction.MODIFIER_PROPERTY_UNIT_STATS_NEEDS_REFRESH
-| 104
+| 111
 | GetModifierUnitStatsNeedsRefresh
 |-
 | modifierfunction.MODIFIER_PROPERTY_BOUNTY_CREEP_MULTIPLIER
-| 105
+| 112
 | GetModifierBountyCreepMultiplier
 |-
 | modifierfunction.MODIFIER_PROPERTY_BOUNTY_OTHER_MULTIPLIER
-| 106
+| 113
 | GetModifierBountyOtherMultiplier
 |-
 | modifierfunction.MODIFIER_EVENT_ON_SPELL_TARGET_READY
-| 107
+| 114
 | OnSpellTargetReady
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK_RECORD
-| 108
+| 115
 | OnAttackRecord
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK_START
-| 109
+| 116
 | OnAttackStart
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK
-| 110
+| 117
 | OnAttack
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK_LANDED
-| 111
+| 118
 | OnAttackLanded
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK_FAIL
-| 112
+| 119
 | OnAttackFail
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK_ALLIED
-| 113
+| 120
 | OnAttackAllied
 |-
 | modifierfunction.MODIFIER_EVENT_ON_PROJECTILE_DODGE
-| 114
+| 121
 | OnProjectileDodge
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ORDER
-| 115
+| 122
 | OnOrder
 |-
 | modifierfunction.MODIFIER_EVENT_ON_UNIT_MOVED
-| 116
+| 123
 | OnUnitMoved
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ABILITY_START
-| 117
+| 124
 | OnAbilityStart
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ABILITY_EXECUTED
-| 118
+| 125
 | OnAbilityExecuted
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ABILITY_FULLY_CAST
-| 119
+| 126
 | OnAbilityFullyCast
 |-
 | modifierfunction.MODIFIER_EVENT_ON_BREAK_INVISIBILITY
-| 120
+| 127
 | OnBreakInvisibility
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ABILITY_END_CHANNEL
-| 121
+| 128
 | OnAbilityEndChannel
 |-
 | modifierfunction.MODIFIER_EVENT_ON_PROCESS_UPGRADE
-| 122
+| 129
 | 
 |-
 | modifierfunction.MODIFIER_EVENT_ON_REFRESH
-| 123
+| 130
 | 
 |-
 | modifierfunction.MODIFIER_EVENT_ON_TAKEDAMAGE
-| 124
+| 131
 | OnTakeDamage
 |-
 | modifierfunction.MODIFIER_EVENT_ON_STATE_CHANGED
-| 125
+| 132
 | OnStateChanged
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ORB_EFFECT
-| 126
+| 133
 | 
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACKED
-| 127
+| 134
 | OnAttacked
 |-
 | modifierfunction.MODIFIER_EVENT_ON_DEATH
-| 128
+| 135
 | OnDeath
 |-
 | modifierfunction.MODIFIER_EVENT_ON_RESPAWN
-| 129
+| 136
 | OnRespawn
 |-
 | modifierfunction.MODIFIER_EVENT_ON_SPENT_MANA
-| 130
+| 137
 | OnSpentMana
 |-
 | modifierfunction.MODIFIER_EVENT_ON_TELEPORTING
-| 131
+| 138
 | OnTeleporting
 |-
 | modifierfunction.MODIFIER_EVENT_ON_TELEPORTED
-| 132
+| 139
 | OnTeleported
 |-
 | modifierfunction.MODIFIER_EVENT_ON_SET_LOCATION
-| 133
+| 140
 | OnSetLocation
 |-
 | modifierfunction.MODIFIER_EVENT_ON_HEALTH_GAINED
-| 134
+| 141
 | OnHealthGained
 |-
 | modifierfunction.MODIFIER_EVENT_ON_MANA_GAINED
-| 135
+| 142
 | OnManaGained
 |-
 | modifierfunction.MODIFIER_EVENT_ON_TAKEDAMAGE_KILLCREDIT
-| 136
+| 143
 | OnTakeDamageKillCredit
 |-
 | modifierfunction.MODIFIER_EVENT_ON_HERO_KILLED
-| 137
+| 144
 | OnHeroKilled
 |-
 | modifierfunction.MODIFIER_EVENT_ON_HEAL_RECEIVED
-| 138
+| 145
 | OnHealReceived
 |-
 | modifierfunction.MODIFIER_EVENT_ON_BUILDING_KILLED
-| 139
+| 146
 | OnBuildingKilled
 |-
 | modifierfunction.MODIFIER_EVENT_ON_MODEL_CHANGED
-| 140
+| 147
 | OnModelChanged
 |-
 | modifierfunction.MODIFIER_PROPERTY_TOOLTIP
-| 141
+| 148
 | OnTooltip
 |-
 | modifierfunction.MODIFIER_PROPERTY_MODEL_CHANGE
-| 142
+| 149
 | GetModifierModelChange
 |-
 | modifierfunction.MODIFIER_PROPERTY_MODEL_SCALE
-| 143
+| 150
 | GetModifierModelScale
 |-
 | modifierfunction.MODIFIER_PROPERTY_IS_SCEPTER
-| 144
+| 151
 | GetModifierScepter
 |-
 | modifierfunction.MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS
-| 145
+| 152
 | GetActivityTranslationModifiers
 |-
 | modifierfunction.MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND
-| 146
+| 153
 | GetAttackSound
 |-
 | modifierfunction.MODIFIER_PROPERTY_LIFETIME_FRACTION
-| 147
+| 154
 | GetUnitLifetimeFraction
 |-
 | modifierfunction.MODIFIER_PROPERTY_PROVIDES_FOW_POSITION
-| 148
+| 155
 | GetModifierProvidesFOWVision
 |-
 | modifierfunction.MODIFIER_PROPERTY_SPELLS_REQUIRE_HP
-| 149
+| 156
 | GetModifierSpellsRequireHP
 |-
 | modifierfunction.MODIFIER_PROPERTY_FORCE_DRAW_MINIMAP
-| 150
+| 157
 | GetForceDrawOnMinimap
 |-
 | modifierfunction.MODIFIER_PROPERTY_DISABLE_TURNING
-| 151
+| 158
 | GetModifierDisableTurning
 |-
 | modifierfunction.MODIFIER_PROPERTY_IGNORE_CAST_ANGLE
-| 152
+| 159
 | GetModifierIgnoreCastAngle
 |-
 | modifierfunction.MODIFIER_PROPERTY_CHANGE_ABILITY_VALUE
-| 153
+| 160
 | GetModifierChangeAbilityValue
 |-
 | modifierfunction.MODIFIER_PROPERTY_ABILITY_LAYOUT
-| 154
+| 161
 | GetModifierAbilityLayout
 |-
 | modifierfunction.MODIFIER_EVENT_ON_DOMINATED
-| 155
+| 162
 | OnDominated
 |-
 | modifierfunction.MODIFIER_PROPERTY_TEMPEST_DOUBLE
-| 156
+| 163
 | GetModifierTempestDouble
 |-
 | modifierfunction.MODIFIER_PROPERTY_PRESERVE_PARTICLES_ON_MODEL_CHANGE
-| 157
+| 164
 | PreserveParticlesOnModelChanged
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK_FINISHED
-| 158
+| 165
 | OnAttackFinished
 |-
 | modifierfunction.MODIFIER_PROPERTY_IGNORE_COOLDOWN
-| 159
+| 166
 | GetModifierIgnoreCooldown
 |-
+| modifierfunction.MODIFIER_PROPERTY_CAN_ATTACK_TREES
+| 167
+| GetModifierCanAttackTrees
+|-
+| modifierfunction.MODIFIER_PROPERTY_VISUAL_Z_DELTA
+| 168
+| GetVisualZDelta
+|-
 | modifierfunction.MODIFIER_FUNCTION_LAST
-| 160
+| 169
 | 
 |-
 | modifierfunction.MODIFIER_FUNCTION_INVALID
@@ -5419,8 +5511,12 @@
 | 10
 | 
 |-
-| CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_LAST
+| CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_RADAR
 | 11
+| 
+|-
+| CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_LAST
+| 12
 | 
 |}
 
