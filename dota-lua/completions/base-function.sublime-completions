@@ -1,5 +1,5 @@
 {
-	"scope": "source.lua",
+	"scope": 	["source.lua", "source.moonscript"],
 	"completions":
 	[
 		{ "trigger": "assert", "contents": "assert(${1:variable}${0:, optional sMessage})"},

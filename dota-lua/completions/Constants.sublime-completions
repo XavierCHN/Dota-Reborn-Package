@@ -1,6 +1,5 @@
 {
-	"scope": "source.lua",
-
+	"scope": 	["source.lua", "source.moonscript"],
 	"completions":
 	[
 		// 6.87

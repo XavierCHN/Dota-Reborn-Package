@@ -1,5 +1,5 @@
 {
-    "scope":    "source.lua",
+    "scope":    ["source.lua", "source.moonscript"],
     "completions":
     [
         {"trigger":"GetModifierPreAttack_BonusDamage_ModiiferLua" , "contents" :"GetModifierPreAttack_BonusDamage" },
