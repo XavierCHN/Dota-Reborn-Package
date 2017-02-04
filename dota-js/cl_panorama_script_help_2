@@ -1,1636 +1,48 @@
-=== CDOTA_PanoramaScript_GameEvents ===
+=== CPanoramaScript_GameEvents ===
 {| class="standard-table" style="width: 100%;"
 ! Function
 ! Signature
 ! Description
 |- 
 | Subscribe
-| <code>GameEvents.Subscribe( cstring pEventName, js_value funcVal )</code>
+| <code>"GameEvents".Subscribe( cstring pEventName, js_value funcVal )</code>
 | Subscribe to a game event
 |- 
 | Unsubscribe
-| <code>GameEvents.Unsubscribe( integer nCallbackHandle )</code>
+| <code>"GameEvents".Unsubscribe( integer nCallbackHandle )</code>
 | Unsubscribe from a game event
 |- 
 | SendCustomGameEventToServer
-| <code>GameEvents.SendCustomGameEventToServer( cstring pEventName, js_object jsObject )</code>
+| <code>"GameEvents".SendCustomGameEventToServer( cstring pEventName, js_object jsObject )</code>
 | Send a custom game event
 |- 
 | SendEventClientSide
-| <code>GameEvents.SendEventClientSide( cstring pEventName, js_object jsObject )</code>
+| <code>"GameEvents".SendEventClientSide( cstring pEventName, js_object jsObject )</code>
 | Send a client-side event using gameeventmanager (only useful for a few specific events)
 |}
 
 
-=== CDOTA_PanoramaScript_GameUI ===
-{| class="standard-table" style="width: 100%;"
-! Function
-! Signature
-! Description
-|- 
-| SetDefaultUIEnabled
-| <code>GameUI.SetDefaultUIEnabled( integer nElementType, boolean bVisible )</code>
-| Control whether the default UI is enabled
-|- 
-| CustomUIConfig
-| <code>GameUI.CustomUIConfig( js_raw_args args )</code>
-| Get the current UI configuration
-|- 
-| PingMinimapAtLocation
-| <code>GameUI.PingMinimapAtLocation( js_value vec3 )</code>
-| Create a minimap ping at the given location
-|- 
-| SetMouseCallback
-| <code>GameUI.SetMouseCallback( js_value callbackFn )</code>
-| Install a mouse input filter
-|- 
-| EnableAliMode
-| <code>GameUI.EnableAliMode( boolean bEnable, integer nPort, js_value offsetVal, float flScale )</code>
-| 
-|- 
-| GetCursorPosition
-| <code>GameUI.GetCursorPosition( js_raw_args args )</code>
-| Get the current mouse position.
-|- 
-| FindScreenEntities
-| <code>GameUI.FindScreenEntities( js_raw_args args )</code>
-| Return the entity index of the entity under the given screen position.
-|- 
-| GetScreenWorldPosition
-| <code>GameUI.GetScreenWorldPosition( js_raw_args args )</code>
-| Get the world position of the screen position, or null if the cursor is out of the world.
-|- 
-| WasMousePressed
-| <code>GameUI.WasMousePressed( integer nButtonNum )</code>
-| Install a mouse input filter
-|- 
-| WasMouseDoublePressed
-| <code>GameUI.WasMouseDoublePressed( integer nButtonNum )</code>
-| Install a mouse input filter
-|- 
-| IsMouseDown
-| <code>GameUI.IsMouseDown( integer nButtonNum )</code>
-| Install a mouse input filter
-|- 
-| IsShiftDown
-| <code>GameUI.IsShiftDown()</code>
-| Is the shift button pressed?
-|- 
-| IsAltDown
-| <code>GameUI.IsAltDown()</code>
-| Is the alt button pressed?
-|- 
-| IsControlDown
-| <code>GameUI.IsControlDown()</code>
-| Is the control button pressed?
-|- 
-| GetClickBehaviors
-| <code>GameUI.GetClickBehaviors()</code>
-| Get the current UI click interaction mode.
-|- 
-| SelectUnit
-| <code>GameUI.SelectUnit( integer nEntityIndex, boolean bAddToGroup )</code>
-| Select a unit, adding it to the group or replacing the current selection.
-|- 
-| SetCameraPitchMin
-| <code>GameUI.SetCameraPitchMin( float flPitchMin )</code>
-| Set the minimum camera pitch angle.
-|- 
-| SetCameraPitchMax
-| <code>GameUI.SetCameraPitchMax( float flPitchMax )</code>
-| Set the maximum camera pitch angle.
-|- 
-| SetCameraYaw
-| <code>GameUI.SetCameraYaw( float flCameraYaw )</code>
-| Set the camera's yaw.
-|- 
-| SetCameraLookAtPositionHeightOffset
-| <code>GameUI.SetCameraLookAtPositionHeightOffset( float flCameraLookAtHeightOffset )</code>
-| Offset the camera's look at point.
-|- 
-| SetCameraDistance
-| <code>GameUI.SetCameraDistance( float flDistance )</code>
-| Set the camera distance from the look at point.
-|- 
-| SetRenderBottomInsetOverride
-| <code>GameUI.SetRenderBottomInsetOverride( integer nInset )</code>
-| Set the gap between the bottom of the screen and the game rendering viewport. (Value expressed as pixels in a normalized 1024x768 viewport.)
-|- 
-| SetRenderTopInsetOverride
-| <code>GameUI.SetRenderTopInsetOverride( integer nInset )</code>
-| Set the gap between the top of the screen and the game rendering viewport. (Value expressed as pixels in a normalized 1024x768 viewport.)
-|- 
-| SetCameraTarget
-| <code>GameUI.SetCameraTarget( integer nTargetEntIndex )</code>
-| Set the camera target for the local player, or -1 to clear.
-|- 
-| SetCameraTargetPosition
-| <code>GameUI.SetCameraTargetPosition( js_value vec3, float flLerp )</code>
-| Set the camera target as position for the local player over specified lerp.
-|}
-
-
-=== CDOTA_PanoramaScript_CustomNetTables ===
+=== CPanoramaScript_CustomNetTables ===
 {| class="standard-table" style="width: 100%;"
 ! Function
 ! Signature
 ! Description
 |- 
 | GetTableValue
-| <code>CustomNetTables.GetTableValue( cstring pTableName, cstring pKeyName )</code>
+| <code>"CustomNetTables".GetTableValue( cstring pTableName, cstring pKeyName )</code>
 | Get a key from a custom net table
 |- 
 | GetAllTableValues
-| <code>CustomNetTables.GetAllTableValues( cstring pTableName )</code>
+| <code>"CustomNetTables".GetAllTableValues( cstring pTableName )</code>
 | Get all values from a custom net table
 |- 
 | SubscribeNetTableListener
-| <code>CustomNetTables.SubscribeNetTableListener( js_raw_args args )</code>
+| <code>"CustomNetTables".SubscribeNetTableListener( js_raw_args args )</code>
 | Register a callback when a particular custom net table changes
 |- 
 | UnsubscribeNetTableListener
-| <code>CustomNetTables.UnsubscribeNetTableListener( integer nCallbackHandle )</code>
+| <code>"CustomNetTables".UnsubscribeNetTableListener( integer nCallbackHandle )</code>
 | Unsubscribe from a game event
-|}
-
-
-=== CScriptBindingPR_Players ===
-{| class="standard-table" style="width: 100%;"
-! Function
-! Signature
-! Description
-|- 
-| GetMaxPlayers
-| <code>Players.GetMaxPlayers()</code>
-| Get the maximum number of players in the game.
-|- 
-| GetMaxTeamPlayers
-| <code>Players.GetMaxTeamPlayers()</code>
-| Get the maximum number of players on teams.
-|- 
-| GetLocalPlayer
-| <code>Players.GetLocalPlayer()</code>
-| Get the local player ID.
-|- 
-| IsValidPlayerID
-| <code>Players.IsValidPlayerID( integer iPlayerID )</code>
-| Is the nth player a valid player?
-|- 
-| GetPlayerName
-| <code>Players.GetPlayerName( integer iPlayerID )</code>
-| Return the name of a player.
-|- 
-| GetPlayerHeroEntityIndex
-| <code>Players.GetPlayerHeroEntityIndex( integer iPlayerID )</code>
-| Get the entity index of the hero controlled by this player.
-|- 
-| GetSelectedEntities
-| <code>Players.GetSelectedEntities( integer iPlayerID )</code>
-| Get the entities this player has selected.
-|- 
-| GetQueryUnit
-| <code>Players.GetQueryUnit( integer iPlayerID )</code>
-| Get the entities this player is querying.
-|- 
-| GetLocalPlayerPortraitUnit
-| <code>Players.GetLocalPlayerPortraitUnit()</code>
-| Get local player current portrait unit. (ie. Player's hero or primary selected unit.)
-|- 
-| CanPlayerBuyback
-| <code>Players.CanPlayerBuyback( integer iPlayerID )</code>
-| Can the player buy back?
-|- 
-| HasCustomGameTicketForPlayerID
-| <code>Players.HasCustomGameTicketForPlayerID( integer iPlayerID )</code>
-| Does this player have a custom game ticket?
-|- 
-| GetAssists
-| <code>Players.GetAssists( integer iPlayerID )</code>
-| The number of assists credited to a player.
-|- 
-| GetClaimedDenies
-| <code>Players.GetClaimedDenies( integer iPlayerID )</code>
-| 
-|- 
-| GetClaimedMisses
-| <code>Players.GetClaimedMisses( integer iPlayerID )</code>
-| 
-|- 
-| GetDeaths
-| <code>Players.GetDeaths( integer iPlayerID )</code>
-| The number of deaths a player has suffered.
-|- 
-| GetDenies
-| <code>Players.GetDenies( integer iPlayerID )</code>
-| The number of denies credited to a player.
-|- 
-| GetGold
-| <code>Players.GetGold( integer iPlayerID )</code>
-| The amount of gold a player has.
-|- 
-| GetKills
-| <code>Players.GetKills( integer iPlayerID )</code>
-| The number of kills credited to a player.
-|- 
-| GetLastBuybackTime
-| <code>Players.GetLastBuybackTime( integer iPlayerID )</code>
-| 
-|- 
-| GetLastHitMultikill
-| <code>Players.GetLastHitMultikill( integer iPlayerID )</code>
-| 
-|- 
-| GetLastHits
-| <code>Players.GetLastHits( integer iPlayerID )</code>
-| The number of last hits credited to a player.
-|- 
-| GetLastHitStreak
-| <code>Players.GetLastHitStreak( integer iPlayerID )</code>
-| 
-|- 
-| GetLevel
-| <code>Players.GetLevel( integer iPlayerID )</code>
-| The current level of a player.
-|- 
-| GetMisses
-| <code>Players.GetMisses( integer iPlayerID )</code>
-| 
-|- 
-| GetNearbyCreepDeaths
-| <code>Players.GetNearbyCreepDeaths( integer iPlayerID )</code>
-| 
-|- 
-| GetReliableGold
-| <code>Players.GetReliableGold( integer iPlayerID )</code>
-| Total reliable gold for this player.
-|- 
-| GetRespawnSeconds
-| <code>Players.GetRespawnSeconds( integer iPlayerID )</code>
-| 
-|- 
-| GetStreak
-| <code>Players.GetStreak( integer iPlayerID )</code>
-| 
-|- 
-| GetTotalEarnedGold
-| <code>Players.GetTotalEarnedGold( integer iPlayerID )</code>
-| Total gold earned in this game by this player.
-|- 
-| GetTotalEarnedXP
-| <code>Players.GetTotalEarnedXP( integer iPlayerID )</code>
-| Total xp earned in this game by this player.
-|- 
-| GetUnreliableGold
-| <code>Players.GetUnreliableGold( integer iPlayerID )</code>
-| Total unreliable gold for this player.
-|- 
-| GetTeam
-| <code>Players.GetTeam( integer iPlayerID )</code>
-| Get the team this player is on.
-|- 
-| GetGoldPerMin
-| <code>Players.GetGoldPerMin( integer iPlayerID )</code>
-| Average gold earned per minute for this player.
-|- 
-| GetXPPerMin
-| <code>Players.GetXPPerMin( integer iPlayerID )</code>
-| Average xp earned per minute for this player.
-|- 
-| GetPlayerSelectedHero
-| <code>Players.GetPlayerSelectedHero( integer iPlayerID )</code>
-| Return the name of the hero a player is controlling.
-|- 
-| GetPlayerColor
-| <code>Players.GetPlayerColor( integer iPlayerID )</code>
-| Get the player color.
-|- 
-| IsSpectator
-| <code>Players.IsSpectator( integer iPlayerID )</code>
-| Is this player a spectator.
-|- 
-| PlayerPortraitClicked
-| <code>Players.PlayerPortraitClicked( integer nClickedPlayerID, boolean bHoldingCtrl, boolean bHoldingAlt )</code>
-| .
-|- 
-| BuffClicked
-| <code>Players.BuffClicked( integer nEntity, integer nBuffSerial, boolean bAlert )</code>
-| .
-|}
-
-
-=== CScriptBindingPR_Entities ===
-{| class="standard-table" style="width: 100%;"
-! Function
-! Signature
-! Description
-|- 
-| GetAbsOrigin
-| <code>Entities.GetAbsOrigin( integer nEntityIndex )</code>
-| Get the world origin of the entity.
-|- 
-| GetForward
-| <code>Entities.GetForward( integer nEntityIndex )</code>
-| Get the forward vector of the entity.
-|- 
-| GetRight
-| <code>Entities.GetRight( integer nEntityIndex )</code>
-| Get the right vector of the entity.
-|- 
-| GetUp
-| <code>Entities.GetUp( integer nEntityIndex )</code>
-| Get the up vector of the entity.
-|- 
-| GetAllBuildingEntities
-| <code>Entities.GetAllBuildingEntities()</code>
-| Get all the building entities.
-|- 
-| GetAllHeroEntities
-| <code>Entities.GetAllHeroEntities()</code>
-| Get all the hero entities.
-|- 
-| GetAllEntitiesByName
-| <code>Entities.GetAllEntitiesByName( cstring pszName )</code>
-| Get all the entities with a given name.
-|- 
-| GetAllEntitiesByClassname
-| <code>Entities.GetAllEntitiesByClassname( cstring pszName )</code>
-| Get all the entities with a given classname.
-|- 
-| GetAllCreatureEntities
-| <code>Entities.GetAllCreatureEntities()</code>
-| Get all the creature entities.
-|- 
-| GetAllEntities
-| <code>Entities.GetAllEntities()</code>
-| Get all the entities.
-|- 
-| CanBeDominated
-| <code>Entities.CanBeDominated( integer nEntityIndex )</code>
-| 
-|- 
-| HasAttackCapability
-| <code>Entities.HasAttackCapability( integer nEntityIndex )</code>
-| 
-|- 
-| HasCastableAbilities
-| <code>Entities.HasCastableAbilities( integer nEntityIndex )</code>
-| 
-|- 
-| HasFlyingVision
-| <code>Entities.HasFlyingVision( integer nEntityIndex )</code>
-| 
-|- 
-| HasFlyMovementCapability
-| <code>Entities.HasFlyMovementCapability( integer nEntityIndex )</code>
-| 
-|- 
-| HasGroundMovementCapability
-| <code>Entities.HasGroundMovementCapability( integer nEntityIndex )</code>
-| 
-|- 
-| HasMovementCapability
-| <code>Entities.HasMovementCapability( integer nEntityIndex )</code>
-| 
-|- 
-| HasScepter
-| <code>Entities.HasScepter( integer nEntityIndex )</code>
-| 
-|- 
-| HasUpgradeableAbilities
-| <code>Entities.HasUpgradeableAbilities( integer nEntityIndex )</code>
-| 
-|- 
-| HasUpgradeableAbilitiesThatArentMaxed
-| <code>Entities.HasUpgradeableAbilitiesThatArentMaxed( integer nEntityIndex )</code>
-| 
-|- 
-| IsAlive
-| <code>Entities.IsAlive( integer nEntityIndex )</code>
-| 
-|- 
-| IsAncient
-| <code>Entities.IsAncient( integer nEntityIndex )</code>
-| 
-|- 
-| IsAttackImmune
-| <code>Entities.IsAttackImmune( integer nEntityIndex )</code>
-| 
-|- 
-| IsBarracks
-| <code>Entities.IsBarracks( integer nEntityIndex )</code>
-| 
-|- 
-| IsBlind
-| <code>Entities.IsBlind( integer nEntityIndex )</code>
-| 
-|- 
-| IsBoss
-| <code>Entities.IsBoss( integer nEntityIndex )</code>
-| 
-|- 
-| IsRoshan
-| <code>Entities.IsRoshan( integer nEntityIndex )</code>
-| 
-|- 
-| IsBuilding
-| <code>Entities.IsBuilding( integer nEntityIndex )</code>
-| 
-|- 
-| IsCommandRestricted
-| <code>Entities.IsCommandRestricted( integer nEntityIndex )</code>
-| 
-|- 
-| IsConsideredHero
-| <code>Entities.IsConsideredHero( integer nEntityIndex )</code>
-| 
-|- 
-| IsControllableByAnyPlayer
-| <code>Entities.IsControllableByAnyPlayer( integer nEntityIndex )</code>
-| 
-|- 
-| IsCourier
-| <code>Entities.IsCourier( integer nEntityIndex )</code>
-| 
-|- 
-| IsCreature
-| <code>Entities.IsCreature( integer nEntityIndex )</code>
-| 
-|- 
-| IsCreep
-| <code>Entities.IsCreep( integer nEntityIndex )</code>
-| 
-|- 
-| IsCreepHero
-| <code>Entities.IsCreepHero( integer nEntityIndex )</code>
-| 
-|- 
-| IsDeniable
-| <code>Entities.IsDeniable( integer nEntityIndex )</code>
-| 
-|- 
-| IsDominated
-| <code>Entities.IsDominated( integer nEntityIndex )</code>
-| 
-|- 
-| IsEnemy
-| <code>Entities.IsEnemy( integer nEntityIndex )</code>
-| 
-|- 
-| IsEvadeDisabled
-| <code>Entities.IsEvadeDisabled( integer nEntityIndex )</code>
-| 
-|- 
-| IsFort
-| <code>Entities.IsFort( integer nEntityIndex )</code>
-| 
-|- 
-| IsFrozen
-| <code>Entities.IsFrozen( integer nEntityIndex )</code>
-| 
-|- 
-| IsGeneratedByEconItem
-| <code>Entities.IsGeneratedByEconItem( integer nEntityIndex )</code>
-| 
-|- 
-| IsHallofFame
-| <code>Entities.IsHallofFame( integer nEntityIndex )</code>
-| 
-|- 
-| IsDisarmed
-| <code>Entities.IsDisarmed( integer nEntityIndex )</code>
-| 
-|- 
-| IsHero
-| <code>Entities.IsHero( integer nEntityIndex )</code>
-| 
-|- 
-| IsHexed
-| <code>Entities.IsHexed( integer nEntityIndex )</code>
-| 
-|- 
-| IsIllusion
-| <code>Entities.IsIllusion( integer nEntityIndex )</code>
-| 
-|- 
-| IsInRangeOfFountain
-| <code>Entities.IsInRangeOfFountain( integer nEntityIndex )</code>
-| 
-|- 
-| IsInventoryEnabled
-| <code>Entities.IsInventoryEnabled( integer nEntityIndex )</code>
-| 
-|- 
-| IsInvisible
-| <code>Entities.IsInvisible( integer nEntityIndex )</code>
-| 
-|- 
-| IsInvulnerable
-| <code>Entities.IsInvulnerable( integer nEntityIndex )</code>
-| 
-|- 
-| IsLaneCreep
-| <code>Entities.IsLaneCreep( integer nEntityIndex )</code>
-| 
-|- 
-| IsLowAttackPriority
-| <code>Entities.IsLowAttackPriority( integer nEntityIndex )</code>
-| 
-|- 
-| IsMagicImmune
-| <code>Entities.IsMagicImmune( integer nEntityIndex )</code>
-| 
-|- 
-| IsMuted
-| <code>Entities.IsMuted( integer nEntityIndex )</code>
-| 
-|- 
-| IsNeutralUnitType
-| <code>Entities.IsNeutralUnitType( integer nEntityIndex )</code>
-| 
-|- 
-| IsNightmared
-| <code>Entities.IsNightmared( integer nEntityIndex )</code>
-| 
-|- 
-| IsOther
-| <code>Entities.IsOther( integer nEntityIndex )</code>
-| 
-|- 
-| IsOutOfGame
-| <code>Entities.IsOutOfGame( integer nEntityIndex )</code>
-| 
-|- 
-| IsOwnedByAnyPlayer
-| <code>Entities.IsOwnedByAnyPlayer( integer nEntityIndex )</code>
-| 
-|- 
-| IsPhantom
-| <code>Entities.IsPhantom( integer nEntityIndex )</code>
-| 
-|- 
-| IsRangedAttacker
-| <code>Entities.IsRangedAttacker( integer nEntityIndex )</code>
-| 
-|- 
-| IsRealHero
-| <code>Entities.IsRealHero( integer nEntityIndex )</code>
-| 
-|- 
-| IsRooted
-| <code>Entities.IsRooted( integer nEntityIndex )</code>
-| 
-|- 
-| IsSelectable
-| <code>Entities.IsSelectable( integer nEntityIndex )</code>
-| 
-|- 
-| IsShop
-| <code>Entities.IsShop( integer nEntityIndex )</code>
-| 
-|- 
-| IsSilenced
-| <code>Entities.IsSilenced( integer nEntityIndex )</code>
-| 
-|- 
-| IsSpeciallyDeniable
-| <code>Entities.IsSpeciallyDeniable( integer nEntityIndex )</code>
-| 
-|- 
-| IsStunned
-| <code>Entities.IsStunned( integer nEntityIndex )</code>
-| 
-|- 
-| IsSummoned
-| <code>Entities.IsSummoned( integer nEntityIndex )</code>
-| 
-|- 
-| IsTower
-| <code>Entities.IsTower( integer nEntityIndex )</code>
-| 
-|- 
-| IsUnselectable
-| <code>Entities.IsUnselectable( integer nEntityIndex )</code>
-| 
-|- 
-| IsWard
-| <code>Entities.IsWard( integer nEntityIndex )</code>
-| 
-|- 
-| IsZombie
-| <code>Entities.IsZombie( integer nEntityIndex )</code>
-| 
-|- 
-| NoHealthBar
-| <code>Entities.NoHealthBar( integer nEntityIndex )</code>
-| 
-|- 
-| NoTeamMoveTo
-| <code>Entities.NoTeamMoveTo( integer nEntityIndex )</code>
-| 
-|- 
-| NoTeamSelect
-| <code>Entities.NoTeamSelect( integer nEntityIndex )</code>
-| 
-|- 
-| NotOnMinimap
-| <code>Entities.NotOnMinimap( integer nEntityIndex )</code>
-| 
-|- 
-| NotOnMinimapForEnemies
-| <code>Entities.NotOnMinimapForEnemies( integer nEntityIndex )</code>
-| 
-|- 
-| NoUnitCollision
-| <code>Entities.NoUnitCollision( integer nEntityIndex )</code>
-| 
-|- 
-| PassivesDisabled
-| <code>Entities.PassivesDisabled( integer nEntityIndex )</code>
-| 
-|- 
-| ProvidesVision
-| <code>Entities.ProvidesVision( integer nEntityIndex )</code>
-| 
-|- 
-| UsesHeroAbilityNumbers
-| <code>Entities.UsesHeroAbilityNumbers( integer nEntityIndex )</code>
-| 
-|- 
-| IsMoving
-| <code>Entities.IsMoving( integer nEntityIndex )</code>
-| 
-|- 
-| GetAbilityCount
-| <code>Entities.GetAbilityCount( integer nEntityIndex )</code>
-| 
-|- 
-| GetCombatClassAttack
-| <code>Entities.GetCombatClassAttack( integer nEntityIndex )</code>
-| 
-|- 
-| GetCombatClassDefend
-| <code>Entities.GetCombatClassDefend( integer nEntityIndex )</code>
-| 
-|- 
-| GetCurrentVisionRange
-| <code>Entities.GetCurrentVisionRange( integer nEntityIndex )</code>
-| 
-|- 
-| GetDamageBonus
-| <code>Entities.GetDamageBonus( integer nEntityIndex )</code>
-| 
-|- 
-| GetDamageMax
-| <code>Entities.GetDamageMax( integer nEntityIndex )</code>
-| 
-|- 
-| GetDamageMin
-| <code>Entities.GetDamageMin( integer nEntityIndex )</code>
-| 
-|- 
-| GetDayTimeVisionRange
-| <code>Entities.GetDayTimeVisionRange( integer nEntityIndex )</code>
-| 
-|- 
-| GetHealth
-| <code>Entities.GetHealth( integer nEntityIndex )</code>
-| 
-|- 
-| GetHealthPercent
-| <code>Entities.GetHealthPercent( integer nEntityIndex )</code>
-| 
-|- 
-| GetHealthThinkRegen
-| <code>Entities.GetHealthThinkRegen( integer nEntityIndex )</code>
-| 
-|- 
-| GetLevel
-| <code>Entities.GetLevel( integer nEntityIndex )</code>
-| 
-|- 
-| GetMaxHealth
-| <code>Entities.GetMaxHealth( integer nEntityIndex )</code>
-| 
-|- 
-| GetNightTimeVisionRange
-| <code>Entities.GetNightTimeVisionRange( integer nEntityIndex )</code>
-| 
-|- 
-| GetStates
-| <code>Entities.GetStates( integer nEntityIndex )</code>
-| 
-|- 
-| GetTotalPurchasedUpgradeGoldCost
-| <code>Entities.GetTotalPurchasedUpgradeGoldCost( integer nEntityIndex )</code>
-| 
-|- 
-| GetTeamNumber
-| <code>Entities.GetTeamNumber( integer nEntityIndex )</code>
-| 
-|- 
-| GetAttackRange
-| <code>Entities.GetAttackRange( integer nEntityIndex )</code>
-| 
-|- 
-| GetAttackSpeed
-| <code>Entities.GetAttackSpeed( integer nEntityIndex )</code>
-| 
-|- 
-| GetAttacksPerSecond
-| <code>Entities.GetAttacksPerSecond( integer nEntityIndex )</code>
-| 
-|- 
-| GetBaseAttackTime
-| <code>Entities.GetBaseAttackTime( integer nEntityIndex )</code>
-| 
-|- 
-| GetBaseMagicalResistanceValue
-| <code>Entities.GetBaseMagicalResistanceValue( integer nEntityIndex )</code>
-| 
-|- 
-| GetBaseMoveSpeed
-| <code>Entities.GetBaseMoveSpeed( integer nEntityIndex )</code>
-| 
-|- 
-| GetBonusPhysicalArmor
-| <code>Entities.GetBonusPhysicalArmor( integer nEntityIndex )</code>
-| 
-|- 
-| GetCollisionPadding
-| <code>Entities.GetCollisionPadding( integer nEntityIndex )</code>
-| 
-|- 
-| GetEffectiveInvisibilityLevel
-| <code>Entities.GetEffectiveInvisibilityLevel( integer nEntityIndex )</code>
-| 
-|- 
-| GetHasteFactor
-| <code>Entities.GetHasteFactor( integer nEntityIndex )</code>
-| 
-|- 
-| GetHullRadius
-| <code>Entities.GetHullRadius( integer nEntityIndex )</code>
-| 
-|- 
-| GetIdealSpeed
-| <code>Entities.GetIdealSpeed( integer nEntityIndex )</code>
-| 
-|- 
-| GetIncreasedAttackSpeed
-| <code>Entities.GetIncreasedAttackSpeed( integer nEntityIndex )</code>
-| 
-|- 
-| GetMana
-| <code>Entities.GetMana( integer nEntityIndex )</code>
-| 
-|- 
-| GetManaThinkRegen
-| <code>Entities.GetManaThinkRegen( integer nEntityIndex )</code>
-| 
-|- 
-| GetMaxMana
-| <code>Entities.GetMaxMana( integer nEntityIndex )</code>
-| 
-|- 
-| GetMagicalArmorValue
-| <code>Entities.GetMagicalArmorValue( integer nEntityIndex )</code>
-| 
-|- 
-| GetPaddedCollisionRadius
-| <code>Entities.GetPaddedCollisionRadius( integer nEntityIndex )</code>
-| 
-|- 
-| GetPercentInvisible
-| <code>Entities.GetPercentInvisible( integer nEntityIndex )</code>
-| 
-|- 
-| GetPhysicalArmorValue
-| <code>Entities.GetPhysicalArmorValue( integer nEntityIndex )</code>
-| 
-|- 
-| GetProjectileCollisionSize
-| <code>Entities.GetProjectileCollisionSize( integer nEntityIndex )</code>
-| 
-|- 
-| GetRingRadius
-| <code>Entities.GetRingRadius( integer nEntityIndex )</code>
-| 
-|- 
-| GetSecondsPerAttack
-| <code>Entities.GetSecondsPerAttack( integer nEntityIndex )</code>
-| 
-|- 
-| ManaFraction
-| <code>Entities.ManaFraction( integer nEntityIndex )</code>
-| 
-|- 
-| GetClassname
-| <code>Entities.GetClassname( integer nEntityIndex )</code>
-| 
-|- 
-| GetDisplayedUnitName
-| <code>Entities.GetDisplayedUnitName( integer nEntityIndex )</code>
-| 
-|- 
-| GetSelectionGroup
-| <code>Entities.GetSelectionGroup( integer nEntityIndex )</code>
-| 
-|- 
-| GetSoundSet
-| <code>Entities.GetSoundSet( integer nEntityIndex )</code>
-| 
-|- 
-| GetUnitLabel
-| <code>Entities.GetUnitLabel( integer nEntityIndex )</code>
-| 
-|- 
-| GetUnitName
-| <code>Entities.GetUnitName( integer nEntityIndex )</code>
-| 
-|- 
-| GetTotalDamageTaken
-| <code>Entities.GetTotalDamageTaken( integer nEntityIndex )</code>
-| 
-|- 
-| IsControllableByPlayer
-| <code>Entities.IsControllableByPlayer( integer nEntityIndex, integer nPlayerIndex )</code>
-| 
-|- 
-| GetChosenTarget
-| <code>Entities.GetChosenTarget( integer nEntityIndex )</code>
-| 
-|- 
-| HasItemInInventory
-| <code>Entities.HasItemInInventory( integer nEntityIndex, cstring pItemName )</code>
-| 
-|- 
-| GetRangeToUnit
-| <code>Entities.GetRangeToUnit( integer nEntityIndex, integer nEntityIndex2 )</code>
-| 
-|- 
-| IsEntityInRange
-| <code>Entities.IsEntityInRange( integer nEntityIndex, integer nEntityIndex2, float flRange )</code>
-| 
-|- 
-| GetMoveSpeedModifier
-| <code>Entities.GetMoveSpeedModifier( integer nEntityIndex, float flBaseSpeed )</code>
-| 
-|- 
-| CanAcceptTargetToAttack
-| <code>Entities.CanAcceptTargetToAttack( integer nEntityIndex, integer nEntityIndex2 )</code>
-| 
-|- 
-| InState
-| <code>Entities.InState( integer nEntityIndex, integer nState )</code>
-| 
-|- 
-| GetArmorForDamageType
-| <code>Entities.GetArmorForDamageType( integer nEntityIndex, integer iDamageType )</code>
-| 
-|- 
-| GetArmorReductionForDamageType
-| <code>Entities.GetArmorReductionForDamageType( integer nEntityIndex, integer iDamageType )</code>
-| 
-|- 
-| IsInRangeOfShop
-| <code>Entities.IsInRangeOfShop( integer nEntityIndex, integer iShopType, boolean bSpecific )</code>
-| 
-|- 
-| GetNumItemsInStash
-| <code>Entities.GetNumItemsInStash( integer nEntityIndex )</code>
-| 
-|- 
-| GetNumItemsInInventory
-| <code>Entities.GetNumItemsInInventory( integer nEntityIndex )</code>
-| 
-|- 
-| GetItemInSlot
-| <code>Entities.GetItemInSlot( integer nEntityIndex, integer nSlotIndex )</code>
-| 
-|- 
-| GetAbility
-| <code>Entities.GetAbility( integer nEntityIndex, integer nSlotIndex )</code>
-| 
-|- 
-| GetAbilityByName
-| <code>Entities.GetAbilityByName( integer nEntityIndex, cstring pszAbilityName )</code>
-| 
-|- 
-| GetNumBuffs
-| <code>Entities.GetNumBuffs( integer nEntityIndex )</code>
-| 
-|- 
-| GetBuff
-| <code>Entities.GetBuff( integer nEntityIndex, integer nBufIndex )</code>
-| 
-|- 
-| GetAbilityPoints
-| <code>Entities.GetAbilityPoints( integer nEntityIndex )</code>
-| 
-|- 
-| GetCurrentXP
-| <code>Entities.GetCurrentXP( integer nEntityIndex )</code>
-| 
-|- 
-| GetNeededXPToLevel
-| <code>Entities.GetNeededXPToLevel( integer nEntityIndex )</code>
-| 
-|- 
-| GetSelectionEntities
-| <code>Entities.GetSelectionEntities( integer nEntityIndex )</code>
-| Get the currently selected entities
-|- 
-| IsValidEntity
-| <code>Entities.IsValidEntity( integer nEntityIndex )</code>
-| Is this a valid entity index?
-|- 
-| IsItemPhysical
-| <code>Entities.IsItemPhysical( integer nEntityIndex )</code>
-| Is this entity an item container in the world?
-|- 
-| GetContainedItem
-| <code>Entities.GetContainedItem( integer nEntityIndex )</code>
-| Get the item contained in this physical item container.
-|}
-
-
-=== CScriptBindingPR_Abilities ===
-{| class="standard-table" style="width: 100%;"
-! Function
-! Signature
-! Description
-|- 
-| GetAbilityName
-| <code>Abilities.GetAbilityName( integer nEntityIndex )</code>
-| 
-|- 
-| GetAbilityTextureName
-| <code>Abilities.GetAbilityTextureName( integer nEntityIndex )</code>
-| 
-|- 
-| GetAssociatedPrimaryAbilities
-| <code>Abilities.GetAssociatedPrimaryAbilities( integer nEntityIndex )</code>
-| 
-|- 
-| GetAssociatedSecondaryAbilities
-| <code>Abilities.GetAssociatedSecondaryAbilities( integer nEntityIndex )</code>
-| 
-|- 
-| GetHotkeyOverride
-| <code>Abilities.GetHotkeyOverride( integer nEntityIndex )</code>
-| 
-|- 
-| GetIntrinsicModifierName
-| <code>Abilities.GetIntrinsicModifierName( integer nEntityIndex )</code>
-| 
-|- 
-| GetSharedCooldownName
-| <code>Abilities.GetSharedCooldownName( integer nEntityIndex )</code>
-| 
-|- 
-| AbilityReady
-| <code>Abilities.AbilityReady( integer nEntityIndex )</code>
-| 
-|- 
-| CanAbilityBeUpgraded
-| <code>Abilities.CanAbilityBeUpgraded( integer nEntityIndex )</code>
-| Returns an AbilityLearnResult_t
-|- 
-| CanBeExecuted
-| <code>Abilities.CanBeExecuted( integer nEntityIndex )</code>
-| 
-|- 
-| GetAbilityDamage
-| <code>Abilities.GetAbilityDamage( integer nEntityIndex )</code>
-| 
-|- 
-| GetAbilityDamageType
-| <code>Abilities.GetAbilityDamageType( integer nEntityIndex )</code>
-| 
-|- 
-| GetAbilityTargetFlags
-| <code>Abilities.GetAbilityTargetFlags( integer nEntityIndex )</code>
-| 
-|- 
-| GetAbilityTargetTeam
-| <code>Abilities.GetAbilityTargetTeam( integer nEntityIndex )</code>
-| 
-|- 
-| GetAbilityTargetType
-| <code>Abilities.GetAbilityTargetType( integer nEntityIndex )</code>
-| 
-|- 
-| GetAbilityType
-| <code>Abilities.GetAbilityType( integer nEntityIndex )</code>
-| 
-|- 
-| GetBehavior
-| <code>Abilities.GetBehavior( integer nEntityIndex )</code>
-| 
-|- 
-| GetCastRange
-| <code>Abilities.GetCastRange( integer nEntityIndex )</code>
-| 
-|- 
-| GetChannelledManaCostPerSecond
-| <code>Abilities.GetChannelledManaCostPerSecond( integer nEntityIndex )</code>
-| 
-|- 
-| GetCurrentCharges
-| <code>Abilities.GetCurrentCharges( integer nEntityIndex )</code>
-| 
-|- 
-| GetEffectiveLevel
-| <code>Abilities.GetEffectiveLevel( integer nEntityIndex )</code>
-| 
-|- 
-| GetHeroLevelRequiredToUpgrade
-| <code>Abilities.GetHeroLevelRequiredToUpgrade( integer nEntityIndex )</code>
-| 
-|- 
-| GetLevel
-| <code>Abilities.GetLevel( integer nEntityIndex )</code>
-| 
-|- 
-| GetManaCost
-| <code>Abilities.GetManaCost( integer nEntityIndex )</code>
-| 
-|- 
-| GetMaxLevel
-| <code>Abilities.GetMaxLevel( integer nEntityIndex )</code>
-| 
-|- 
-| AttemptToUpgrade
-| <code>Abilities.AttemptToUpgrade( integer nEntityIndex )</code>
-| 
-|- 
-| CanLearn
-| <code>Abilities.CanLearn( integer nEntityIndex )</code>
-| 
-|- 
-| GetAutoCastState
-| <code>Abilities.GetAutoCastState( integer nEntityIndex )</code>
-| 
-|- 
-| GetToggleState
-| <code>Abilities.GetToggleState( integer nEntityIndex )</code>
-| 
-|- 
-| HasScepterUpgradeTooltip
-| <code>Abilities.HasScepterUpgradeTooltip( integer nEntityIndex )</code>
-| 
-|- 
-| IsActivated
-| <code>Abilities.IsActivated( integer nEntityIndex )</code>
-| 
-|- 
-| IsActivatedChanging
-| <code>Abilities.IsActivatedChanging( integer nEntityIndex )</code>
-| 
-|- 
-| IsAttributeBonus
-| <code>Abilities.IsAttributeBonus( integer nEntityIndex )</code>
-| 
-|- 
-| IsAutocast
-| <code>Abilities.IsAutocast( integer nEntityIndex )</code>
-| 
-|- 
-| IsCooldownReady
-| <code>Abilities.IsCooldownReady( integer nEntityIndex )</code>
-| 
-|- 
-| IsDisplayedAbility
-| <code>Abilities.IsDisplayedAbility( integer nEntityIndex )</code>
-| 
-|- 
-| IsHidden
-| <code>Abilities.IsHidden( integer nEntityIndex )</code>
-| 
-|- 
-| IsHiddenWhenStolen
-| <code>Abilities.IsHiddenWhenStolen( integer nEntityIndex )</code>
-| 
-|- 
-| IsInAbilityPhase
-| <code>Abilities.IsInAbilityPhase( integer nEntityIndex )</code>
-| 
-|- 
-| IsItem
-| <code>Abilities.IsItem( integer nEntityIndex )</code>
-| 
-|- 
-| IsMarkedAsDirty
-| <code>Abilities.IsMarkedAsDirty( integer nEntityIndex )</code>
-| 
-|- 
-| IsMuted
-| <code>Abilities.IsMuted( integer nEntityIndex )</code>
-| 
-|- 
-| IsOnCastbar
-| <code>Abilities.IsOnCastbar( integer nEntityIndex )</code>
-| 
-|- 
-| IsOnLearnbar
-| <code>Abilities.IsOnLearnbar( integer nEntityIndex )</code>
-| 
-|- 
-| IsOwnersGoldEnough
-| <code>Abilities.IsOwnersGoldEnough( integer nEntityIndex )</code>
-| 
-|- 
-| IsOwnersGoldEnoughForUpgrade
-| <code>Abilities.IsOwnersGoldEnoughForUpgrade( integer nEntityIndex )</code>
-| 
-|- 
-| IsOwnersManaEnough
-| <code>Abilities.IsOwnersManaEnough( integer nEntityIndex )</code>
-| 
-|- 
-| IsPassive
-| <code>Abilities.IsPassive( integer nEntityIndex )</code>
-| 
-|- 
-| IsRecipe
-| <code>Abilities.IsRecipe( integer nEntityIndex )</code>
-| 
-|- 
-| IsSharedWithTeammates
-| <code>Abilities.IsSharedWithTeammates( integer nEntityIndex )</code>
-| 
-|- 
-| IsStealable
-| <code>Abilities.IsStealable( integer nEntityIndex )</code>
-| 
-|- 
-| IsStolen
-| <code>Abilities.IsStolen( integer nEntityIndex )</code>
-| 
-|- 
-| IsToggle
-| <code>Abilities.IsToggle( integer nEntityIndex )</code>
-| 
-|- 
-| GetAOERadius
-| <code>Abilities.GetAOERadius( integer nEntityIndex )</code>
-| 
-|- 
-| GetBackswingTime
-| <code>Abilities.GetBackswingTime( integer nEntityIndex )</code>
-| 
-|- 
-| GetCastPoint
-| <code>Abilities.GetCastPoint( integer nEntityIndex )</code>
-| 
-|- 
-| GetChannelStartTime
-| <code>Abilities.GetChannelStartTime( integer nEntityIndex )</code>
-| 
-|- 
-| GetChannelTime
-| <code>Abilities.GetChannelTime( integer nEntityIndex )</code>
-| 
-|- 
-| GetCooldown
-| <code>Abilities.GetCooldown( integer nEntityIndex )</code>
-| 
-|- 
-| GetCooldownLength
-| <code>Abilities.GetCooldownLength( integer nEntityIndex )</code>
-| 
-|- 
-| GetCooldownTime
-| <code>Abilities.GetCooldownTime( integer nEntityIndex )</code>
-| 
-|- 
-| GetCooldownTimeRemaining
-| <code>Abilities.GetCooldownTimeRemaining( integer nEntityIndex )</code>
-| 
-|- 
-| GetDuration
-| <code>Abilities.GetDuration( integer nEntityIndex )</code>
-| 
-|- 
-| GetUpgradeBlend
-| <code>Abilities.GetUpgradeBlend( integer nEntityIndex )</code>
-| 
-|- 
-| GetLocalPlayerActiveAbility
-| <code>Abilities.GetLocalPlayerActiveAbility()</code>
-| Get the local player's current active ability. (Pre-cast targetting state.)
-|- 
-| GetCaster
-| <code>Abilities.GetCaster( integer nAbilityIndex )</code>
-| 
-|- 
-| GetCustomValueFor
-| <code>Abilities.GetCustomValueFor( integer nAbilityIndex, cstring pszAbilityVarName )</code>
-| 
-|- 
-| GetLevelSpecialValueFor
-| <code>Abilities.GetLevelSpecialValueFor( integer nAbilityIndex, cstring szName, integer nLevel )</code>
-| 
-|- 
-| GetSpecialValueFor
-| <code>Abilities.GetSpecialValueFor( integer nAbilityIndex, cstring szName )</code>
-| 
-|- 
-| IsCosmetic
-| <code>Abilities.IsCosmetic( integer nAbilityIndex, integer nTargetEntityIndex )</code>
-| 
-|- 
-| ExecuteAbility
-| <code>Abilities.ExecuteAbility( integer nAbilityEntIndex, integer nCasterEntIndex, boolean bIsQuickCast )</code>
-| Attempt to execute the specified ability (Equivalent to clicking the ability in the HUD action bar)
-|- 
-| CreateDoubleTapCastOrder
-| <code>Abilities.CreateDoubleTapCastOrder( integer nAbilityEntIndex, integer nCasterEntIndex )</code>
-| Attempt to double-tap (self-cast) the specified ability (Equivalent to double-clicking the ability in the HUD action bar)
-|- 
-| PingAbility
-| <code>Abilities.PingAbility( integer nAbilityIndex )</code>
-| Ping the specified ability (Equivalent to alt-clicking the ability in the HUD action bar)
-|- 
-| GetKeybind
-| <code>Abilities.GetKeybind( integer nAbilityEntIndex )</code>
-| Returns the keybind (as a string) for the specified ability.
-|}
-
-
-=== CScriptBindingPR_Items ===
-{| class="standard-table" style="width: 100%;"
-! Function
-! Signature
-! Description
-|- 
-| ShouldDisplayCharges
-| <code>Items.ShouldDisplayCharges( integer nEntityIndex )</code>
-| 
-|- 
-| AlwaysDisplayCharges
-| <code>Items.AlwaysDisplayCharges( integer nEntityIndex )</code>
-| 
-|- 
-| ShowSecondaryCharges
-| <code>Items.ShowSecondaryCharges( integer nEntityIndex )</code>
-| 
-|- 
-| CanBeSoldByLocalPlayer
-| <code>Items.CanBeSoldByLocalPlayer( integer nEntityIndex )</code>
-| 
-|- 
-| CanDoubleTapCast
-| <code>Items.CanDoubleTapCast( integer nEntityIndex )</code>
-| 
-|- 
-| ForceHideCharges
-| <code>Items.ForceHideCharges( integer nEntityIndex )</code>
-| 
-|- 
-| IsAlertableItem
-| <code>Items.IsAlertableItem( integer nEntityIndex )</code>
-| 
-|- 
-| IsCastOnPickup
-| <code>Items.IsCastOnPickup( integer nEntityIndex )</code>
-| 
-|- 
-| IsDisassemblable
-| <code>Items.IsDisassemblable( integer nEntityIndex )</code>
-| 
-|- 
-| IsDroppable
-| <code>Items.IsDroppable( integer nEntityIndex )</code>
-| 
-|- 
-| IsInnatelyDisassemblable
-| <code>Items.IsInnatelyDisassemblable( integer nEntityIndex )</code>
-| 
-|- 
-| IsKillable
-| <code>Items.IsKillable( integer nEntityIndex )</code>
-| 
-|- 
-| IsMuted
-| <code>Items.IsMuted( integer nEntityIndex )</code>
-| 
-|- 
-| IsPermanent
-| <code>Items.IsPermanent( integer nEntityIndex )</code>
-| 
-|- 
-| IsPurchasable
-| <code>Items.IsPurchasable( integer nEntityIndex )</code>
-| 
-|- 
-| IsRecipe
-| <code>Items.IsRecipe( integer nEntityIndex )</code>
-| 
-|- 
-| IsRecipeGenerated
-| <code>Items.IsRecipeGenerated( integer nEntityIndex )</code>
-| 
-|- 
-| IsSellable
-| <code>Items.IsSellable( integer nEntityIndex )</code>
-| 
-|- 
-| IsStackable
-| <code>Items.IsStackable( integer nEntityIndex )</code>
-| 
-|- 
-| ProRatesChargesWhenSelling
-| <code>Items.ProRatesChargesWhenSelling( integer nEntityIndex )</code>
-| 
-|- 
-| RequiresCharges
-| <code>Items.RequiresCharges( integer nEntityIndex )</code>
-| 
-|- 
-| CanBeExecuted
-| <code>Items.CanBeExecuted( integer nEntityIndex )</code>
-| 
-|- 
-| GetCost
-| <code>Items.GetCost( integer nEntityIndex )</code>
-| 
-|- 
-| GetCurrentCharges
-| <code>Items.GetCurrentCharges( integer nEntityIndex )</code>
-| 
-|- 
-| GetSecondaryCharges
-| <code>Items.GetSecondaryCharges( integer nEntityIndex )</code>
-| 
-|- 
-| GetDisplayedCharges
-| <code>Items.GetDisplayedCharges( integer nEntityIndex )</code>
-| 
-|- 
-| GetInitialCharges
-| <code>Items.GetInitialCharges( integer nEntityIndex )</code>
-| 
-|- 
-| GetItemColor
-| <code>Items.GetItemColor( integer nEntityIndex )</code>
-| 
-|- 
-| GetShareability
-| <code>Items.GetShareability( integer nEntityIndex )</code>
-| 
-|- 
-| GetAbilityTextureSF
-| <code>Items.GetAbilityTextureSF( integer nEntityIndex )</code>
-| 
-|- 
-| GetAssembledTime
-| <code>Items.GetAssembledTime( integer nEntityIndex )</code>
-| 
-|- 
-| GetPurchaseTime
-| <code>Items.GetPurchaseTime( integer nEntityIndex )</code>
-| 
-|- 
-| GetPurchaser
-| <code>Items.GetPurchaser( integer nItemID )</code>
-| 
-|- 
-| LocalPlayerDisassembleItem
-| <code>Items.LocalPlayerDisassembleItem( integer nItem )</code>
-| Attempt to have the local player disassemble the specified item. Returns false if the order wasn't issued.
-|- 
-| LocalPlayerDropItemFromStash
-| <code>Items.LocalPlayerDropItemFromStash( integer nItem )</code>
-| Attempt to have the local player drop the specified item from its stash. Returns false if the order wasn't issued.
-|- 
-| LocalPlayerItemAlertAllies
-| <code>Items.LocalPlayerItemAlertAllies( integer nItem )</code>
-| Attempt to have the local player alert allies about the specified item. Returns false if the order wasn't issued.
-|- 
-| LocalPlayerMoveItemToStash
-| <code>Items.LocalPlayerMoveItemToStash( integer nItem )</code>
-| Attempt to have the local player move the specified item to its stash. Returns false if the order wasn't issued.
-|- 
-| LocalPlayerSellItem
-| <code>Items.LocalPlayerSellItem( integer nItem )</code>
-| Attempt to have the local player sell the specified item. Returns false if the order wasn't issued.
-|}
-
-
-=== CScriptBindingPR_Game ===
-{| class="standard-table" style="width: 100%;"
-! Function
-! Signature
-! Description
-|- 
-| Time
-| <code>Game.Time()</code>
-| 
-|- 
-| GetGameTime
-| <code>Game.GetGameTime()</code>
-| 
-|- 
-| GetDOTATime
-| <code>Game.GetDOTATime( boolean bIncludePreGame, boolean bIncludeNegativeTime )</code>
-| 
-|- 
-| IsGamePaused
-| <code>Game.IsGamePaused()</code>
-| 
-|- 
-| IsInToolsMode
-| <code>Game.IsInToolsMode()</code>
-| 
-|- 
-| GetGameWinner
-| <code>Game.GetGameWinner()</code>
-| Return the team id of the winning team.
-|- 
-| GetStateTransitionTime
-| <code>Game.GetStateTransitionTime()</code>
-| 
-|- 
-| GetCustomGameDifficulty
-| <code>Game.GetCustomGameDifficulty()</code>
-| Get the difficulty setting of the game.
-|- 
-| IsHUDFlipped
-| <code>Game.IsHUDFlipped()</code>
-| Returns true if the user has enabled flipped HUD
-|- 
-| GetScreenWidth
-| <code>Game.GetScreenWidth()</code>
-| Returns the width of the display.
-|- 
-| GetScreenHeight
-| <code>Game.GetScreenHeight()</code>
-| Returns the height of the display.
-|- 
-| WorldToScreenX
-| <code>Game.WorldToScreenX( float x, float y, float z )</code>
-| Converts the specified x,y,z world co-ordinate into an x screen coordinate. Returns -1 if behind the camera
-|- 
-| WorldToScreenY
-| <code>Game.WorldToScreenY( float x, float y, float z )</code>
-| Converts the specified x,y,z world co-ordinate into a y screen coordinate. Returns -1 if behind the camera
-|- 
-| ScreenXYToWorld
-| <code>Game.ScreenXYToWorld( integer nX, integer nY )</code>
-| Converts the specified x, y screen coordinates into a x, y, z world coordinates.
-|- 
-| GetKeybindForAbility
-| <code>Game.GetKeybindForAbility( integer iSlot )</code>
-| Returns the keybind (as a string) for the requested ability slot.
-|- 
-| GetNianFightTimeLeft
-| <code>Game.GetNianFightTimeLeft()</code>
-| 
-|- 
-| GetState
-| <code>Game.GetState()</code>
-| 
-|- 
-| GameStateIs
-| <code>Game.GameStateIs( integer nState )</code>
-| 
-|- 
-| GameStateIsBefore
-| <code>Game.GameStateIsBefore( integer nState )</code>
-| 
-|- 
-| GameStateIsAfter
-| <code>Game.GameStateIsAfter( integer nState )</code>
-| 
-|- 
-| AddCommand
-| <code>Game.AddCommand( cstring pszCommandName, js_value callback, cstring pszDescription, integer nFlags )</code>
-| 
-|- 
-| GetLocalPlayerID
-| <code>Game.GetLocalPlayerID()</code>
-| 
-|- 
-| PlayerJoinTeam
-| <code>Game.PlayerJoinTeam( integer nTeamID )</code>
-| Assign the local player to the specified team
-|- 
-| AutoAssignPlayersToTeams
-| <code>Game.AutoAssignPlayersToTeams()</code>
-| Assign the currently unassigned players to teams
-|- 
-| ShufflePlayerTeamAssignments
-| <code>Game.ShufflePlayerTeamAssignments()</code>
-| Shuffle the team assignments of all of the players currently assigned to a team.
-|- 
-| SetRemainingSetupTime
-| <code>Game.SetRemainingSetupTime( float flSeconds )</code>
-| Set the remaining seconds in team setup before the game starts. -1 to stop the countdown timer
-|- 
-| SetAutoLaunchDelay
-| <code>Game.SetAutoLaunchDelay( float flSeconds )</code>
-| Set the amount of time in seconds that will be set as the remaining time when all players are assigned to a team.
-|- 
-| SetAutoLaunchEnabled
-| <code>Game.SetAutoLaunchEnabled( boolean bEnable )</code>
-| Enable or disable automatically starting the game once all players are assigned to a team
-|- 
-| GetAutoLaunchEnabled
-| <code>Game.GetAutoLaunchEnabled()</code>
-| Return true of false indicating if automatically starting the game is enabled.
-|- 
-| SetTeamSelectionLocked
-| <code>Game.SetTeamSelectionLocked( boolean bLockTeams )</code>
-| Lock the team selection preventing players from swiching teams.
-|- 
-| GetTeamSelectionLocked
-| <code>Game.GetTeamSelectionLocked()</code>
-| Returns true or false to indicate if team selection is locked
-|- 
-| GetAllTeamIDs
-| <code>Game.GetAllTeamIDs()</code>
-| Get all team IDs
-|- 
-| GetAllPlayerIDs
-| <code>Game.GetAllPlayerIDs()</code>
-| Get all player IDs
-|- 
-| GetUnassignedPlayerIDs
-| <code>Game.GetUnassignedPlayerIDs()</code>
-| Get unassigned player IDs
-|- 
-| GetPlayerUltimateStateOrTime
-| <code>Game.GetPlayerUltimateStateOrTime( integer nPlayerID )</code>
-| Get info about the player hero ultimate ability
-|- 
-| IsPlayerMuted
-| <code>Game.IsPlayerMuted( integer nPlayerID )</code>
-| Whether the local player has muted text and voice chat for the specified player id
-|- 
-| SetPlayerMuted
-| <code>Game.SetPlayerMuted( integer nPlayerID, boolean bMuted )</code>
-| Set whether the local player has muted text and voice chat for the specified player id
-|- 
-| GetTeamDetails
-| <code>Game.GetTeamDetails( integer nTeam )</code>
-| Get detailed information for the given team
-|- 
-| GetLocalPlayerInfo
-| <code>Game.GetLocalPlayerInfo()</code>
-| Get details for the local player
-|- 
-| GetPlayerItems
-| <code>Game.GetPlayerItems( integer nPlayerID )</code>
-| Get info about the player items.
-|- 
-| GetPlayerInfo
-| <code>Game.GetPlayerInfo( integer nPlayerID )</code>
-| Get info about the given player
-|- 
-| GetPlayerIDsOnTeam
-| <code>Game.GetPlayerIDsOnTeam( integer nTeam )</code>
-| Get player IDs for the given team
-|- 
-| ServerCmd
-| <code>Game.ServerCmd( cstring pMsg )</code>
-| 
-|- 
-| FinishGame
-| <code>Game.FinishGame()</code>
-| 
-|- 
-| EmitSound
-| <code>Game.EmitSound( cstring pSoundEventName )</code>
-| Emit a sound for the local player. Returns an integer handle that can be passed to StopSound. (Returns 0 on failure.)
-|- 
-| StopSound
-| <code>Game.StopSound( integer nHandle )</code>
-| Stop a current playing sound on the local player. Takes handle from a call to EmitSound.
-|- 
-| GetMapInfo
-| <code>Game.GetMapInfo()</code>
-| Return information about the current map.
-|- 
-| PrepareUnitOrders
-| <code>Game.PrepareUnitOrders( js_raw_args args )</code>
-| Orders from the local player - takes a single arguments object that supports: dotaunitorder_t OrderType, ent_index TargetIndex, vector Position, ent_index AbilityIndex, OrderIssuer_t OrderIssuer, ent_index UnitIndex, OrderQueueBehavior_t QueueBehavior, bool ShowEffects.
-|- 
-| DropItemAtCursor
-| <code>Game.DropItemAtCursor( integer nControlledUnitEnt, integer nItemEnt )</code>
-| Order a unit to drop the specified item at the current cursor location.
-|- 
-| EnterAbilityLearnMode
-| <code>Game.EnterAbilityLearnMode()</code>
-| 
-|- 
-| EndAbilityLearnMode
-| <code>Game.EndAbilityLearnMode()</code>
-| 
-|- 
-| IsInAbilityLearnMode
-| <code>Game.IsInAbilityLearnMode()</code>
-| 
 |}
 
 
@@ -1724,31 +136,35 @@
 | 
 |-
 | DOTA_GameState.DOTA_GAMERULES_STATE_STRATEGY_TIME
-| 5
+| 4
 | 
 |-
 | DOTA_GameState.DOTA_GAMERULES_STATE_PRE_GAME
-| 6
-| 
-|-
-| DOTA_GameState.DOTA_GAMERULES_STATE_GAME_IN_PROGRESS
 | 7
 | 
 |-
-| DOTA_GameState.DOTA_GAMERULES_STATE_POST_GAME
+| DOTA_GameState.DOTA_GAMERULES_STATE_GAME_IN_PROGRESS
 | 8
 | 
 |-
-| DOTA_GameState.DOTA_GAMERULES_STATE_DISCONNECT
+| DOTA_GameState.DOTA_GAMERULES_STATE_POST_GAME
 | 9
 | 
 |-
+| DOTA_GameState.DOTA_GAMERULES_STATE_DISCONNECT
+| 10
+| 
+|-
 | DOTA_GameState.DOTA_GAMERULES_STATE_TEAM_SHOWCASE
-| 4
+| 5
 | 
 |-
 | DOTA_GameState.DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP
 | 2
+| 
+|-
+| DOTA_GameState.DOTA_GAMERULES_STATE_WAIT_FOR_MAP_TO_LOAD
+| 6
 | 
 |-
 | DOTA_GameState.DOTA_GAMERULES_STATE_LAST
@@ -2038,6 +454,14 @@
 | DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_MAGICAL_BLOCK
 | 16
 | 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_INCOMING_DAMAGE
+| 17
+| 
+|-
+| DOTA_OVERHEAD_ALERT.OVERHEAD_ALERT_OUTGOING_DAMAGE
+| 18
+| 
 |}
 
 === DOTA_HeroPickState ===
@@ -2058,11 +482,11 @@
 | 2
 | 
 |-
-| DOTA_HeroPickState.DOTA_HEROPICK_STATE_INTRO_SELECT
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_INTRO_SELECT_UNUSED
 | 3
 | 
 |-
-| DOTA_HeroPickState.DOTA_HEROPICK_STATE_RD_SELECT
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_RD_SELECT_UNUSED
 | 4
 | 
 |-
@@ -2266,8 +690,12 @@
 | 54
 | 
 |-
-| DOTA_HeroPickState.DOTA_HEROPICK_STATE_COUNT
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_SELECT_PENALTY
 | 55
+| 
+|-
+| DOTA_HeroPickState.DOTA_HEROPICK_STATE_COUNT
+| 56
 | 
 |}
 
@@ -2925,8 +1353,12 @@
 | 1073741824
 | 
 |-
+| DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_LAST_RESORT_POINT
+| -2147483648
+| 
+|-
 | DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_LAST_BEHAVIOR
-| 1073741824
+| -2147483648
 | 
 |}
 
@@ -3059,6 +1491,14 @@
 |-
 | DOTADamageFlag_t.DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS
 | 512
+| 
+|-
+| DOTADamageFlag_t.DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
+| 1024
+| 
+|-
+| DOTADamageFlag_t.DOTA_DAMAGE_FLAG_DONT_DISPLAY_DAMAGE_IF_SOURCE_HIDDEN
+| 2048
 | 
 |}
 
@@ -3954,6 +2394,42 @@
 | GameActivity_t.ACT_DOTA_MK_STRIKE
 | 1715
 | 
+|-
+| GameActivity_t.ACT_DOTA_VERSUS
+| 1716
+| 
+|-
+| GameActivity_t.ACT_DOTA_CAPTURE_CARD
+| 1717
+| 
+|-
+| GameActivity_t.ACT_DOTA_MK_SPRING_SOAR
+| 1718
+| 
+|-
+| GameActivity_t.ACT_DOTA_MK_SPRING_END
+| 1719
+| 
+|-
+| GameActivity_t.ACT_DOTA_MK_TREE_SOAR
+| 1720
+| 
+|-
+| GameActivity_t.ACT_DOTA_MK_TREE_END
+| 1721
+| 
+|-
+| GameActivity_t.ACT_DOTA_MK_FUR_ARMY
+| 1722
+| 
+|-
+| GameActivity_t.ACT_DOTA_MK_SPRING_CAST
+| 1723
+| 
+|-
+| GameActivity_t.ACT_DOTA_NECRO_GHOST_SHROUD
+| 1724
+| 
 |}
 
 === DOTAMinimapEvent_t ===
@@ -4228,680 +2704,696 @@
 | 0
 | GetModifierPreAttack_BonusDamage
 |-
-| modifierfunction.MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_POST_CRIT
+| modifierfunction.MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_PROC
 | 1
+| GetModifierPreAttack_BonusDamage_Proc
+|-
+| modifierfunction.MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE_POST_CRIT
+| 2
 | GetModifierPreAttack_BonusDamagePostCrit
 |-
 | modifierfunction.MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE
-| 2
+| 3
 | GetModifierBaseAttack_BonusDamage
 |-
 | modifierfunction.MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL
-| 3
+| 4
 | GetModifierProcAttack_BonusDamage_Physical
 |-
 | modifierfunction.MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL
-| 4
+| 5
 | GetModifierProcAttack_BonusDamage_Magical
 |-
 | modifierfunction.MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE
-| 5
+| 6
 | GetModifierProcAttack_BonusDamage_Pure
 |-
 | modifierfunction.MODIFIER_PROPERTY_PROCATTACK_FEEDBACK
-| 6
+| 7
 | GetModifierProcAttack_Feedback
 |-
 | modifierfunction.MODIFIER_PROPERTY_PRE_ATTACK
-| 7
+| 8
 | GetModifierPreAttack
 |-
 | modifierfunction.MODIFIER_PROPERTY_INVISIBILITY_LEVEL
-| 8
+| 9
 | GetModifierInvisibilityLevel
 |-
 | modifierfunction.MODIFIER_PROPERTY_PERSISTENT_INVISIBILITY
-| 9
+| 10
 | GetModifierPersistentInvisibility
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT
-| 10
+| 11
 | GetModifierMoveSpeedBonus_Constant
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE
-| 11
+| 12
 | GetModifierMoveSpeedOverride
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE
-| 12
+| 13
 | GetModifierMoveSpeedBonus_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE
-| 13
+| 14
 | GetModifierMoveSpeedBonus_Percentage_Unique
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE_2
-| 14
+| 15
 | GetModifierMoveSpeedBonus_Percentage_Unique_2
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE
-| 15
+| 16
 | GetModifierMoveSpeedBonus_Special_Boots
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE_2
-| 16
+| 17
 | GetModifierMoveSpeedBonus_Special_Boots_2
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
-| 17
+| 18
 | GetModifierMoveSpeed_Absolute
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN
-| 18
+| 19
 | GetModifierMoveSpeed_AbsoluteMin
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_LIMIT
-| 19
+| 20
 | GetModifierMoveSpeed_Limit
 |-
 | modifierfunction.MODIFIER_PROPERTY_MOVESPEED_MAX
-| 20
+| 21
 | GetModifierMoveSpeed_Max
 |-
+| modifierfunction.MODIFIER_PROPERTY_ATTACKSPEED_BASE_OVERRIDE
+| 22
+| GetModifierAttackSpeedBaseOverride
+|-
+| modifierfunction.MODIFIER_PROPERTY_FIXED_ATTACK_RATE
+| 23
+| GetModifierAttackSpeedBaseOverride
+|-
 | modifierfunction.MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
-| 21
+| 24
 | GetModifierAttackSpeedBonus_Constant
 |-
-| modifierfunction.MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_POWER_TREADS
-| 22
-| GetModifierAttackSpeedBonus_Constant_PowerTreads
-|-
-| modifierfunction.MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY
-| 23
-| GetModifierAttackSpeedBonus_Constant_Secondary
-|-
 | modifierfunction.MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT
-| 24
+| 25
 | GetModifierCooldownReduction_Constant
 |-
 | modifierfunction.MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT
-| 25
+| 26
 | GetModifierBaseAttackTimeConstant
 |-
 | modifierfunction.MODIFIER_PROPERTY_ATTACK_POINT_CONSTANT
-| 26
+| 27
 | GetModifierAttackPointConstant
 |-
 | modifierfunction.MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
-| 27
+| 28
 | GetModifierDamageOutgoing_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE_ILLUSION
-| 28
+| 29
 | GetModifierDamageOutgoing_Percentage_Illusion
 |-
 | modifierfunction.MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE
-| 29
+| 30
 | GetModifierTotalDamageOutgoing_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
-| 30
+| 31
 | GetModifierSpellAmplify_Percentage
 |-
+| modifierfunction.MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE
+| 32
+| GetModifierHealAmplify_Percentage
+|-
 | modifierfunction.MODIFIER_PROPERTY_MAGICDAMAGEOUTGOING_PERCENTAGE
-| 31
+| 33
 | GetModifierMagicDamageOutgoing_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE
-| 32
+| 34
 | GetModifierBaseDamageOutgoing_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE_UNIQUE
-| 33
+| 35
 | GetModifierBaseDamageOutgoing_PercentageUnique
 |-
 | modifierfunction.MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
-| 34
+| 36
 | GetModifierIncomingDamage_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE
-| 35
+| 37
 | GetModifierIncomingPhysicalDamage_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_CONSTANT
-| 36
+| 38
 | GetModifierIncomingPhysicalDamageConstant
 |-
 | modifierfunction.MODIFIER_PROPERTY_INCOMING_SPELL_DAMAGE_CONSTANT
-| 37
+| 39
 | GetModifierIncomingSpellDamageConstant
 |-
 | modifierfunction.MODIFIER_PROPERTY_EVASION_CONSTANT
-| 38
+| 40
 | GetModifierEvasion_Constant
 |-
 | modifierfunction.MODIFIER_PROPERTY_NEGATIVE_EVASION_CONSTANT
-| 39
+| 41
 | GetModifierNegativeEvasion_Constant
 |-
 | modifierfunction.MODIFIER_PROPERTY_AVOID_DAMAGE
-| 40
+| 42
 | GetModifierAvoidDamage
 |-
 | modifierfunction.MODIFIER_PROPERTY_AVOID_SPELL
-| 41
+| 43
 | GetModifierAvoidSpell
 |-
 | modifierfunction.MODIFIER_PROPERTY_MISS_PERCENTAGE
-| 42
+| 44
 | GetModifierMiss_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
-| 43
+| 45
 | GetModifierPhysicalArmorBonus
 |-
-| modifierfunction.MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_ILLUSIONS
-| 44
-| GetModifierPhysicalArmorBonusIllusions
-|-
 | modifierfunction.MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE
-| 45
+| 46
 | GetModifierPhysicalArmorBonusUnique
 |-
 | modifierfunction.MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE_ACTIVE
-| 46
+| 47
 | GetModifierPhysicalArmorBonusUniqueActive
 |-
+| modifierfunction.MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION
+| 48
+| GetModifierMagicalResistanceDirectModification
+|-
 | modifierfunction.MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
-| 47
+| 49
 | GetModifierMagicalResistanceBonus
 |-
-| modifierfunction.MODIFIER_PROPERTY_MAGICAL_RESISTANCE_ITEM_UNIQUE
-| 48
-| GetModifierMagicalResistanceItemUnique
-|-
 | modifierfunction.MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE
-| 49
+| 50
 | GetModifierMagicalResistanceDecrepifyUnique
 |-
 | modifierfunction.MODIFIER_PROPERTY_BASE_MANA_REGEN
-| 50
+| 51
 | GetModifierBaseRegen
 |-
 | modifierfunction.MODIFIER_PROPERTY_MANA_REGEN_CONSTANT
-| 51
+| 52
 | GetModifierConstantManaRegen
 |-
 | modifierfunction.MODIFIER_PROPERTY_MANA_REGEN_CONSTANT_UNIQUE
-| 52
+| 53
 | GetModifierConstantManaRegenUnique
 |-
 | modifierfunction.MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE
-| 53
+| 54
 | GetModifierPercentageManaRegen
 |-
 | modifierfunction.MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE
-| 54
+| 55
 | GetModifierTotalPercentageManaRegen
 |-
 | modifierfunction.MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT
-| 55
+| 56
 | GetModifierConstantHealthRegen
 |-
 | modifierfunction.MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE
-| 56
+| 57
 | GetModifierHealthRegenPercentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_HEALTH_BONUS
-| 57
+| 58
 | GetModifierHealthBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_MANA_BONUS
-| 58
+| 59
 | GetModifierManaBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_EXTRA_STRENGTH_BONUS
-| 59
+| 60
 | GetModifierExtraStrengthBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS
-| 60
+| 61
 | GetModifierExtraHealthBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_EXTRA_MANA_BONUS
-| 61
+| 62
 | GetModifierExtraManaBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE
-| 62
+| 63
 | GetModifierExtraHealthPercentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_STATS_STRENGTH_BONUS
-| 63
+| 64
 | GetModifierBonusStats_Strength
 |-
 | modifierfunction.MODIFIER_PROPERTY_STATS_AGILITY_BONUS
-| 64
+| 65
 | GetModifierBonusStats_Agility
 |-
 | modifierfunction.MODIFIER_PROPERTY_STATS_INTELLECT_BONUS
-| 65
+| 66
 | GetModifierBonusStats_Intellect
 |-
 | modifierfunction.MODIFIER_PROPERTY_CAST_RANGE_BONUS
-| 66
+| 67
 | GetModifierCastRangeBonus
 |-
+| modifierfunction.MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING
+| 68
+| GetModifierCastRangeBonusStacking
+|-
 | modifierfunction.MODIFIER_PROPERTY_ATTACK_RANGE_BONUS
-| 67
+| 69
 | GetModifierAttackRangeBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_UNIQUE
-| 68
+| 70
 | GetModifierAttackRangeBonusUnique
 |-
 | modifierfunction.MODIFIER_PROPERTY_MAX_ATTACK_RANGE
-| 69
+| 71
 | GetModifierMaxAttackRange
 |-
 | modifierfunction.MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS
-| 70
+| 72
 | GetModifierProjectileSpeedBonus
 |-
 | modifierfunction.MODIFIER_PROPERTY_REINCARNATION
-| 71
+| 73
 | ReincarnateTime
 |-
 | modifierfunction.MODIFIER_PROPERTY_RESPAWNTIME
-| 72
+| 74
 | GetModifierConstantRespawnTime
 |-
 | modifierfunction.MODIFIER_PROPERTY_RESPAWNTIME_PERCENTAGE
-| 73
+| 75
 | GetModifierPercentageRespawnTime
 |-
 | modifierfunction.MODIFIER_PROPERTY_RESPAWNTIME_STACKING
-| 74
+| 76
 | GetModifierStackingRespawnTime
 |-
 | modifierfunction.MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE
-| 75
+| 77
 | GetModifierPercentageCooldown
 |-
 | modifierfunction.MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING
-| 76
+| 78
 | GetModifierPercentageCooldownStacking
 |-
 | modifierfunction.MODIFIER_PROPERTY_CASTTIME_PERCENTAGE
-| 77
+| 79
 | GetModifierPercentageCasttime
 |-
 | modifierfunction.MODIFIER_PROPERTY_MANACOST_PERCENTAGE
-| 78
+| 80
 | GetModifierPercentageManacost
 |-
 | modifierfunction.MODIFIER_PROPERTY_DEATHGOLDCOST
-| 79
+| 81
 | GetModifierConstantDeathGoldCost
 |-
+| modifierfunction.MODIFIER_PROPERTY_EXP_RATE_BOOST
+| 82
+| GetModifierPercentageExpRateBoost
+|-
 | modifierfunction.MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE
-| 80
+| 83
 | GetModifierPreAttack_CriticalStrike
 |-
 | modifierfunction.MODIFIER_PROPERTY_PREATTACK_TARGET_CRITICALSTRIKE
-| 81
+| 84
 | GetModifierPreAttack_Target_CriticalStrike
 |-
 | modifierfunction.MODIFIER_PROPERTY_MAGICAL_CONSTANT_BLOCK
-| 82
+| 85
 | GetModifierMagical_ConstantBlock
 |-
 | modifierfunction.MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK
-| 83
+| 86
 | GetModifierPhysical_ConstantBlock
 |-
 | modifierfunction.MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK_SPECIAL
-| 84
+| 87
 | GetModifierPhysical_ConstantBlockSpecial
 |-
 | modifierfunction.MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_UNAVOIDABLE_PRE_ARMOR
-| 85
+| 88
 | GetModifierPhysical_ConstantBlockUnavoidablePreArmor
 |-
 | modifierfunction.MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK
-| 86
+| 89
 | GetModifierTotal_ConstantBlock
 |-
 | modifierfunction.MODIFIER_PROPERTY_OVERRIDE_ANIMATION
-| 87
+| 90
 | GetOverrideAnimation
 |-
 | modifierfunction.MODIFIER_PROPERTY_OVERRIDE_ANIMATION_WEIGHT
-| 88
+| 91
 | GetOverrideAnimationWeight
 |-
 | modifierfunction.MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE
-| 89
+| 92
 | GetOverrideAnimationRate
 |-
 | modifierfunction.MODIFIER_PROPERTY_ABSORB_SPELL
-| 90
+| 93
 | GetAbsorbSpell
 |-
 | modifierfunction.MODIFIER_PROPERTY_REFLECT_SPELL
-| 91
+| 94
 | GetReflectSpell
 |-
 | modifierfunction.MODIFIER_PROPERTY_DISABLE_AUTOATTACK
-| 92
+| 95
 | GetDisableAutoAttack
 |-
 | modifierfunction.MODIFIER_PROPERTY_BONUS_DAY_VISION
-| 93
+| 96
 | GetBonusDayVision
 |-
 | modifierfunction.MODIFIER_PROPERTY_BONUS_NIGHT_VISION
-| 94
+| 97
 | GetBonusNightVision
 |-
 | modifierfunction.MODIFIER_PROPERTY_BONUS_NIGHT_VISION_UNIQUE
-| 95
+| 98
 | GetBonusNightVisionUnique
 |-
 | modifierfunction.MODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE
-| 96
+| 99
 | GetBonusVisionPercentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_FIXED_DAY_VISION
-| 97
+| 100
 | GetFixedDayVision
 |-
 | modifierfunction.MODIFIER_PROPERTY_FIXED_NIGHT_VISION
-| 98
+| 101
 | GetFixedNightVision
 |-
 | modifierfunction.MODIFIER_PROPERTY_MIN_HEALTH
-| 99
+| 102
 | GetMinHealth
 |-
 | modifierfunction.MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL
-| 100
+| 103
 | GetAbsoluteNoDamagePhysical
 |-
 | modifierfunction.MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL
-| 101
+| 104
 | GetAbsoluteNoDamageMagical
 |-
 | modifierfunction.MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE
-| 102
+| 105
 | GetAbsoluteNoDamagePure
 |-
 | modifierfunction.MODIFIER_PROPERTY_IS_ILLUSION
-| 103
+| 106
 | GetIsIllusion
 |-
 | modifierfunction.MODIFIER_PROPERTY_ILLUSION_LABEL
-| 104
+| 107
 | GetModifierIllusionLabel
 |-
 | modifierfunction.MODIFIER_PROPERTY_SUPER_ILLUSION
-| 105
+| 108
 | GetModifierSuperIllusion
 |-
 | modifierfunction.MODIFIER_PROPERTY_SUPER_ILLUSION_WITH_ULTIMATE
-| 106
+| 109
 | GetModifierSuperIllusionWithUltimate
 |-
 | modifierfunction.MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE
-| 107
+| 110
 | GetModifierTurnRate_Percentage
 |-
 | modifierfunction.MODIFIER_PROPERTY_DISABLE_HEALING
-| 108
+| 111
 | GetDisableHealing
 |-
 | modifierfunction.MODIFIER_PROPERTY_ALWAYS_ALLOW_ATTACK
-| 109
+| 112
 | GetAlwaysAllowAttack
 |-
 | modifierfunction.MODIFIER_PROPERTY_OVERRIDE_ATTACK_MAGICAL
-| 110
+| 113
 | GetOverrideAttackMagical
 |-
 | modifierfunction.MODIFIER_PROPERTY_UNIT_STATS_NEEDS_REFRESH
-| 111
+| 114
 | GetModifierUnitStatsNeedsRefresh
 |-
 | modifierfunction.MODIFIER_PROPERTY_BOUNTY_CREEP_MULTIPLIER
-| 112
+| 115
 | GetModifierBountyCreepMultiplier
 |-
 | modifierfunction.MODIFIER_PROPERTY_BOUNTY_OTHER_MULTIPLIER
-| 113
+| 116
 | GetModifierBountyOtherMultiplier
 |-
 | modifierfunction.MODIFIER_EVENT_ON_SPELL_TARGET_READY
-| 114
+| 117
 | OnSpellTargetReady
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK_RECORD
-| 115
+| 118
 | OnAttackRecord
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK_START
-| 116
+| 119
 | OnAttackStart
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK
-| 117
+| 120
 | OnAttack
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK_LANDED
-| 118
+| 121
 | OnAttackLanded
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK_FAIL
-| 119
+| 122
 | OnAttackFail
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK_ALLIED
-| 120
+| 123
 | OnAttackAllied
 |-
 | modifierfunction.MODIFIER_EVENT_ON_PROJECTILE_DODGE
-| 121
+| 124
 | OnProjectileDodge
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ORDER
-| 122
+| 125
 | OnOrder
 |-
 | modifierfunction.MODIFIER_EVENT_ON_UNIT_MOVED
-| 123
+| 126
 | OnUnitMoved
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ABILITY_START
-| 124
+| 127
 | OnAbilityStart
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ABILITY_EXECUTED
-| 125
+| 128
 | OnAbilityExecuted
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ABILITY_FULLY_CAST
-| 126
+| 129
 | OnAbilityFullyCast
 |-
 | modifierfunction.MODIFIER_EVENT_ON_BREAK_INVISIBILITY
-| 127
+| 130
 | OnBreakInvisibility
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ABILITY_END_CHANNEL
-| 128
+| 131
 | OnAbilityEndChannel
 |-
 | modifierfunction.MODIFIER_EVENT_ON_PROCESS_UPGRADE
-| 129
+| 132
 | 
 |-
 | modifierfunction.MODIFIER_EVENT_ON_REFRESH
-| 130
-| 
-|-
-| modifierfunction.MODIFIER_EVENT_ON_TAKEDAMAGE
-| 131
-| OnTakeDamage
-|-
-| modifierfunction.MODIFIER_EVENT_ON_STATE_CHANGED
-| 132
-| OnStateChanged
-|-
-| modifierfunction.MODIFIER_EVENT_ON_ORB_EFFECT
 | 133
 | 
 |-
-| modifierfunction.MODIFIER_EVENT_ON_ATTACKED
+| modifierfunction.MODIFIER_EVENT_ON_TAKEDAMAGE
 | 134
+| OnTakeDamage
+|-
+| modifierfunction.MODIFIER_EVENT_ON_STATE_CHANGED
+| 135
+| OnStateChanged
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ORB_EFFECT
+| 136
+| 
+|-
+| modifierfunction.MODIFIER_EVENT_ON_ATTACKED
+| 137
 | OnAttacked
 |-
 | modifierfunction.MODIFIER_EVENT_ON_DEATH
-| 135
+| 138
 | OnDeath
 |-
 | modifierfunction.MODIFIER_EVENT_ON_RESPAWN
-| 136
+| 139
 | OnRespawn
 |-
 | modifierfunction.MODIFIER_EVENT_ON_SPENT_MANA
-| 137
+| 140
 | OnSpentMana
 |-
 | modifierfunction.MODIFIER_EVENT_ON_TELEPORTING
-| 138
+| 141
 | OnTeleporting
 |-
 | modifierfunction.MODIFIER_EVENT_ON_TELEPORTED
-| 139
+| 142
 | OnTeleported
 |-
 | modifierfunction.MODIFIER_EVENT_ON_SET_LOCATION
-| 140
+| 143
 | OnSetLocation
 |-
 | modifierfunction.MODIFIER_EVENT_ON_HEALTH_GAINED
-| 141
+| 144
 | OnHealthGained
 |-
 | modifierfunction.MODIFIER_EVENT_ON_MANA_GAINED
-| 142
+| 145
 | OnManaGained
 |-
 | modifierfunction.MODIFIER_EVENT_ON_TAKEDAMAGE_KILLCREDIT
-| 143
+| 146
 | OnTakeDamageKillCredit
 |-
 | modifierfunction.MODIFIER_EVENT_ON_HERO_KILLED
-| 144
+| 147
 | OnHeroKilled
 |-
 | modifierfunction.MODIFIER_EVENT_ON_HEAL_RECEIVED
-| 145
+| 148
 | OnHealReceived
 |-
 | modifierfunction.MODIFIER_EVENT_ON_BUILDING_KILLED
-| 146
+| 149
 | OnBuildingKilled
 |-
 | modifierfunction.MODIFIER_EVENT_ON_MODEL_CHANGED
-| 147
+| 150
 | OnModelChanged
 |-
 | modifierfunction.MODIFIER_PROPERTY_TOOLTIP
-| 148
+| 151
 | OnTooltip
 |-
 | modifierfunction.MODIFIER_PROPERTY_MODEL_CHANGE
-| 149
+| 152
 | GetModifierModelChange
 |-
 | modifierfunction.MODIFIER_PROPERTY_MODEL_SCALE
-| 150
+| 153
 | GetModifierModelScale
 |-
 | modifierfunction.MODIFIER_PROPERTY_IS_SCEPTER
-| 151
+| 154
 | GetModifierScepter
 |-
 | modifierfunction.MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS
-| 152
+| 155
 | GetActivityTranslationModifiers
 |-
 | modifierfunction.MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND
-| 153
+| 156
 | GetAttackSound
 |-
 | modifierfunction.MODIFIER_PROPERTY_LIFETIME_FRACTION
-| 154
+| 157
 | GetUnitLifetimeFraction
 |-
 | modifierfunction.MODIFIER_PROPERTY_PROVIDES_FOW_POSITION
-| 155
+| 158
 | GetModifierProvidesFOWVision
 |-
 | modifierfunction.MODIFIER_PROPERTY_SPELLS_REQUIRE_HP
-| 156
+| 159
 | GetModifierSpellsRequireHP
 |-
 | modifierfunction.MODIFIER_PROPERTY_FORCE_DRAW_MINIMAP
-| 157
+| 160
 | GetForceDrawOnMinimap
 |-
 | modifierfunction.MODIFIER_PROPERTY_DISABLE_TURNING
-| 158
+| 161
 | GetModifierDisableTurning
 |-
 | modifierfunction.MODIFIER_PROPERTY_IGNORE_CAST_ANGLE
-| 159
+| 162
 | GetModifierIgnoreCastAngle
 |-
 | modifierfunction.MODIFIER_PROPERTY_CHANGE_ABILITY_VALUE
-| 160
+| 163
 | GetModifierChangeAbilityValue
 |-
 | modifierfunction.MODIFIER_PROPERTY_ABILITY_LAYOUT
-| 161
+| 164
 | GetModifierAbilityLayout
 |-
 | modifierfunction.MODIFIER_EVENT_ON_DOMINATED
-| 162
+| 165
 | OnDominated
 |-
 | modifierfunction.MODIFIER_PROPERTY_TEMPEST_DOUBLE
-| 163
+| 166
 | GetModifierTempestDouble
 |-
 | modifierfunction.MODIFIER_PROPERTY_PRESERVE_PARTICLES_ON_MODEL_CHANGE
-| 164
+| 167
 | PreserveParticlesOnModelChanged
 |-
 | modifierfunction.MODIFIER_EVENT_ON_ATTACK_FINISHED
-| 165
+| 168
 | OnAttackFinished
 |-
 | modifierfunction.MODIFIER_PROPERTY_IGNORE_COOLDOWN
-| 166
+| 169
 | GetModifierIgnoreCooldown
 |-
 | modifierfunction.MODIFIER_PROPERTY_CAN_ATTACK_TREES
-| 167
+| 170
 | GetModifierCanAttackTrees
 |-
 | modifierfunction.MODIFIER_PROPERTY_VISUAL_Z_DELTA
-| 168
+| 171
 | GetVisualZDelta
 |-
+| modifierfunction.MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION
+| 172
+| 
+|-
 | modifierfunction.MODIFIER_FUNCTION_LAST
-| 169
+| 173
 | 
 |-
 | modifierfunction.MODIFIER_FUNCTION_INVALID
@@ -4975,84 +3467,88 @@
 | 14
 | 
 |-
-| modifierstate.MODIFIER_STATE_CANNOT_MISS
+| modifierstate.MODIFIER_STATE_CANNOT_TARGET_ENEMIES
 | 15
 | 
 |-
-| modifierstate.MODIFIER_STATE_SPECIALLY_DENIABLE
+| modifierstate.MODIFIER_STATE_CANNOT_MISS
 | 16
 | 
 |-
-| modifierstate.MODIFIER_STATE_FROZEN
+| modifierstate.MODIFIER_STATE_SPECIALLY_DENIABLE
 | 17
 | 
 |-
-| modifierstate.MODIFIER_STATE_COMMAND_RESTRICTED
+| modifierstate.MODIFIER_STATE_FROZEN
 | 18
 | 
 |-
-| modifierstate.MODIFIER_STATE_NOT_ON_MINIMAP
+| modifierstate.MODIFIER_STATE_COMMAND_RESTRICTED
 | 19
 | 
 |-
-| modifierstate.MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES
+| modifierstate.MODIFIER_STATE_NOT_ON_MINIMAP
 | 20
 | 
 |-
-| modifierstate.MODIFIER_STATE_LOW_ATTACK_PRIORITY
+| modifierstate.MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES
 | 21
 | 
 |-
-| modifierstate.MODIFIER_STATE_NO_HEALTH_BAR
+| modifierstate.MODIFIER_STATE_LOW_ATTACK_PRIORITY
 | 22
 | 
 |-
-| modifierstate.MODIFIER_STATE_FLYING
+| modifierstate.MODIFIER_STATE_NO_HEALTH_BAR
 | 23
 | 
 |-
-| modifierstate.MODIFIER_STATE_NO_UNIT_COLLISION
+| modifierstate.MODIFIER_STATE_FLYING
 | 24
 | 
 |-
-| modifierstate.MODIFIER_STATE_NO_TEAM_MOVE_TO
+| modifierstate.MODIFIER_STATE_NO_UNIT_COLLISION
 | 25
 | 
 |-
-| modifierstate.MODIFIER_STATE_NO_TEAM_SELECT
+| modifierstate.MODIFIER_STATE_NO_TEAM_MOVE_TO
 | 26
 | 
 |-
-| modifierstate.MODIFIER_STATE_PASSIVES_DISABLED
+| modifierstate.MODIFIER_STATE_NO_TEAM_SELECT
 | 27
 | 
 |-
-| modifierstate.MODIFIER_STATE_DOMINATED
+| modifierstate.MODIFIER_STATE_PASSIVES_DISABLED
 | 28
 | 
 |-
-| modifierstate.MODIFIER_STATE_BLIND
+| modifierstate.MODIFIER_STATE_DOMINATED
 | 29
 | 
 |-
-| modifierstate.MODIFIER_STATE_OUT_OF_GAME
+| modifierstate.MODIFIER_STATE_BLIND
 | 30
 | 
 |-
-| modifierstate.MODIFIER_STATE_FAKE_ALLY
+| modifierstate.MODIFIER_STATE_OUT_OF_GAME
 | 31
 | 
 |-
-| modifierstate.MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY
+| modifierstate.MODIFIER_STATE_FAKE_ALLY
 | 32
 | 
 |-
-| modifierstate.MODIFIER_STATE_TRUESIGHT_IMMUNE
+| modifierstate.MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY
 | 33
 | 
 |-
-| modifierstate.MODIFIER_STATE_LAST
+| modifierstate.MODIFIER_STATE_TRUESIGHT_IMMUNE
 | 34
+| 
+|-
+| modifierstate.MODIFIER_STATE_LAST
+| 35
 | 
 |}
 
@@ -5076,6 +3572,10 @@
 |-
 | DOTAModifierAttribute_t.MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
 | 4
+| 
+|-
+| DOTAModifierAttribute_t.MODIFIER_ATTRIBUTE_AURA_PRIORITY
+| 8
 | 
 |}
 
@@ -5168,8 +3668,12 @@
 | 12
 | 
 |-
-| ParticleAttachment_t.MAX_PATTACH_TYPES
+| ParticleAttachment_t.PATTACH_CENTER_FOLLOW
 | 13
+| 
+|-
+| ParticleAttachment_t.MAX_PATTACH_TYPES
+| 14
 | 
 |}
 
@@ -5383,16 +3887,28 @@
 | 17
 | 
 |-
-| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_RADIANT_TEAM
 | 18
 | 
 |-
-| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME_CHAT
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_DIRE_TEAM
 | 19
 | 
 |-
-| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ELEMENT_COUNT
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_SCORE
 | 20
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME
+| 21
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME_CHAT
+| 22
+| 
+|-
+| DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ELEMENT_COUNT
+| 23
 | 
 |}
 
