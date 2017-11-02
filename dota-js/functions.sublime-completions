@@ -4,7 +4,7 @@
 	[
 		// #region 7.07 update
 		{"trigger":"GameEvents_SendCustomGameEventToAllClients", "contents":"GameEvents.SendCustomGameEventToAllClients(${1:cstring pEventName}, ${2:jsObject jsObject})"},
-		{"trigger":"GameEvents_SendCustomGameEventToAllClients", "contents":"GameEvents.SendCustomGameEventToClient(${1:cstring pEventName}, ${2:integer playerIndex}, ${3:jsObject jsObject})"},
+		{"trigger":"GameEvents_SendCustomGameEventToClient", "contents":"GameEvents.SendCustomGameEventToClient(${1:cstring pEventName}, ${2:integer playerIndex}, ${3:jsObject jsObject})"},
 		// #endregion 7.07 update
 
 		// #region 2016.8.23 upate
