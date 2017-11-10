@@ -8,7 +8,6 @@ Msg( "Initializing script VM(Modified)...\n" )
 
 -------------------------------------------------------------------------------
 
-
 -- returns a string like "foo.nut:53"
 -- with the source file and line number of its caller.
 -- returns the empty string if it couldn't get the source file and line number of its caller.
@@ -74,7 +73,7 @@ function DumpScriptBindings()
 			end
 			table.insert( docList, string.format( "-- @param %s %s", prmName, prmType ) )
 			table.insert( parameterList, prmName )
-			table.insert(completionParamterList, string.format('{$%s:%s}', i+1, prmName))
+			table.insert(completionParamterList, string.format('${%s:%s}', i+1, prmName))
 		end
 
 		local realFnName = fnName
