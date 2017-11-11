@@ -74,7 +74,7 @@ function DumpScriptBindings()
 			end
 			table.insert( docList, string.format( "-- @param %s %s", prmName, prmType ) )
 			table.insert( parameterList, prmName )
-			table.insert(completionParamterList, string.format('{$%s:%s}', i+1, prmName))
+			table.insert(completionParamterList, string.format('${%s:%s}', i+1, prmName))
 		end
 
 		local realFnName = fnName
