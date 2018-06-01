@@ -8,7 +8,6 @@ Msg( "Initializing script VM(Modified)...\n" )
 
 -------------------------------------------------------------------------------
 
-
 -- returns a string like "foo.nut:53"
 -- with the source file and line number of its caller.
 -- returns the empty string if it couldn't get the source file and line number of its caller.
