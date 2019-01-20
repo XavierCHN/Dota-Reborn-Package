@@ -81,6 +81,7 @@
 		{ "trigger": "GetItemDefOwnedCount", "contents": "GetItemDefOwnedCount(${1:int_1}, ${2:int_2})" },
 		{ "trigger": "GetItemDefQuantity", "contents": "GetItemDefQuantity(${1:int_1}, ${2:int_2})" },
 		{ "trigger": "GetListenServerHost", "contents": "GetListenServerHost()" },
+		{ "trigger": "GetLobbyEventGameDetails", "contents": "GetLobbyEventGameDetails()" },
 		{ "trigger": "GetMapName", "contents": "GetMapName()" },
 		{ "trigger": "GetMaxOutputDelay", "contents": "GetMaxOutputDelay(${1:ehandle_1}, ${2:string_2})" },
 		{ "trigger": "GetPhysAngularVelocity", "contents": "GetPhysAngularVelocity(${1:handle_1})" },
@@ -171,6 +172,7 @@
 		{ "trigger": "StartSoundEventReliable", "contents": "StartSoundEventReliable(${1:string_1}, ${2:handle_2})" },
 		{ "trigger": "StartSoundEventUnreliable", "contents": "StartSoundEventUnreliable(${1:string_1}, ${2:handle_2})" },
 		{ "trigger": "StopEffect", "contents": "StopEffect(${1:handle_1}, ${2:string_2})" },
+		{ "trigger": "StopGlobalSound", "contents": "StopGlobalSound(${1:string_1})" },
 		{ "trigger": "StopListeningToAllGameEvents", "contents": "StopListeningToAllGameEvents(${1:handle_1})" },
 		{ "trigger": "StopListeningToGameEvent", "contents": "StopListeningToGameEvent(${1:int_1})" },
 		{ "trigger": "StopSoundEvent", "contents": "StopSoundEvent(${1:string_1}, ${2:handle_2})" },
@@ -191,6 +193,7 @@
 		{ "trigger": "UnitFilter", "contents": "UnitFilter(${1:handle_1}, ${2:int_2}, ${3:int_3}, ${4:int_4}, ${5:int_5})" },
 		{ "trigger": "UnloadSpawnGroup", "contents": "UnloadSpawnGroup(${1:string_1})" },
 		{ "trigger": "UnloadSpawnGroupByHandle", "contents": "UnloadSpawnGroupByHandle(${1:int_1})" },
+		{ "trigger": "UpdateEventPoints", "contents": "UpdateEventPoints(${1:hEventPointData})" },
 		{ "trigger": "VectorAngles", "contents": "VectorAngles(${1:Vector_1})" },
 		{ "trigger": "VectorToAngles", "contents": "VectorToAngles(${1:withnoroll})" },
 		{ "trigger": "Warning", "contents": "Warning(${1:string_1})" },
@@ -1938,6 +1941,8 @@
 		{ "trigger": "CDOTA_BaseNPC_Creature_SetManaRegenGain", "contents": "SetManaRegenGain(${1:flManaRegenGain})" },
 		{ "trigger": "SetMoveSpeedGain", "contents": "SetMoveSpeedGain(${1:nMoveSpeedGain})" },
 		{ "trigger": "CDOTA_BaseNPC_Creature_SetMoveSpeedGain", "contents": "SetMoveSpeedGain(${1:nMoveSpeedGain})" },
+		{ "trigger": "SetRequiresReachingEndPath", "contents": "SetRequiresReachingEndPath(${1:bRequiresReachingEndPath})" },
+		{ "trigger": "CDOTA_BaseNPC_Creature_SetRequiresReachingEndPath", "contents": "SetRequiresReachingEndPath(${1:bRequiresReachingEndPath})" },
 		{ "trigger": "SetXPGain", "contents": "SetXPGain(${1:nXPGain})" },
 		{ "trigger": "CDOTA_BaseNPC_Creature_SetXPGain", "contents": "SetXPGain(${1:nXPGain})" },
 		{ "trigger": "AddExperience", "contents": "AddExperience(${1:flXP}, ${2:nReason}, ${3:bApplyBotDifficultyScaling}, ${4:bIncrementTotal})" },
@@ -2718,6 +2723,8 @@
 		{ "trigger": "CDOTA_PlayerResource_NumPlayers", "contents": "NumPlayers()" },
 		{ "trigger": "NumTeamPlayers", "contents": "NumTeamPlayers()" },
 		{ "trigger": "CDOTA_PlayerResource_NumTeamPlayers", "contents": "NumTeamPlayers()" },
+		{ "trigger": "RecordConsumableAbilityChargeChange", "contents": "RecordConsumableAbilityChargeChange(${1:iPlayerID}, ${2:item_definition_index}, ${3:nChargeIncrementOrDecrement})" },
+		{ "trigger": "CDOTA_PlayerResource_RecordConsumableAbilityChargeChange", "contents": "RecordConsumableAbilityChargeChange(${1:iPlayerID}, ${2:item_definition_index}, ${3:nChargeIncrementOrDecrement})" },
 		{ "trigger": "ReplaceHeroWith", "contents": "ReplaceHeroWith(${1:iPlayerID}, ${2:pszHeroClass}, ${3:nGold}, ${4:nXP})" },
 		{ "trigger": "CDOTA_PlayerResource_ReplaceHeroWith", "contents": "ReplaceHeroWith(${1:iPlayerID}, ${2:pszHeroClass}, ${3:nGold}, ${4:nXP})" },
 		{ "trigger": "ResetBuybackCostTime", "contents": "ResetBuybackCostTime(${1:nPlayerID})" },
@@ -3185,6 +3192,8 @@
 		{ "trigger": "ProjectileDodge", "contents": "ProjectileDodge(${1:handle_1})" },
 		{ "trigger": "ProjectileManager_ProjectileDodge", "contents": "ProjectileDodge(${1:handle_1})" },
 		{ "trigger": "UpdateLinearProjectileDirection", "contents": "UpdateLinearProjectileDirection(${1:int_1}, ${2:Vector_2}, ${3:float_3})" },
-		{ "trigger": "ProjectileManager_UpdateLinearProjectileDirection", "contents": "UpdateLinearProjectileDirection(${1:int_1}, ${2:Vector_2}, ${3:float_3})" }
+		{ "trigger": "ProjectileManager_UpdateLinearProjectileDirection", "contents": "UpdateLinearProjectileDirection(${1:int_1}, ${2:Vector_2}, ${3:float_3})" },
+		{ "trigger": "IsPublicUniverse", "contents": "IsPublicUniverse()" },
+		{ "trigger": "SteamInfo_IsPublicUniverse", "contents": "IsPublicUniverse()" }
 	]
 }
