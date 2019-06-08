@@ -1494,6 +1494,8 @@
 		{ "trigger": "CDOTA_BaseNPC_GetItemInSlot", "contents": "GetItemInSlot(${1:i})" },
 		{ "trigger": "GetLastAttackTime", "contents": "GetLastAttackTime()" },
 		{ "trigger": "CDOTA_BaseNPC_GetLastAttackTime", "contents": "GetLastAttackTime()" },
+		{ "trigger": "GetLastDamageTime", "contents": "GetLastDamageTime()" },
+		{ "trigger": "CDOTA_BaseNPC_GetLastDamageTime", "contents": "GetLastDamageTime()" },
 		{ "trigger": "GetLastIdleChangeTime", "contents": "GetLastIdleChangeTime()" },
 		{ "trigger": "CDOTA_BaseNPC_GetLastIdleChangeTime", "contents": "GetLastIdleChangeTime()" },
 		{ "trigger": "GetLevel", "contents": "GetLevel()" },
