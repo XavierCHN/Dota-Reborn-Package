@@ -2300,6 +2300,8 @@
 		{ "trigger": "CDOTA_Item_DataDriven_ApplyDataDrivenModifier", "contents": "ApplyDataDrivenModifier(${1:hCaster}, ${2:hTarget}, ${3:pszModifierName}, ${4:hModifierTable})" },
 		{ "trigger": "ApplyDataDrivenThinker", "contents": "ApplyDataDrivenThinker(${1:hCaster}, ${2:vLocation}, ${3:pszModifierName}, ${4:hModifierTable})" },
 		{ "trigger": "CDOTA_Item_DataDriven_ApplyDataDrivenThinker", "contents": "ApplyDataDrivenThinker(${1:hCaster}, ${2:vLocation}, ${3:pszModifierName}, ${4:hModifierTable})" },
+		{ "trigger": "CanUnitPickUp", "contents": "CanUnitPickUp(${1:hUnit})" },
+		{ "trigger": "CDOTA_Item_Lua_CanUnitPickUp", "contents": "CanUnitPickUp(${1:hUnit})" },
 		{ "trigger": "CastFilterResult", "contents": "CastFilterResult()" },
 		{ "trigger": "CDOTA_Item_Lua_CastFilterResult", "contents": "CastFilterResult()" },
 		{ "trigger": "CastFilterResultLocation", "contents": "CastFilterResultLocation(${1:vLocation})" },
