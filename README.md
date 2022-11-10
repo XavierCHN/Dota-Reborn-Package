@@ -1,3 +1,6 @@
+#DEPRECATED
+this project is deprecated, please consider to use typescript+react to develop dota2 mods with [this template project](https://github.com/XavierCHN/x-template)
+
 Dota Reborn Package
 ================================
 
